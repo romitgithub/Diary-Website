@@ -59,12 +59,12 @@
 							<img src="images/calendars.png" class="calendars-img">
 						</div>
 						<div class="progress col-2 offset-5 mt-3">
-						  <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+						  <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="section active" id="section-3">
+			<div class="section" id="section-3">
 				<div class="container">
 					<div class="row">
 						<div class="col-8 offset-2 col-lg-10 offset-lg-1 col-md-12 offset-md-0 col-sm-12 offset-sm-0">
@@ -95,6 +95,7 @@
 			</div>
 		</footer>
 		<script type="text/javascript">
+			var progressValue, interval;
 			$('#fullpage').fullpage({
 				//Navigation
 				navigation: false,
@@ -108,44 +109,19 @@
 
     		function moveToSlide(slideNum){
     			$.fn.fullpage.silentMoveTo(slideNum);
-    		}
-
-    		function loadResultsScreen(resultCode){
-    			var titleText, descText;
-    			var imagePath = "images/error.png";
-
-    			$('#maybelaterbutton').hide();
-    			$('#birthdatebutton').hide();
-    			$('#entriesmoodbutton').hide();
-    			$('#skiplink').hide();
-
-    			switch(resultCode){
-    				case 1:
-    					titleText = "<strong>Way Off!</strong>";
-    					descText = "Hmm, we'll check what's happening behind the scenes. <strong><br>In the meantime, let's see what else we can learn.</strong>";
-    					$('#entriesmoodbutton').show();
-    					$('#skiplink').show();
-    					break;
-    				case 2:
-    					titleText = "<strong>Close but not quite</strong>";
-    					descText = "<strong>Oh, not quite right?</strong> Wonder where we slipped up.<br>Can you tell us your birthday so we can learn and improve?";
-    					$('#birthdatebutton').show();
-    					break;
-    				case 3:
-    					titleText = "<strong>Spot On!</strong>";
-    					descText = "See, your entries can tell us a lot! <strong>Let's see what else we can learn.</strong>";
-    					imagePath = "images/success.png";
-    					$('#maybelaterbutton').show();
-    					$('#entriesmoodbutton').show();
-    					break;
+    			if(slideNum==2){
+    				showLoader();
+    				$('.progress-bar').css('width', '100%').attr('aria-valuenow', 100);
     			}
-
-    			$('#result-title').html(titleText);
-    			$('#result-description').html(descText);
-				$('#result-icon').attr('src', imagePath);
-
-				$.fn.fullpage.silentMoveTo(4);
     		}
+
+    		function showLoader(){
+    			var interval = setTimeout("updateProgress()", 2000);
+    		}
+
+    		function updateProgress(){
+	    		moveToSlide(3);
+	    	}
 
 		</script>
 	</body>
