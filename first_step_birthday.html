@@ -41,7 +41,7 @@
 							<button class="button blue-border-bg col-6">
 								<span><strong>Maybe later</strong></span>
 							</button>
-							<button class="button get-started col-6">
+							<button class="button get-started col-6" onclick="moveToSlide(2)">
 								<span><strong>Ok, let's see</strong></span>
 							</button>
 						</div>
@@ -51,7 +51,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="section active" id="section-2">
+			<div class="section" id="section-2">
 				<div class="container mt-5">
 					<div class="row">
 						<div class="col-8 offset-2 col-lg-10 offset-lg-1 col-md-12 offset-md-0 col-sm-12 offset-sm-0">
@@ -67,8 +67,57 @@
 					</div>
 				</div>
 			</div>
-			<div class="section" id="section-3">
-				section 3
+			<div class="section active" id="section-3">
+				<div class="container">
+					<div class="row">
+						<div class="col-8 offset-2 col-lg-10 offset-lg-1 col-md-12 offset-md-0 col-sm-12 offset-sm-0">
+							<img src="images/cake-dark.png" class="birthday-big-icon">
+							<h1 class="big-header mt-4"><strong>Your birthday is November 13th</strong></h1>
+							<p class="feature-desc-text mt-4 col-12">
+								Based on our analytics, it looks like this is the special date, <strong>Is that right?</strong>
+							</p>
+						</div>
+						<div class="col-12 mt-8">
+							<button class="button blue-border-bg col-4" onclick="loadResultsScreen(1)">
+								<span><strong>Way off</strong></span>
+							</button>
+							<button class="button blue-border-bg col-4" onclick="loadResultsScreen(2)">
+								<span><strong>Close but not quite</strong></span>
+							</button>
+							<button class="button get-started col-4" onclick="loadResultsScreen(3)">
+								<span><strong>Spot on!</strong></span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section" id="section-4">
+				<div class="container">
+					<div class="row">
+						<div class="col-8 offset-2 col-lg-10 offset-lg-1 col-md-12 offset-md-0 col-sm-12 offset-sm-0">
+							<img src="images/cake-dark.png" class="big-icon">
+							<img src="images/success.png" class="big-icon result" id="result-icon">
+							<h2 class="mt-4" id="result-title"></h2>
+							<p class="feature-desc-text mt-4 col-12" id="result-description">
+								
+							</p>
+						</div>
+						<div class="col-12 mt-8">
+							<button class="button blue-border-bg col-4" id="maybelaterbutton">
+								<span><strong>Maybe later</strong></span>
+							</button>
+							<button class="button blue-border-bg col-4" id="birthdatebutton">
+								<span><strong>DD/MM/YYYY</strong></span>
+							</button>
+							<button class="button get-started col-4" id="entriesmoodbutton">
+								<span><strong>Entries Mood</strong></span>
+							</button>
+						</div>
+						<div class="col-12 mt-5 md-text dark-text" id="skiplink">
+							<a href="signup.html"><p><strong>Skip and go to my dashboard</strong></p></a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<footer>
@@ -93,6 +142,48 @@
     		$.fn.fullpage.setAllowScrolling(false);
     		$.fn.fullpage.setMouseWheelScrolling(false);
     		$.fn.fullpage.setKeyboardScrolling(false);	
+
+    		function moveToSlide(slideNum){
+    			$.fn.fullpage.silentMoveTo(slideNum);
+    		}
+
+    		function loadResultsScreen(resultCode){
+    			var titleText, descText;
+    			var imagePath = "images/error.png";
+
+    			$('#maybelaterbutton').hide();
+    			$('#birthdatebutton').hide();
+    			$('#entriesmoodbutton').hide();
+    			$('#skiplink').hide();
+
+    			switch(resultCode){
+    				case 1:
+    					titleText = "<strong>Way Off!</strong>";
+    					descText = "Hmm, we'll check what's happening behind the scenes. <strong><br>In the meantime, let's see what else we can learn.</strong>";
+    					$('#entriesmoodbutton').show();
+    					$('#skiplink').show();
+    					break;
+    				case 2:
+    					titleText = "<strong>Close but not quite</strong>";
+    					descText = "<strong>Oh, not quite right?</strong> Wonder where we slipped up.<br>Can you tell us your birthday so we can learn and improve?";
+    					$('#birthdatebutton').show();
+    					break;
+    				case 3:
+    					titleText = "<strong>Spot On!</strong>";
+    					descText = "See, your entries can tell us a lot! <strong>Let's see what else we can learn.</strong>";
+    					imagePath = "images/success.png";
+    					$('#maybelaterbutton').show();
+    					$('#entriesmoodbutton').show();
+    					break;
+    			}
+
+    			$('#result-title').html(titleText);
+    			$('#result-description').html(descText);
+				$('#result-icon').attr('src', imagePath);
+
+				$.fn.fullpage.silentMoveTo(4);
+    		}
+
 		</script>
 	</body>
 </html>
