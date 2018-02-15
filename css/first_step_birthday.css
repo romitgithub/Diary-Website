@@ -51,6 +51,14 @@ button.button.mood img, button.button.mood span{
 	text-align: center;
 }
 
+#section-2{
+	text-align: center;
+}
+
+#section-3{
+	text-align: center;
+}
+
 h1.big-header{
 	font-size: 36px;
 }
@@ -84,4 +92,37 @@ h1.big-header{
 .dark-text a{
 	color: #a0a0a0;
 	text-decoration: none;
+}
+
+footer{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 16px;
+}
+
+img.footer-logo{
+	width: 20px;
+	height: 20px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	margin-right: 4px;
+	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+.footer-text{
+	vertical-align: middle;
+	margin-top: 6px;
+	margin-bottom: 6px;
+	color: #d2d2d2;
+}
+
+img.calendars-img{
+	width: 500px;
+}
+
+.progress{
+	padding: 0;
 }

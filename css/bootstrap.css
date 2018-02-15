@@ -5110,7 +5110,7 @@ tbody.collapse.show {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 1rem;
+  height: .4rem;
   overflow: hidden;
   font-size: 0.75rem;
   background-color: #e9ecef;
@@ -5130,7 +5130,7 @@ tbody.collapse.show {
   justify-content: center;
   color: #fff;
   text-align: center;
-  background-color: #007bff;
+  background-color: #4CAF50;
   transition: width 0.6s ease;
 }
 
