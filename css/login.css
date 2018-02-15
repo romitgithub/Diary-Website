@@ -1,0 +1,70 @@
+body{
+	height: 100vh;
+	background: linear-gradient(rgba(9, 63, 91, 0.9), rgba(9, 63, 91, 0.9)), url(../images/banner.jpg);
+	background-size: cover;
+	color: #5a5a5a;
+	text-align: center;
+}
+
+.card-bg{
+	width: 900px;
+	padding: 20px;
+	background: white;
+	box-shadow: 8px 8px 24px #00000038;
+	margin: 60px auto;
+	display: inline-flex;
+	border-radius: 24px;
+	text-align: center;
+}
+
+.logo-section img{
+	width: 40px;
+	line-height: 80px;
+	vertical-align: top;
+	font-family: arial;
+	font-style:  italic;
+}
+
+.logo-section p{
+	display: inline;
+	font-size: 28px;
+}
+
+.red-button{
+	background: #F54040;
+	box-shadow: 8px 8px 24px #00000038;
+	color: white;
+	width: 220px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	border-radius: 36px;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.red-button img, .red-button span{
+	vertical-align: middle;
+	font-size: 18px;
+}
+
+img.email-icon{
+	width: 24px;
+	height: 24px;
+	margin-right: 8px;
+}
+
+.small-text{
+	font-size: 12px;
+}
+
+.md-text{
+	font-size: 14px;
+}
+
+.light-text{
+	color: #d2d2d2;
+}
+
+.dark-text{
+	color: #a0a0a0;
+}
