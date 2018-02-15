@@ -1,0 +1,27 @@
+@font-face {
+	font-family: "quicksand";
+	src: url("../fonts/quicksand/Quicksand-Regular.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "quicksand-light";
+	src: url("../fonts/quicksand/Quicksand-Light.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "quicksand-bold";
+	src: url("../fonts/quicksand/Quicksand-Bold.otf") format("opentype");
+}
+
+*{
+	font-family: 'quicksand', Arial;
+	letter-spacing: 1px;
+}
+
+.mt-8{
+	margin-top: 100px;
+}
+
+strong{
+	font-family: quicksand-bold;
+}
