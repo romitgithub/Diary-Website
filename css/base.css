@@ -15,7 +15,7 @@
 
 *{
 	font-family: 'quicksand', Arial;
-	letter-spacing: 1px;
+	letter-spacing: 0px;
 }
 
 .mt-8{
@@ -47,3 +47,11 @@ strong{
 a, a:hover{
 	text-decoration: none;
 }
+
+
+button:active {
+	outline: none;
+	border: none;
+}
+
+button:focus {outline:0;}

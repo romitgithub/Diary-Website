@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyDiary</title>
+		<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/base.css">
+		<link rel="stylesheet" type="text/css" href="css/first_step_birthday.css">
+		<script src="libs/jquery.min.js"></script>
+		<script type="text/javascript" src="libs/bootstrap.js"></script>
+		<script type="text/javascript" src="libs/jquery.fullPage.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="row">
+				<div class="col-6 text-right">
+					<button class="button birthday">
+						<img src="images/cake-blue.png" class="birthday-icon-small">
+						<span><strong>Your Birthday</strong></span>
+					</button>
+				</div>
+				<div class="col-6 text-left">
+					<button class="button mood">
+						<img src="images/hand-light.png" class="mood-icon-small">
+						<span><strong>Entries Mood</strong></span>
+					</button>
+				</div>
+			</div>
+		</header>
+		<div id="fullpage">
+			<div class="section" id="section-1">
+				<div class="container">
+					<div class="row">
+						<div class="col-8 offset-2 col-lg-10 offset-lg-1 col-md-12 offset-md-0 col-sm-12 offset-sm-0">
+							<img src="images/cake-dark.png" class="birthday-big-icon">
+							<h1 class="big-header mt-4"><strong>Let's find your birthday</strong></h1>
+							<p class="feature-desc-text mt-4 col-10 offset-1">
+								<strong>Your diary entries have a lot of interesting data!</strong> Our software can analyze your entries and find out all kinds of interesting things. Let's start with your birthday. You haven't told us that date, but let's take a look at your mails and see if we can work it out.</p>
+						</div>
+						<div class="col-12 mt-5">
+							<button class="button blue-border-bg col-6">
+								<span><strong>Maybe later</strong></span>
+							</button>
+							<button class="button get-started col-6">
+								<span><strong>Ok, let's see</strong></span>
+							</button>
+						</div>
+						<div class="col-12 mt-5 md-text dark-text">
+							<a href="signup.html"><p><strong>Skip and go to my dashboard</strong></p></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section" id="section-2">
+				section 2
+			</div>
+			<div class="section" id="section-3">
+				section 3
+			</div>
+		</div>
+		<script type="text/javascript">
+			$('#fullpage').fullpage({
+				//Navigation
+				navigation: false,
+				showActiveTooltip: false,
+				scrollingSpeed: 600,
+			});
+			$.fn.fullpage.setMouseWheelScrolling(false);
+    		$.fn.fullpage.setAllowScrolling(false);
+    		$.fn.fullpage.setMouseWheelScrolling(false);
+    		$.fn.fullpage.setKeyboardScrolling(false);	
+		</script>
+	</body>
+</html>
