@@ -43,3 +43,7 @@ strong{
 *:focus{
 	outline: none;
 }
+
+a, a:hover{
+	text-decoration: none;
+}

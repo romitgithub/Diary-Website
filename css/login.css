@@ -90,3 +90,8 @@ img.email-icon{
 	margin: 12px;
 	width: 320px;
 }
+
+.dark-text a{
+	color: #a0a0a0;
+	text-decoration: none;
+}
