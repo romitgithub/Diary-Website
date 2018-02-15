@@ -45,6 +45,11 @@ img.big-icon.result{
 
 button.button{
 	cursor: pointer;
+	color: #d2d2d2;
+}
+
+button.button.active{
+	color: #2590f4;
 }
 
 button.button.birthday img, button.button.birthday span{
@@ -53,7 +58,6 @@ button.button.birthday img, button.button.birthday span{
 
 button.button.mood img, button.button.mood span{
 	vertical-align: middle;
-	color: #d2d2d2;
 }
 
 #section-1{
@@ -73,7 +77,7 @@ button.button.mood img, button.button.mood span{
 }
 
 h1.big-header{
-	font-size: 36px;
+	font-size: 28px;
 }
 
 .button.get-started{

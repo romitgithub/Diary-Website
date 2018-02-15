@@ -14,14 +14,14 @@
 		<header>
 			<div class="row">
 				<div class="col-6 text-right">
-					<button class="button birthday">
+					<button class="button birthday active">
 						<img src="images/cake-blue.png" class="birthday-icon-small">
 						<span><strong>Your Birthday</strong></span>
 					</button>
 				</div>
 				<div class="col-6 text-left">
-					<button class="button mood">
-						<img src="images/hand-light.png" class="mood-icon-small">
+					<button class="button mood active">
+						<img src="images/hand-blue.png" class="mood-icon-small">
 						<span><strong>Entries Mood</strong></span>
 					</button>
 				</div>
@@ -32,17 +32,14 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-8 offset-2 col-lg-10 offset-lg-1 col-md-12 offset-md-0 col-sm-12 offset-sm-0">
-							<img src="images/cake-dark.png" class="birthday-big-icon">
-							<h1 class="big-header mt-4"><strong>Let's find your birthday</strong></h1>
+							<img src="images/hand-dark.png" class="big-icon">
+							<h1 class="big-header mt-4"><strong>Entries Mood</strong></h1>
 							<p class="feature-desc-text mt-4 col-10 offset-1">
-								<strong>Your diary entries have a lot of interesting data!</strong> Our software can analyze your entries and find out all kinds of interesting things. Let's start with your birthday. You haven't told us that date, but let's take a look at your mails and see if we can work it out.</p>
+								Every one of your emails has associated <strong>Politeness, Sentiment and Mirroring</strong> scores based on the words you use, the frequency and the context you use it. The hights score will be a 100% and with that in mind, you will be able to track how those elements vary by contacts and periods of time.</p>
 						</div>
 						<div class="col-12 mt-5">
-							<button class="button blue-border-bg col-6">
-								<span><strong>Maybe later</strong></span>
-							</button>
 							<button class="button get-started col-6" onclick="moveToSlide(2)">
-								<span><strong>Ok, let's see</strong></span>
+								<span><strong>Show me more</strong></span>
 							</button>
 						</div>
 						<div class="col-12 mt-5 md-text dark-text">
@@ -55,9 +52,9 @@
 				<div class="container mt-5">
 					<div class="row">
 						<div class="col-8 offset-2 col-lg-10 offset-lg-1 col-md-12 offset-md-0 col-sm-12 offset-sm-0">
-							<h3 class="mt-4"><strong>Days Analysis</strong></h1>
+							<h3 class="mt-4"><strong>Entry Analysis</strong></h1>
 							<p class="feature-desc-text mt-2 col-10 offset-1">
-								Our analytical capabilities allow us to identify important days based on your interactions.
+								We analyze every entry and apply a score in each category.
 							</p>
 							<img src="images/calendars.png" class="calendars-img">
 						</div>
@@ -71,50 +68,16 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-8 offset-2 col-lg-10 offset-lg-1 col-md-12 offset-md-0 col-sm-12 offset-sm-0">
-							<img src="images/cake-dark.png" class="birthday-big-icon">
-							<h1 class="big-header mt-4"><strong>Your birthday is November 13th</strong></h1>
-							<p class="feature-desc-text mt-4 col-12">
-								Based on our analytics, it looks like this is the special date, <strong>Is that right?</strong>
-							</p>
-						</div>
-						<div class="col-12 mt-8">
-							<button class="button blue-border-bg col-4" onclick="loadResultsScreen(1)">
-								<span><strong>Way off</strong></span>
-							</button>
-							<button class="button blue-border-bg col-4" onclick="loadResultsScreen(2)">
-								<span><strong>Close but not quite</strong></span>
-							</button>
-							<button class="button get-started col-4" onclick="loadResultsScreen(3)">
-								<span><strong>Spot on!</strong></span>
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="section" id="section-4">
-				<div class="container">
-					<div class="row">
-						<div class="col-8 offset-2 col-lg-10 offset-lg-1 col-md-12 offset-md-0 col-sm-12 offset-sm-0">
-							<img src="images/cake-dark.png" class="big-icon">
-							<img src="images/success.png" class="big-icon result" id="result-icon">
-							<h2 class="mt-4" id="result-title"></h2>
+							<h2 class="mt-4" id="result-title"><strong>Score Results</strong></h2>
 							<p class="feature-desc-text mt-4 col-12" id="result-description">
-								
+								Then we show you aggregate results for dates, locations, and a group of contacts.<br>
+								Based on that you can create all the custom insight you desire.
 							</p>
 						</div>
 						<div class="col-12 mt-8">
-							<button class="button blue-border-bg col-4" id="maybelaterbutton">
-								<span><strong>Maybe later</strong></span>
+							<button class="button get-started col-4">
+								<span><strong>I got this!</strong></span>
 							</button>
-							<button class="button blue-border-bg col-4" id="birthdatebutton">
-								<span><strong>DD/MM/YYYY</strong></span>
-							</button>
-							<button class="button get-started col-4" id="entriesmoodbutton">
-								<span><strong>Entries Mood</strong></span>
-							</button>
-						</div>
-						<div class="col-12 mt-5 md-text dark-text" id="skiplink">
-							<a href="signup.html"><p><strong>Skip and go to my dashboard</strong></p></a>
 						</div>
 					</div>
 				</div>
