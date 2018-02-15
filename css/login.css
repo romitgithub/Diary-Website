@@ -68,3 +68,25 @@ img.email-icon{
 .dark-text{
 	color: #a0a0a0;
 }
+
+.button.get-started{
+	background: #2590f4;
+	box-shadow: 8px 8px 24px #00000038;
+	color: white;
+	width: 220px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	border-radius: 36px;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.input.signup{
+	background: transparent;
+	box-shadow: none;
+	border: none;
+	padding: 8px;
+	border-bottom:  1px solid #e5e5e5;
+	margin: 12px;
+	width: 320px;
+}

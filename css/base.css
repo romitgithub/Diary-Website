@@ -39,3 +39,7 @@ strong{
 	padding-right: 24px;
 	font-family: quicksand-bold;
 }
+
+*:focus{
+	outline: none;
+}
