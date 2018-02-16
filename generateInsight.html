@@ -56,20 +56,27 @@
 					  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 					    <a class="dropdown-item" href="#action">
 					    	<div>
-					    		<p><strong>Personal vs Work</strong></p>
-					    		<p>This work</p>
+					    		<p><strong>Personal</strong></p>
 					    	</div>
 					    </a>
 					    <a class="dropdown-item" href="#">
 					    	<div>
-					    		<p><strong>Personal vs Work</strong></p>
-					    		<p>This work</p>
+					    		<p><strong>Work</strong></p>
 					    	</div>
 					    </a>
 					    <a class="dropdown-item" href="#">
 					    	<div>
-					    		<p><strong>Personal vs Work</strong></p>
-					    		<p>This work</p>
+					    		<p><strong>Female</strong></p>
+					    	</div>
+					    </a>
+					    <a class="dropdown-item" href="#">
+					    	<div>
+					    		<p><strong>Male</strong></p>
+					    	</div>
+					    </a>
+					    <a class="dropdown-item add-new" href="#" data-toggle="modal" data-target="#exampleModalCenter">
+					    	<div>
+					    		<p><strong>New Group</strong></p>
 					    	</div>
 					    </a>
 					  </div>
@@ -81,14 +88,32 @@
 					  </a>
 
 					  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-					    <a class="dropdown-item" href="#">Action</a>
-					    <a class="dropdown-item" href="#">Another action</a>
-					    <a class="dropdown-item" href="#">Something else here</a>
+					    <a class="dropdown-item" href="#" onclick="alert('test')">
+					    	<div>
+					    		<img src="images/delete.png">
+					    		<p><strong>Personal vs Work</strong></p>
+					    		<p>This work</p>
+					    	</div>
+					    </a>
+					    <a class="dropdown-item" href="#">
+					    	<div>
+					    		<img src="images/delete.png">
+					    		<p><strong>Personal vs Work</strong></p>
+					    		<p>This work</p>
+					    	</div>
+					    </a>
+					    <a class="dropdown-item" href="#">
+					    	<div>
+					    		<img src="images/delete.png">
+					    		<p><strong>Personal vs Work</strong></p>
+					    		<p>This work</p>
+					    	</div>
+					    </a>
 					  </div>
 					</div>
 				</div>
 			</div>
-			<div class="container row mt-3">
+			<div class="container row mt-4">
 				<div class="col-lg-4 col-md-4 col-sm-8 extra-padding">
 					<div class="group">
 						<p><strong>Group A</strong></p>
@@ -163,6 +188,34 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+		    <div class="modal-content">
+		      <div class="modal-body container">
+		      	<div class="row group-header">
+		      		<p class="col-6"><strong>Female</strong> (25)</p>
+		      	</div>
+		      	<div class="row group-search-card">
+		      		<input type="text" placeholder="Find email contacts" class="col-12">
+		      	</div>
+		      	<div class="row group-items">
+		      		<ul>
+		      			<li>
+		      				<div class="card-item">
+		      					<img src="images/check-mark.png" class="col-3 user-profile-icon-small">
+		      					<div class="col-6">
+		      						<p>Isabella Thompson</p>
+		      						<p>isabella@gmail.com</p>
+		      					</div>
+		      					<img src="images/success.png" class="col-3 user-check-mark-icon">
+		      				</div>
+		      			</li>
+		      		</ul>
+		      	</div>
+		      </div>
+		    </div>
+		  </div>
 		</div>
 	</body>
 	<script type="text/javascript">

@@ -3158,17 +3158,19 @@ tbody.collapse.show {
   z-index: 1000;
   display: none;
   float: left;
-  min-width: 10rem;
-  padding: 0.5rem 0;
+  min-width: 12rem;
+  /* padding: 0.5rem 0; */
   margin: 0.125rem 0 0;
   font-size: 1rem;
   color: #212529;
   text-align: left;
   list-style: none;
-  background-color: #fff;
+  background-color: #ffffff;
   background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0.25rem;
+  /* border: 1px solid rgba(0, 0, 0, 0.15); */
+  border-radius: 0.3rem;
+  box-shadow: 0px 0px 8px #e5e5e5;
+  border-top: 3px solid #2590f4;
 }
 
 .dropup .dropdown-menu {
@@ -3266,7 +3268,7 @@ tbody.collapse.show {
 .dropdown-item {
   display: block;
   width: 100%;
-  padding: 0.25rem 1.5rem;
+  /* padding: 0.25rem 1.5rem; */
   clear: both;
   font-weight: 400;
   color: #212529;
@@ -5456,7 +5458,7 @@ button.close {
   flex-direction: column;
   width: 100%;
   pointer-events: auto;
-  background-color: #fff;
+  background-color: #ffffff;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 0.3rem;
