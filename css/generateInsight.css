@@ -186,5 +186,26 @@ img.btn-small-icon{
 	width: 16px;
 	height: 16px;
 	margin: 2px;
+	filter: hue-rotate;
 	margin-left: 8px;
+}
+
+div.dropdown-button-group > div{
+	display: inline-block;
+	margin: 8px;
+}
+
+a#dropdownMenuLink{
+	font-size: 14px;
+    background: transparent;
+    color: #3c8feb;
+    font-weight: bold;
+    font-family: quicksand-bold;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.btn-secondary:focus, .btn-secondary:hover, .show > .btn-secondary.dropdown-toggle:focus{
+	box-shadow: none;
 }

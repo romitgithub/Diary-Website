@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 		<script src="libs/jquery.min.js"></script>
 
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script type="text/javascript" src="libs/bootstrap.js"></script>
 		<script type="text/javascript" src="libs/jquery.fullPage.js"></script>
@@ -43,10 +44,51 @@
 			</div>
 		</header>
 		<div class="container create-insight-container">
-			<div class="col-12 mt-2 text-left">
-				<h5><strong>Insights Criteria</strong></h5>
+			<div class="row mt-2">
+				<h5 class="col-4 extra-padding"><strong>Insights Criteria</strong></h5>
+				<div class="col-8 dropdown-button-group text-right extra-padding">
+					<div class="dropdown show custom-dropdown">
+					  <img src="images/calendar-light.png" class="btn-small-icon">
+					  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    Groups
+					  </a>
+
+					  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+					    <a class="dropdown-item" href="#action">
+					    	<div>
+					    		<p><strong>Personal vs Work</strong></p>
+					    		<p>This work</p>
+					    	</div>
+					    </a>
+					    <a class="dropdown-item" href="#">
+					    	<div>
+					    		<p><strong>Personal vs Work</strong></p>
+					    		<p>This work</p>
+					    	</div>
+					    </a>
+					    <a class="dropdown-item" href="#">
+					    	<div>
+					    		<p><strong>Personal vs Work</strong></p>
+					    		<p>This work</p>
+					    	</div>
+					    </a>
+					  </div>
+					</div>
+					<div class="dropdown show">
+					  <img src="images/calendar-light.png" class="btn-small-icon">
+					  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    Favorites
+					  </a>
+
+					  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+					    <a class="dropdown-item" href="#">Action</a>
+					    <a class="dropdown-item" href="#">Another action</a>
+					    <a class="dropdown-item" href="#">Something else here</a>
+					  </div>
+					</div>
+				</div>
 			</div>
-			<div class="container row mt-5">
+			<div class="container row mt-3">
 				<div class="col-lg-4 col-md-4 col-sm-8 extra-padding">
 					<div class="group">
 						<p><strong>Group A</strong></p>

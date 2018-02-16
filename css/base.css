@@ -47,6 +47,9 @@ a, a:hover{
 	text-decoration: none;
 }
 
+p{
+	margin: 0;
+}
 
 button:active {
 	outline: none;
