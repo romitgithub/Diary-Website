@@ -84,7 +84,7 @@ h1.big-header{
 	background: #2590f4;
 	box-shadow: 8px 8px 24px #00000038;
 	color: white;
-	width: 220px;
+	min-width: 240px;
 	padding-top: 16px;
 	padding-bottom: 16px;
 	border-radius: 36px;
@@ -96,7 +96,7 @@ h1.big-header{
 .button.blue-border-bg{
 	background: #00000000;
 	color: #2590f4;
-	width: 240px;
+	min-width: 220px;
 	padding-top: 16px;
 	padding-bottom: 16px;
 	border: 1px solid #2590f4;

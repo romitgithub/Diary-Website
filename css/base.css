@@ -30,14 +30,13 @@ strong{
 	background: transparent;
 	border: none;
 	color: #2590f4;
-	line-height:  26px;
-	vertical-align: middle;
 	font-size: 14px;
 	padding-top: 2px;
 	padding-bottom: 2px;
 	padding-left: 24px;
 	padding-right: 24px;
 	font-family: quicksand-bold;
+	display: inline-block;
 }
 
 *:focus{

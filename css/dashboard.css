@@ -1,0 +1,108 @@
+header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding-left: 24px;
+	padding-right: 24px;
+	z-index: 1;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background: linear-gradient(rgba(9, 63, 91, 1), rgba(9, 63, 91, 1));
+}
+
+header p{
+	display: inline;
+	vertical-align: middle;
+	color: white;
+	margin: 0;
+}
+
+p.logo-text{
+	font-size: 20px;
+	letter-spacing: 0px;
+	margin-left: 8px;
+}
+
+p.user-profile-name{
+	font-size: 12px;
+	letter-spacing: 0px;
+	margin-left: 8px;	
+	font-family: quicksand-bold;
+}
+
+p.light-bg-header{
+	color: black;
+}
+
+img.header-logo{
+	width: 24px;
+	vertical-align: middle;
+	font-family: quicksand-bold;
+	font-style:  italic;
+}
+
+img.user-profile-icon{
+	width: 30px;
+	height: 30px;
+	vertical-align: middle;	
+	border-radius: 15px;
+	border: 1px solid white;
+}
+
+img.profile-more-icon{
+	width: 8px;
+	height: 8px;
+	margin: 4px;
+	opacity: 0.7;
+	margin-top: 6px;
+	vertical-align: middle;
+}
+
+p.menu-button-text{
+	display: inline-block;
+	font-size: 12px;
+	vertical-align: middle;
+	font-family: quicksand-bold;
+}
+
+div.menu-buttons div{
+	 margin-bottom: -16px; 
+	text-align: center;
+}
+
+div.menu-buttons div.active{
+	 border-bottom: 4px solid #2590f4; 
+}
+
+div.menu-buttons div.active p{
+	color: #2590f4;
+}
+
+div.create-insight-container{
+	width: 94vw;
+	height: 82vh;
+	margin: 100px auto;
+	background: #f1f1f1;
+	box-shadow: 1px 1px 2px #e5e5e5;
+	border-radius: 12px;
+	text-align: center;
+}
+
+img.big-icon{
+	width: 56px;
+	height: 56px;
+}
+
+.button.get-started{
+	background: #2590f4;
+	box-shadow: 8px 8px 24px #00000038;
+	color: white;
+	width: 160px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	border-radius: 36px;
+	font-size: 16px;
+	margin: 12px;
+	cursor: pointer;
+}

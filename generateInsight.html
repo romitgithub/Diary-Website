@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyDiary</title>
+		<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/base.css">
+		<link rel="stylesheet" type="text/css" href="css/generateInsight.css">
+		<script src="libs/jquery.min.js"></script>
+		<script type="text/javascript" src="libs/bootstrap.js"></script>
+		<script type="text/javascript" src="libs/jquery.fullPage.js"></script>
+	</head>
+	<body>
+		
+		<header>
+			<div class="row">
+				<div class="col-3 text-left">
+					<img src="images/logo-white.png" class="header-logo">
+					<p class="logo-text">
+						<span><strong>MY</strong></span>
+						<span>DIARY</span>
+					</p>	
+				</div>
+				<div class="row col-6 menu-buttons">
+					<div class="col-4 active">
+						<p class="menu-button-text">Core Insights</p>
+					</div>
+					<div class="col-4">
+						<p class="menu-button-text">Simple Language</p>
+					</div>
+					<div class="col-4">
+						<p class="menu-button-text">Basic Insights</p>
+					</div>
+				</div>
+				<div class="col-3 text-right">
+					<img src="images/cake-blue.png" class="user-profile-icon">
+					<p class="user-profile-name">Sophia Brown</p>
+					<img src="images/down-arrow.png" class="profile-more-icon">
+				</div>
+			</div>
+		</header>
+		<div class="container create-insight-container">
+			<div class="col-12 mt-2 text-left">
+				<h5><strong>Insights Criteria</strong></h5>
+			</div>
+			<div class="container row mt-5">
+				<div class="col-4">
+					<div class="group">
+						<p><strong>Group A</strong></p>
+						<button class="button unselected">All</button>
+						<button class="button unselected">Personal</button>
+						<button class="button unselected">Work</button>
+						<button class="button selected">Female</button>
+						<button class="button unselected">Male</button>
+					</div>
+
+					<div class="group mt-4">
+						<p><strong>Group B</strong></p>
+						<button class="button unselected">All</button>
+						<button class="button selected">Personal</button>
+						<button class="button unselected">Work</button>
+						<button class="button unselected">Female</button>
+						<button class="button unselected">Male</button>
+					</div>
+				</div>
+				<div class="col-5 border-left-right extra-padding">
+					<div class="group">
+						<p><strong>Time periods</strong></p>
+						<button class="button unselected">Today</button>
+						<button class="button unselected">This week</button>
+						<button class="button unselected">This month</button>
+						<button class="button selected">Last month</button>
+						<button class="button unselected">Last 3 months</button>
+						<button class="button unselected">Last 6 months</button>
+						<button class="button unselected">Last 12 months</button>
+						<button class="button unselected">This year</button>
+						<button class="button unselected">Last year</button>
+					</div>
+					<div class="group mt-4">
+						<p><strong>Custom Period</strong></p>
+						<button class="button unselected">Today</button>
+						<span>to</span>
+						<button class="button unselected">Today</button>
+					</div>
+					<div class="group mt-4">
+						<p><strong>Before</strong></p>
+						<p><strong>After</strong></p>
+						<button class="button unselected">Today</button>
+						<button class="button unselected">Today</button>
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="group">
+						<p><strong>Exact Period</strong></p>
+						<button class="button unselected">Today</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
