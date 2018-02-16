@@ -54,3 +54,16 @@ button:active {
 }
 
 button:focus {outline:0;}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #bcbcbc;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #bcbcbc;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #bcbcbc;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #bcbcbc;
+}

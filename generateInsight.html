@@ -6,7 +6,10 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="css/base.css">
 		<link rel="stylesheet" type="text/css" href="css/generateInsight.css">
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 		<script src="libs/jquery.min.js"></script>
+
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script type="text/javascript" src="libs/bootstrap.js"></script>
 		<script type="text/javascript" src="libs/jquery.fullPage.js"></script>
 	</head>
@@ -44,14 +47,16 @@
 				<h5><strong>Insights Criteria</strong></h5>
 			</div>
 			<div class="container row mt-5">
-				<div class="col-4">
+				<div class="col-lg-4 col-md-4 col-sm-8 extra-padding">
 					<div class="group">
 						<p><strong>Group A</strong></p>
-						<button class="button unselected">All</button>
-						<button class="button unselected">Personal</button>
-						<button class="button unselected">Work</button>
-						<button class="button selected">Female</button>
-						<button class="button unselected">Male</button>
+						<div>
+							<button class="button unselected">All</button>
+							<button class="button unselected">Personal</button>
+							<button class="button unselected">Work</button>
+							<button class="button selected">Female</button>
+							<button class="button unselected">Male</button>
+						</div>
 					</div>
 
 					<div class="group mt-4">
@@ -63,7 +68,7 @@
 						<button class="button unselected">Male</button>
 					</div>
 				</div>
-				<div class="col-5 border-left-right extra-padding">
+				<div class="col-lg-5 col-md-5 col-sm-8 border-left-right extra-padding">
 					<div class="group">
 						<p><strong>Time periods</strong></p>
 						<button class="button unselected">Today</button>
@@ -78,25 +83,51 @@
 					</div>
 					<div class="group mt-4">
 						<p><strong>Custom Period</strong></p>
-						<button class="button unselected">Today</button>
-						<span>to</span>
-						<button class="button unselected">Today</button>
+						<div class="button calendar mt-3">
+							<input type="text" id="datepicker1" placeholder="MM/DD/YYYY">
+							<label for="datepicker1"><img src="images/calendar-light.png" class="btn-small-icon"></label>
+						</div>
+						<span class="margin-left-right"><strong>to</strong></span>
+						<div class="button calendar mt-3">
+							<input type="text" id="datepicker2" placeholder="MM/DD/YYYY">
+							<label for="datepicker2"><img src="images/calendar-light.png" class="btn-small-icon"></label>
+						</div>
 					</div>
 					<div class="group mt-4">
-						<p><strong>Before</strong></p>
-						<p><strong>After</strong></p>
-						<button class="button unselected">Today</button>
-						<button class="button unselected">Today</button>
+						<div class="before-after-col">
+							<p><strong>Before</strong></p>	
+							<div class="button calendar mt-3">
+								<input type="text" id="datepicker3" placeholder="MM/DD/YYYY">
+								<label for="datepicker3"><img src="images/calendar-light.png" class="btn-small-icon"></label>
+							</div>
+						</div>
+						<div class="before-after-col">
+							<p><strong>After</strong></p>	
+							<div class="button calendar mt-3">
+								<input type="text" id="datepicker4" placeholder="MM/DD/YYYY">
+								<label for="datepicker4"><img src="images/calendar-light.png" class="btn-small-icon"></label>
+							</div>
+						</div>
+						
 					</div>
 				</div>
-				<div class="col-3">
+				<div class="col-lg-3 col-md-3 col-sm-8 extra-padding">
 					<div class="group">
 						<p><strong>Exact Period</strong></p>
-						<button class="button unselected">Today</button>
+						<div class="button calendar mt-3">
+							<input type="text" id="datepicker5" placeholder="MM/DD/YYYY">
+							<label for="datepicker5"><img src="images/calendar-light.png" class="btn-small-icon"></label>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</body>
-
+	<script type="text/javascript">
+		$( "#datepicker1" ).datepicker();
+		$( "#datepicker2" ).datepicker();
+		$( "#datepicker3" ).datepicker();
+		$( "#datepicker4" ).datepicker();
+		$( "#datepicker5" ).datepicker();
+	</script>
 </html>

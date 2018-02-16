@@ -128,6 +128,11 @@ div.group p{
 	margin: 0px;
 }
 
+div.before-after-col{
+	display: inline-block;
+	margin-right: 28px;
+}
+
 .extra-padding{
 	padding-left: 36px;
 	padding-right: 36px;
@@ -136,4 +141,50 @@ div.group p{
 .border-left-right{
 	border-left: 1px solid #e5e5e5;
 	border-right: 1px solid #e5e5e5;
+}
+
+div.button.calendar span, div.button.calendar img{
+	vertical-align: middle;
+	color: #bcbcbc;
+} 
+
+div.button.calendar{
+	background: #fff;
+	color: #bcbcbc;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 8px;
+	padding-right: 4px;
+	border: 2px solid #e5e5e5;
+	border-radius: 4px;
+	font-size: 12px;
+}
+
+div.button.calendar input{
+	background: white;
+	box-shadow: none;
+	border: none;
+	min-width: 0px;
+	width: 80px;
+	vertical-align: middle;
+	color: #bcbcbc;
+	margin-top: 2px;
+}
+
+div.button.calendar label{
+	margin: 0px;
+}
+
+.margin-left-right{
+	margin-left: 4px;
+	margin-right: 4px;
+	font-size: 14px;
+	color: #bcbcbc;
+}
+
+img.btn-small-icon{
+	width: 16px;
+	height: 16px;
+	margin: 2px;
+	margin-left: 8px;
 }
