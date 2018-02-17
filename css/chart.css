@@ -127,7 +127,7 @@ div.single-chart-container{
 	background: #fff;
 	box-shadow: 1px 1px 12px #e5e5e5;
 	border-radius: 6px;
-	padding: 20px;
+	padding: 16px;
 	text-align: center;
 }
 
@@ -290,6 +290,33 @@ div.custom-tooltip span.data-comparison-item-group{
 	height: 380px;
 }
 
+.lg-chart{
+	height: 420px;
+}
+
 .sm-chart{
 	height: 140px;
+}
+
+.progress.big{
+	max-width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+    height: 14px;
+    margin: 6px;
+    background: #fff;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.progress.big.red .progress-bar{
+	background: #F54040;
+	border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.progress.big.blue .progress-bar{
+	background: #2590f4;
+	border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 }

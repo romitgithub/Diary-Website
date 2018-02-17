@@ -63,6 +63,10 @@ function drawChart(chartClassName, data, spacing){
     var divWidth = $(chartClassName).width();
     var divHeight = $(chartClassName).height();
 
+    if(divHeight==undefined || divHeight==0){
+      divHeight = 300;
+    }
+
     var margin = {top: 20, right: 20, bottom: 30, left: 20},
     width = divWidth - margin.left - margin.right,
     height = divHeight - margin.top - margin.bottom;
@@ -174,6 +178,10 @@ function drawMultiLineChart(chartClassName, data){
 
   var divWidth = $(chartClassName).width();
   var divHeight = $(chartClassName).height();
+
+  if(divHeight==undefined || divHeight==0){
+    divHeight = 300;
+  }
 
   var colors = [
     "#2590f4", "#F54040",
