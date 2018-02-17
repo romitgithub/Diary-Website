@@ -97,16 +97,96 @@ div.charts-container{
   display: none;
 }
 
+.axis{
+	font-size: 12px;
+	font-family: quicksand-bold;
+	font-weight: 700;
+	color: #bcbcbc;
+}
+
+.axis path {
+	fill: none;
+	stroke: #bbb;
+	shape-rendering: crispEdges;
+}
+
 .c3-axis .tick line {display: none;}
 
-div.chart-item{
+div.multiple-charts-container div.chart-item{
 	margin: 10px;
 	background: #fff;
 	box-shadow: 1px 1px 12px #e5e5e5;
 	border-radius: 6px;
-	padding: 12px;
+	padding: 20px;
 	text-align: center;
 	/* margin: 100px auto; */
 }
 
-div.double-charts-container{margin-top: 100px;}
+div.single-chart-container{
+	margin: 10px;
+	background: #fff;
+	box-shadow: 1px 1px 12px #e5e5e5;
+	border-radius: 6px;
+	padding: 20px;
+	text-align: center;
+}
+
+div.charts-main-container{
+	max-width: 1260px;
+}
+
+div.data-comparison-item{
+	display: inline-block;
+}
+
+div.data-comparison-item span.data-comparison-item-title{
+	font-size: 12px;
+	font-family: quicksand-bold;
+	vertical-align: middle;
+}
+
+span.data-comparison-item-icon{
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	border-radius: 6px;
+	margin: 4px;
+	vertical-align: middle;
+	background: #2590f4;
+}
+
+
+body {
+  font: 10px sans-serif;
+  margin: 50px;
+}
+ 
+.grid .tick {
+	stroke: lightgrey;
+	opacity: 0.7;
+	shape-rendering: crispEdges;
+}
+ 
+.axis text {
+	fill: #555;
+}
+ 
+.axis .axis-label {
+	font-size: 14px;
+}
+ 
+.line {
+	fill: none;
+	stroke-width: 1.5px;
+}
+ 
+.dot {
+	/* consider the stroke-with the mouse detect radius? */
+	stroke: transparent;
+	stroke-width: 10px;  
+	cursor: pointer;
+}
+ 
+.dot:hover {
+	stroke: rgba(68, 127, 255, 0.3);
+}
