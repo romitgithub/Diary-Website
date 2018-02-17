@@ -61,10 +61,11 @@ function drawChart(chartClassName, data, spacing){
     .style("opacity", 0);
 
     var divWidth = $(chartClassName).width();
+    var divHeight = $(chartClassName).height();
 
     var margin = {top: 20, right: 20, bottom: 30, left: 20},
     width = divWidth - margin.left - margin.right,
-    height = 380 - margin.top - margin.bottom;
+    height = divHeight - margin.top - margin.bottom;
 
     var x0 = d3.scale.ordinal()
         .rangeRoundBands([0, width], spacing);
@@ -166,10 +167,13 @@ var data =  [
 ];
 
 drawMultiLineChart(".chart-7", data);
+drawMultiLineChart(".chart-8", data);
+drawMultiLineChart(".chart-9", data);
  
 function drawMultiLineChart(chartClassName, data){
 
   var divWidth = $(chartClassName).width();
+  var divHeight = $(chartClassName).height();
 
   var colors = [
     "#2590f4", "#F54040",
@@ -182,7 +186,7 @@ function drawMultiLineChart(chartClassName, data){
   //************************************************************
   var margin = {top: 20, right: 10, bottom: 30, left: 15},
       width = divWidth - margin.left - margin.right,
-      height = 300 - margin.top - margin.bottom;
+      height = divHeight - margin.top - margin.bottom;
     
   var x = d3.scale.linear()
       .domain([0, 12])
