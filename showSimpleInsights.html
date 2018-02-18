@@ -57,34 +57,6 @@
 				<h5><strong>Male vs Female this year</strong></h5>
 			</div>
 			<div class="row col-12 multiple-charts-container mt-4">
-				<!-- <div class="col-6 chart-item" id="chart">
-					<h6 class="text-left chart-title"><strong>Sent Emails</strong></h6>
-					<div class="text-left">
-						<div class="data-comparison-item text-left">
-							<span class="data-comparison-item-title">Male</span>
-							<span class="data-comparison-item-icon blue"></span>
-						</div>
-						<div class="data-comparison-item text-left">
-							<span class="data-comparison-item-title">Female</span>
-							<span class="data-comparison-item-icon red"></span>
-						</div>
-					</div>
-					<div class="chart-5 lg-chart mt-4"></div>
-				</div>
-				<div class="col-6 chart-item" id="chart">
-					<div class="text-left">
-						<h6 class="text-left chart-title"><strong>Sent Emails</strong></h6>
-						<div class="data-comparison-item text-left">
-							<span class="data-comparison-item-title">Male</span>
-							<span class="data-comparison-item-icon blue"></span>
-						</div>
-						<div class="data-comparison-item text-left">
-							<span class="data-comparison-item-title">Female</span>
-							<span class="data-comparison-item-icon red"></span>
-						</div>
-					</div>
-					<div class="chart-6 lg-chart mt-4"></div>
-				</div> -->
 			</div>
 			<div class="container col-12 single-chart-container mt-4">	
 				<div class="col-12 text-left">
@@ -158,8 +130,6 @@
 				var chartHeaderItem = "<h6 class='text-left chart-title'><strong>" + charts[i].chartTitle + "</strong></h6>";
 				var dataComparisonContainer = "<div class='text-left data-comparison-items'></div>";
 				var chart = "<div class='lg-chart mt-4' id='" + chartId + "'></div>";
-
-				console.log($('.chart-item'));
 
 				$('.multiple-charts-container').append(chartItem);
 				$('#' + chartItemId).append(chartHeaderItem);

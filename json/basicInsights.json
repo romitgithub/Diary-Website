@@ -1,0 +1,312 @@
+{
+  "dataTitle": "Male vs Female this year",
+  "chartComparisonItems": [
+    "Male", "Female"
+  ],
+  "charts": [
+    {
+      "chartTitle": "Email Statistics",
+      "chartType": "SingleBarChartContainer",
+      "chartData": [
+        [
+          {
+            "Groups": "Politeness",
+            "Male": 4,
+            "Female": 6
+          },
+          {
+            "Groups": "Request",
+            "Male": 3,
+            "Female": 4
+          }
+        ],
+        [
+          {
+            "Groups": "Politeness",
+            "Male": 4,
+            "Female": 6
+          },
+          {
+            "Groups": "Request",
+            "Male": 3,
+            "Female": 4
+          }
+        ],
+        [
+          {
+            "Groups": "Politeness",
+            "Male": 4,
+            "Female": 6
+          },
+          {
+            "Groups": "Request",
+            "Male": 3,
+            "Female": 4
+          }
+        ],
+        [
+          {
+            "Groups": "Politeness",
+            "Male": 4,
+            "Female": 6
+          },
+          {
+            "Groups": "Request",
+            "Male": 3,
+            "Female": 4
+          }
+        ]
+      ]
+    },
+    {
+      "chartTitle": "Volume of email over time",
+      "chartType": "SingleLineChartContainer",
+      "chartData": [
+        {
+          "Groups": "Jan",
+          "Male": 4,
+          "Female": 6,
+          "Sent": 5,
+          "Received": 6
+        },
+        {
+          "Groups": "Feb",
+          "Male": 4,
+          "Female": 6,
+          "Sent": 5,
+          "Received": 6
+        },
+        {
+          "Groups": "Mar",
+          "Male": 4,
+          "Female": 6,
+          "Sent": 5,
+          "Received": 6
+        },
+        {
+          "Groups": "Apr",
+          "Male": 4,
+          "Female": 6,
+          "Sent": 5,
+          "Received": 6
+        },
+        {
+          "Groups": "May",
+          "Male": 4,
+          "Female": 6,
+          "Sent": 5,
+          "Received": 6
+        },
+        {
+          "Groups": "Jun",
+          "Male": 4,
+          "Female": 6,
+          "Sent": 5,
+          "Received": 6
+        },
+        {
+          "Groups": "Jul",
+          "Male": 4,
+          "Female": 6,
+          "Sent": 5,
+          "Received": 6
+        },
+        {
+          "Groups": "Aug",
+          "Male": 4,
+          "Female": 6,
+          "Sent": 5,
+          "Received": 6
+        },
+        {
+          "Groups": "Sep",
+          "Male": 4,
+          "Female": 6,
+          "Sent": 5,
+          "Received": 6
+        },
+        {
+          "Groups": "Oct",
+          "Male": 4,
+          "Female": 6,
+          "Sent": 5,
+          "Received": 6
+        },
+        {
+          "Groups": "Nov",
+          "Male": 4,
+          "Female": 6,
+          "Sent": 5,
+          "Received": 6
+        },
+        {
+          "Groups": "Dec",
+          "Male": 4,
+          "Female": 6,
+          "Sent": 5,
+          "Received": 6
+        }
+      ]
+    },
+    {
+      "chartType" : "MultipleBarChartContainer",
+      "charts": [
+        {
+          "chartTitle": "Email sent by day of week",
+          "chartData": [
+            {
+              "Groups": "Mon",
+              "Male": 8,
+              "Female": 10
+            },
+            {
+              "Groups": "Tue",
+              "Male": 7,
+              "Female": 8
+            },
+            {
+              "Groups": "Wed",
+              "Male": 6,
+              "Female": 4
+            },
+            {
+              "Groups": "Thu",
+              "Male": 4,
+              "Female": 3
+            },
+            {
+              "Groups": "Fri",
+              "Male": 3,
+              "Female": 4
+            },
+            {
+              "Groups": "Sat",
+              "Male": 2,
+              "Female": 3
+            },
+            {
+              "Groups": "Sun",
+              "Male": 1,
+              "Female": 4
+            }
+          ]
+        },
+        {
+          "chartTitle": "Email received by day of week",
+          "chartData": [
+            {
+              "Groups": "Mon",
+              "Male": 8,
+              "Female": 10
+            },
+            {
+              "Groups": "Tue",
+              "Male": 7,
+              "Female": 8
+            },
+            {
+              "Groups": "Wed",
+              "Male": 6,
+              "Female": 4
+            },
+            {
+              "Groups": "Thu",
+              "Male": 4,
+              "Female": 3
+            },
+            {
+              "Groups": "Fri",
+              "Male": 3,
+              "Female": 4
+            },
+            {
+              "Groups": "Sat",
+              "Male": 2,
+              "Female": 3
+            },
+            {
+              "Groups": "Sun",
+              "Male": 1,
+              "Female": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chartType" : "MultipleLineChartContainer",
+      "charts": [
+        {
+          "chartTitle": "Email sent by time of day",
+          "chartData": [
+            {
+              "Groups": "6am",
+              "Male": 8,
+              "Female": 10
+            },
+            {
+              "Groups": "10am",
+              "Male": 7,
+              "Female": 8
+            },
+            {
+              "Groups": "2pm",
+              "Male": 6,
+              "Female": 4
+            },
+            {
+              "Groups": "6pm",
+              "Male": 4,
+              "Female": 3
+            },
+            {
+              "Groups": "10pm",
+              "Male": 3,
+              "Female": 4
+            },
+            {
+              "Groups": "2am",
+              "Male": 2,
+              "Female": 3
+            }
+          ]
+        },
+        {
+          "chartTitle": "Email received by time of day",
+          "chartData": [
+            {
+              "Groups": "6am",
+              "Male": 8,
+              "Female": 10
+            },
+            {
+              "Groups": "10am",
+              "Male": 7,
+              "Female": 8
+            },
+            {
+              "Groups": "2pm",
+              "Male": 6,
+              "Female": 4
+            },
+            {
+              "Groups": "6pm",
+              "Male": 4,
+              "Female": 3
+            },
+            {
+              "Groups": "10pm",
+              "Male": 3,
+              "Female": 4
+            },
+            {
+              "Groups": "2am",
+              "Male": 2,
+              "Female": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

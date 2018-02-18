@@ -53,11 +53,11 @@
 		</header>
 		<div class="container charts-main-container"> 
 			<div class="col-12 mt-8">
-				<h5><strong>Male vs Female this year</strong></h5>
+				<h5 class="data-title"><strong></strong></h5>
 			</div>
-			<div class="container col-12 single-chart-container mt-4">
-				<div class="col-12 text-left">
-					<h5 class="text-left chart-title"><strong>Email Statistics</strong></h5>
+			<!-- <div class="container col-12 single-chart-container mt-4">
+				<h5 class="col-12 text-left chart-title"><strong>Email Statistics</strong></h5>
+				<div class="col-12 text-left data-comparison-items">
 					<div class="data-comparison-item text-left mt-2">
 						<span class="data-comparison-item-title">Male</span>
 						<span class="data-comparison-item-icon blue"></span>
@@ -73,7 +73,7 @@
 					<div class="col-3 chart-3 md-chart mt-4"></div>	
 					<div class="col-3 chart-4 md-chart mt-4"></div>	
 				</div>
-			</div>
+			</div> -->
 			<div class="container col-12 single-chart-container mt-4">	
 				<div class="col-12 text-left">
 					<h5 class="text-left chart-title"><strong>Sent Emails</strong></h5>
@@ -154,5 +154,92 @@
 		<script type="text/javascript" src="js/chart.js"></script>
 	</body>
 	<script type="text/javascript">
+
+		var url = "https://api.myjson.com/bins/9g87l";
+		var dataJson;
+		var chartsMainContainerClassName = '.charts-main-container';
+		var dataComparisonItemsClassName = '.data-comparison-items';
+
+		$(document).ready(function(){
+			loadData();
+		});
+
+		function loadData(){
+			$.getJSON( url, function( data ) {
+			  if(data!=null){
+			  	dataJson = data;
+			  	$('.data-title').html("<strong>" + data.dataTitle + "</strong>");
+
+			  	if(data.charts.length!=0){
+			  		for(var i = 0; i < data.charts.length; i++){
+			  			if(data.charts[i].chartType == "SingleBarChartContainer"){
+			  				addSingleBarChartContainer(data.charts[i]);
+			  			}
+			  			else if(data.charts[i].chartType == "SingleLineChartContainer"){
+			  				addSingleLineChartContainer();
+			  			}
+			  			else if(data.charts[i].chartType == "MultipleBarChartContainer"){
+			  				addMultipleBarChartContainer();
+			  			}
+			  			else if(data.charts[i].chartType == "MultipleLineChartContainer"){
+			  				addMultipleLineChartContainer();
+			  			}
+			  		}
+			  	}
+			  }
+			});
+		}
+
+		function addSingleBarChartContainer(data){
+			var chartContainerId = "chart_container" + data.chartTitle.replace(" ", "_");
+			var chartContainer = "<div class='container col-12 single-chart-container mt-4' id='" + chartContainerId + "'></div>";
+			var chartHeaderItem = "<h5 class='col-12 text-left chart-title'><strong>" + data.chartTitle + "</strong></h5>";
+			var chartComparisonItemsContainer = "<div class='col-12 text-left data-comparison-items'>";
+			var chartBox = "<div class='row chart-box'></div>";
+
+			$(chartsMainContainerClassName).append(chartContainer);
+			$('#' + chartContainerId).append(chartHeaderItem);
+			$('#' + chartContainerId).append(chartComparisonItemsContainer);
+			$('#' + chartContainerId).append(chartBox);
+			$('#' + chartContainerId + ' > ' + dataComparisonItemsClassName).append(getDataComparisonItems());
+
+			for(var j = 0; j < data.chartData; j++){
+				var chartItemId  = chartContainerId + "_chart_" + j;
+				var chartItem = "<div class='col-3 chart-2 md-chart mt-4' id='" + chartItemId + "'></div>";
+				$('#' + chartContainerId + ' > ' + '.chart-box').append(chartItem);
+
+				console.log(data.chartData[j]);
+				drawMultiLineChart("#"+chartItemId, data.chartData[j]);
+			}
+
+		}
+
+		function addSingleLineChartContainer(){
+
+		}
+
+		function addMultipleBarChartContainer(){
+
+		}
+
+		function addMultipleLineChartContainer(){
+
+		}		
+
+		function getDataComparisonItems(){
+			var chartComparisonItems = dataJson.chartComparisonItems;
+			var colorsClass = ["blue", "red"];
+			var items = [];
+
+			for(var j = 0; j < chartComparisonItems.length; j++){
+				var additionalClass = colorsClass[j];
+				var div = "<div class='data-comparison-item text-left'><span class='data-comparison-item-title'>" + chartComparisonItems[j] + "</span><span class='data-comparison-item-icon " + additionalClass + "'></span></div>";
+
+				items.push(div);
+			}
+
+			return items;
+		}
+
 	</script>
 </html>
