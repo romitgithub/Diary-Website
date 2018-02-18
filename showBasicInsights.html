@@ -75,7 +75,7 @@
 				</div>
 			</div> -->
 			<div class="container col-12 single-chart-container mt-4">	
-				<div class="col-12 text-left">
+				<!-- <div class="col-12 text-left">
 					<h5 class="text-left chart-title"><strong>Sent Emails</strong></h5>
 					<div class="data-comparison-item text-left">
 						<span class="data-comparison-item-title">Male</span>
@@ -87,7 +87,7 @@
 					</div>
 				</div>
 				<div class="col-12 chart-7 md-chart mt-4">
-				</div>
+				</div> -->
 			</div>
 			<div class="row col-12 multiple-charts-container mt-4">
 				<div class="col-6 chart-item" id="chart">
@@ -155,7 +155,7 @@
 	</body>
 	<script type="text/javascript">
 
-		var url = "https://api.myjson.com/bins/9g87l";
+		var url = "https://api.myjson.com/bins/13tjs1";
 		var dataJson;
 		var chartsMainContainerClassName = '.charts-main-container';
 		var dataComparisonItemsClassName = '.data-comparison-items';
@@ -173,16 +173,16 @@
 			  	if(data.charts.length!=0){
 			  		for(var i = 0; i < data.charts.length; i++){
 			  			if(data.charts[i].chartType == "SingleBarChartContainer"){
-			  				addSingleBarChartContainer(data.charts[i]);
+			  				addSingleBarChartContainer(data.charts[i], i+1);
 			  			}
 			  			else if(data.charts[i].chartType == "SingleLineChartContainer"){
-			  				addSingleLineChartContainer();
+			  				addSingleLineChartContainer(data.charts[i], i+1);
 			  			}
 			  			else if(data.charts[i].chartType == "MultipleBarChartContainer"){
-			  				addMultipleBarChartContainer();
+			  				addMultipleBarChartContainer(data.charts[i], i+1);
 			  			}
 			  			else if(data.charts[i].chartType == "MultipleLineChartContainer"){
-			  				addMultipleLineChartContainer();
+			  				addMultipleLineChartContainer(data.charts[i], i+1);
 			  			}
 			  		}
 			  	}
@@ -190,8 +190,8 @@
 			});
 		}
 
-		function addSingleBarChartContainer(data){
-			var chartContainerId = "chart_container" + data.chartTitle.replace(" ", "_");
+		function addSingleBarChartContainer(data, position){
+			var chartContainerId = "chart_container_" + position;
 			var chartContainer = "<div class='container col-12 single-chart-container mt-4' id='" + chartContainerId + "'></div>";
 			var chartHeaderItem = "<h5 class='col-12 text-left chart-title'><strong>" + data.chartTitle + "</strong></h5>";
 			var chartComparisonItemsContainer = "<div class='col-12 text-left data-comparison-items'>";
@@ -203,23 +203,63 @@
 			$('#' + chartContainerId).append(chartBox);
 			$('#' + chartContainerId + ' > ' + dataComparisonItemsClassName).append(getDataComparisonItems());
 
-			for(var j = 0; j < data.chartData; j++){
+			for(var j = 0; j < data.chartData.length; j++){
 				var chartItemId  = chartContainerId + "_chart_" + j;
-				var chartItem = "<div class='col-3 chart-2 md-chart mt-4' id='" + chartItemId + "'></div>";
+				var chartItem = "<div class='col-3 md-chart mt-4' id='" + chartItemId + "'></div>";
 				$('#' + chartContainerId + ' > ' + '.chart-box').append(chartItem);
 
-				console.log(data.chartData[j]);
-				drawMultiLineChart("#"+chartItemId, data.chartData[j]);
+				drawChart("#"+chartItemId, data.chartData[j], 0.6);
 			}
 
 		}
 
-		function addSingleLineChartContainer(){
+		function addSingleLineChartContainer(data, position){
+			var chartContainerId = "chart_container_" + position;
+			var chartContainer = "<div class='container col-12 single-chart-container mt-4' id='" + chartContainerId + "'></div>";
+			var chartHeaderItem = "<h5 class='col-12 text-left chart-title'><strong>" + data.chartTitle + "</strong></h5>";
+			var chartComparisonItemsContainer = "<div class='col-12 text-left data-comparison-items'>";
+			var chartBox = "<div class='row chart-box'></div>";
 
+			$(chartsMainContainerClassName).append(chartContainer);
+			$('#' + chartContainerId).append(chartHeaderItem);
+			$('#' + chartContainerId).append(chartComparisonItemsContainer);
+			$('#' + chartContainerId).append(chartBox);
+			$('#' + chartContainerId + ' > ' + dataComparisonItemsClassName).append(getDataComparisonItems());
+
+			var chartItemId  = chartContainerId + "_chart";
+			var chartItem = "<div class='col-12 md-chart mt-4' id='" + chartItemId + "'></div>";
+			$('#' + chartContainerId + ' > ' + '.chart-box').append(chartItem);
+
+			drawMultiLineChart("#"+chartItemId, data.chartData, data.chartElems);
 		}
 
-		function addMultipleBarChartContainer(){
+		function addMultipleBarChartContainer(data, position){
+			var chartContainerId = "chart_container_" + position;
+			var chartContainer = "<div class='row col-12 multiple-charts-container mt-4' id='" + chartContainerId + "'></div>";
 
+			$(chartsMainContainerClassName).append(chartContainer);
+			
+			for(var i = 0; i < data.charts.length; i++){
+				var chartItemContainerId  = chartContainerId + "_chart_item_container_" + i;
+				var chartItemContainer = "<div class='col-6 chart-item' id='" + chartItemContainerId + "'></div>";
+
+				var chartHeaderItem = "<h5 class='col-12 text-left chart-title'><strong>" + data.charts[i].chartTitle + "</strong></h5>";
+				var chartComparisonItemsContainer = "<div class='col-12 text-left data-comparison-items'></div>";	
+
+				var chartId = chartItemContainerId + "_chart";
+				var chart = "<div class='chart-5 rg-chart mt-4' id='" + chartId + "''></div>";
+
+				$('#' + chartContainerId).append(chartItemContainer);
+				$('#' + chartItemContainerId).append(chartHeaderItem);
+				$('#' + chartItemContainerId).append(chartComparisonItemsContainer);
+				$('#' + chartItemContainerId + ' > ' + dataComparisonItemsClassName).append(getDataComparisonItems());
+				$('#' + chartItemContainerId).append(chart);
+				drawChart('#'+chartId, data.charts[i].chartData, 0.6);
+			}
+
+			
+			var chartBox = "<div class='row chart-box'></div>";
+			
 		}
 
 		function addMultipleLineChartContainer(){

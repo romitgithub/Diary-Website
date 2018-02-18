@@ -61,90 +61,97 @@
     {
       "chartTitle": "Volume of email over time",
       "chartType": "SingleLineChartContainer",
+      "chartElems": {
+          "Groups": -1,
+          "Male": 0,
+          "Female": 1,
+          "Sent": 2,
+          "Received": 3
+      },
       "chartData": [
         {
           "Groups": "Jan",
           "Male": 4,
           "Female": 6,
-          "Sent": 5,
-          "Received": 6
+          "Sent": 3,
+          "Received": 7
         },
         {
           "Groups": "Feb",
-          "Male": 4,
+          "Male": 8,
           "Female": 6,
-          "Sent": 5,
-          "Received": 6
+          "Sent": 2,
+          "Received": 5
         },
         {
           "Groups": "Mar",
-          "Male": 4,
-          "Female": 6,
-          "Sent": 5,
-          "Received": 6
+          "Male": 3,
+          "Female": 5,
+          "Sent": 9,
+          "Received": 2
         },
         {
           "Groups": "Apr",
-          "Male": 4,
+          "Male": 3,
           "Female": 6,
           "Sent": 5,
-          "Received": 6
+          "Received": 2
         },
         {
           "Groups": "May",
           "Male": 4,
           "Female": 6,
-          "Sent": 5,
-          "Received": 6
+          "Sent": 3,
+          "Received": 7
         },
         {
           "Groups": "Jun",
-          "Male": 4,
+          "Male": 8,
           "Female": 6,
-          "Sent": 5,
-          "Received": 6
+          "Sent": 2,
+          "Received": 5
         },
         {
           "Groups": "Jul",
-          "Male": 4,
-          "Female": 6,
-          "Sent": 5,
-          "Received": 6
+          "Male": 3,
+          "Female": 5,
+          "Sent": 9,
+          "Received": 2
         },
         {
           "Groups": "Aug",
-          "Male": 4,
+          "Male": 3,
           "Female": 6,
           "Sent": 5,
-          "Received": 6
+          "Received": 2
         },
         {
           "Groups": "Sep",
           "Male": 4,
           "Female": 6,
-          "Sent": 5,
-          "Received": 6
+          "Sent": 3,
+          "Received": 7
         },
         {
           "Groups": "Oct",
-          "Male": 4,
+          "Male": 8,
           "Female": 6,
-          "Sent": 5,
-          "Received": 6
+          "Sent": 2,
+          "Received": 5
         },
         {
           "Groups": "Nov",
-          "Male": 4,
-          "Female": 6,
-          "Sent": 5,
-          "Received": 6
+          "Male": 3,
+          "Female": 5,
+          "Sent": 9,
+          "Received": 2
         },
         {
           "Groups": "Dec",
-          "Male": 4,
+          "Male": 3,
           "Female": 6,
           "Sent": 5,
-          "Received": 6
+          "Received": 2
         }
       ]
     },

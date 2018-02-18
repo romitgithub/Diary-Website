@@ -47,14 +47,16 @@ var data3 = [
   }
 ]
 
-drawChart(".chart-1", data3, 0.6);
-drawChart(".chart-2", data3, 0.6);
-drawChart(".chart-3", data3, 0.6);
-drawChart(".chart-4", data3, 0.6);
-drawChart(".chart-5", data1, 0.7);
-drawChart(".chart-6", data2, 0.7);
+// drawChart(".chart-1", data3, 0.6);
+// drawChart(".chart-2", data3, 0.6);
+// drawChart(".chart-3", data3, 0.6);
+// drawChart(".chart-4", data3, 0.6);
+// drawChart(".chart-5", data1, 0.7);
+// drawChart(".chart-6", data2, 0.7);
 
 function drawChart(chartClassName, data, spacing){
+
+  console.log(data);
 
     var div = d3.select("body").append("div")
     .attr("class", "custom-tooltip text-center")
@@ -140,7 +142,7 @@ function drawChart(chartClassName, data, spacing){
         .attr("width", 14)
         .attr("x", function(d) 
         { 
-          if(d.name=='Level 2'){
+          if(d.name=='Female'){
             return x1(d.name) + 5;   
           }
           else{
@@ -156,27 +158,37 @@ function drawChart(chartClassName, data, spacing){
 
 }
 
+function modifyData(data, elems){
+  var finalData = [];
+  var count = getCount(data[0]);
+  for(var i = 0; i < data.length; i++){
+      for(var key in data[i]){
+        if(elems[key] >= 0){
+          if(i == 0){
+            finalData[elems[key]] = [{ 'x': i, 'y': data[i][key]}];
+          }
+          else{
+            finalData[elems[key]].push({ 'x': i, 'y': data[i][key]});
+          }
+        }
+      }
+  }
+  return finalData;
+}
 
-
-
-
-//************************************************************
-// Data notice the structure
-//************************************************************
-// var data =  [
-//   [{'x':0,'y':0},{'x':2,'y':5},{'x':3,'y':10},{'x':4,'y':0},{'x':5,'y':6},{'x':6,'y':11},{'x':7,'y':9},{'x':8,'y':4},{'x':9,'y':11},{'x':10,'y':2},{'x':11,'y':6},{'x':12,'y':11}],
-//   [{'x':0,'y':1},{'x':2,'y':6},{'x':3,'y':11},{'x':4,'y':1},{'x':5,'y':7},{'x':6,'y':12},{'x':7,'y':8},{'x':8,'y':3},{'x':9,'y':13},{'x':10,'y':3},{'x':11,'y':7},{'x':12,'y':9}],
-//   [{'x':0,'y':2},{'x':2,'y':7},{'x':3,'y':12},{'x':4,'y':2},{'x':5,'y':8},{'x':6,'y':13},{'x':7,'y':7},{'x':8,'y':2},{'x':9,'y':4},{'x':10,'y':7},{'x':11,'y':8},{'x':12,'y':4}],
-//   [{'x':0,'y':3},{'x':2,'y':8},{'x':3,'y':13},{'x':4,'y':3},{'x':5,'y':9},{'x':6,'y':14},{'x':7,'y':6},{'x':8,'y':1},{'x':9,'y':7},{'x':10,'y':9},{'x':11,'y':3},{'x':12,'y':7}]
-// ];
-
-// drawMultiLineChart(".chart-7", data);
-// drawMultiLineChart(".chart-8", data);
-// drawMultiLineChart(".chart-9", data);
+function getCount(json){
+  var i = 0;
+  for (var key in json) {
+    if (json.hasOwnProperty(key)) {
+        i++;
+    }
+  }
+  return i;
+}
  
-function drawMultiLineChart(chartClassName, data){
+function drawMultiLineChart(chartClassName, data, elems){
 
-  console.log(this.data);
+  var data = modifyData(data, elems);
 
   var divWidth = $(chartClassName).width();
   var divHeight = $(chartClassName).height();
@@ -199,7 +211,7 @@ function drawMultiLineChart(chartClassName, data){
       height = divHeight - margin.top - margin.bottom;
     
   var x = d3.scale.linear()
-      .domain([0, 12])
+      .domain([0, 11])
       .range([0, width]);
    
   var y = d3.scale.linear()
