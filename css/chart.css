@@ -322,3 +322,9 @@ div.custom-tooltip span.data-comparison-item-group{
 	border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
 }
+
+span.data-comparison-item-value {
+    font-size: 14px;
+    vertical-align: middle;
+    margin: 8px;
+}

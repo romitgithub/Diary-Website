@@ -90,24 +90,24 @@
 				<div class="col-12 text-left">
 					<h5 class="text-left chart-title"><strong>Relative length of sent/received emails</strong></h5>
 				</div>
-				<div class="row col-12 mt-4">
+				<div class="row col-12 mt-4" id="relativeLengthItem1">
 					<div class="col-2 data-comparison-item text-left">
 						<span class="data-comparison-item-icon blue"></span>
-						<span class="data-comparison-item-title">0.7</span>
-						<span class="data-comparison-item-title">Male</span>
+						<span class="data-comparison-item-value"></span>
+						<span class="data-comparison-item-title"></span>
 					</div>
 					<div class="col-10 progress big blue">
-					  <div class="progress-bar" role="progressbar" style="width: 45%;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+					  <div class="progress-bar" role="progressbar" style="width: 0;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 					</div>
 				</div>
-				<div class="row col-12">
+				<div class="row col-12" id="relativeLengthItem2">
 					<div class="col-2 data-comparison-item text-left">
 						<span class="data-comparison-item-icon red"></span>
-						<span class="data-comparison-item-title">0.9</span>
-						<span class="data-comparison-item-title">Female</span>
+						<span class="data-comparison-item-value"></span>
+						<span class="data-comparison-item-title"></span>
 					</div>
 					<div class="col-10 progress big red">
-					  <div class="progress-bar" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+					  <div class="progress-bar" role="progressbar" style="width: 0;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 					</div>
 				</div>
 			</div>
@@ -131,8 +131,19 @@
 			  	$('.data-title').html("<strong>" + data.dataTitle + "</strong>");
 			  	
 			  	addCharts(data);
+			  	addRelativeLengthData(data);
 			  }
 			});
+		}
+
+		function addRelativeLengthData(data){
+			$('#relativeLengthItem1 > div > .data-comparison-item-title').text(data.chartComparisonItems[0]);
+			$('#relativeLengthItem1 > div > .data-comparison-item-value').text(data.maleRelativeLengthEmails);
+			$('#relativeLengthItem1 > div > .progress-bar').css('width', data.maleRelativeLengthEmails*100+'%').attr('aria-valuenow', data.maleRelativeLengthEmails*100);
+
+			$('#relativeLengthItem2 > div > .data-comparison-item-title').text(data.chartComparisonItems[1]);
+			$('#relativeLengthItem2 > div > .data-comparison-item-value').text(data.femaleRelativeLengthEmails);
+			$('#relativeLengthItem2 > div > .progress-bar').css('width', data.femaleRelativeLengthEmails*100+'%').attr('aria-valuenow', data.femaleRelativeLengthEmails*100);
 		}
 
 		function addCharts(data){
