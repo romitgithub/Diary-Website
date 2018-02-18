@@ -59,24 +59,11 @@
 				<div class="row text-left">
 					<h5 class="col-3 text-left chart-title"><strong></strong></h5>
 					<div class="col-9 text-right data-section-buttons">
-						<!-- <button class="button data-section-button selected">Politeness</button>
-						<button class="button data-section-button unselected">Sentiment</button>
-						<button class="button data-section-button unselected">Mirroring</button> -->
 					</div>
 				</div>
 				<div class="row col-12 text-left data-comparison-items">
-					<div class="data-comparison-item text-left">
-						<span class="data-comparison-item-title"></span>
-						<span class="data-comparison-item-icon blue"></span>
-					</div>
-					<div class="data-comparison-item text-left">
-						<span class="data-comparison-item-title"></span>
-						<span class="data-comparison-item-icon red"></span>
-					</div>
 				</div>
 				<div class="row charts-box">
-					<!-- <div class="col-6 chart-1 lg-chart mt-4"></div>	
-					<div class="col-6 chart-2 lg-chart mt-4"></div>	 -->
 				</div>
 				
 			</div>
@@ -85,27 +72,35 @@
 		<script type="text/javascript" src="js/chart.js"></script>
 	</body>
 	<script type="text/javascript">
+		
 		var dataJson;
 		var url = "https://api.myjson.com/bins/ek4kx";
-		$.getJSON( url, function( data ) {
-		  if(data!=null){
-		  	dataJson = data;
-		  	$('.data-title').html("<strong>" + data.dataTitle + "</strong>");
-		  	$('.chart-title').html("<strong>" + data.chartSections[0] + "</strong>");
-		  	$('.data-comparison-item .data-comparison-item-title')[0].innerHTML = data.chartComparisonItems[0];
-		  	$('.data-comparison-item .data-comparison-item-title')[1].innerHTML = data.chartComparisonItems[1];
 
-		  	addDataSectionButtons(data.chartSections);
-
-		  	for(var i = 1; i <= data.charts.length; i++){
-		  		var chartId = "chart"+i;
-		  		console.log(chartId);
-		  		var div = "<div class='col-6 lg-chart mt-4' id='" + chartId + "'></div>";
-		  		$('.charts-box').append(div);
-		  		drawChart("#"+chartId, data.charts[i-1][data.chartSections[0]], 0.6);
-		  	}
-		  }
+		$(document).ready(function(){
+			addInitialData();
 		});
+
+		function addInitialData(){
+			$.getJSON( url, function( data ) {
+			  if(data!=null){
+			  	dataJson = data;
+			  	$('.data-title').html("<strong>" + data.dataTitle + "</strong>");
+			  	$('.chart-title').html("<strong>" + data.chartSections[0] + "</strong>");
+			  	
+			  	addDataComparisonItems(data.chartComparisonItems);
+
+			  	addDataSectionButtons(data.chartSections);
+
+			  	for(var i = 1; i <= data.charts.length; i++){
+			  		var chartId = "chart"+i;
+			  		console.log(chartId);
+			  		var div = "<div class='col-6 lg-chart mt-4' id='" + chartId + "'></div>";
+			  		$('.charts-box').append(div);
+			  		drawChart("#"+chartId, data.charts[i-1][data.chartSections[0]], 0.6);
+			  	}
+			  }
+			});
+		}
 
 		function addDataSectionButtons(chartSections){
 			for(var i = 1; i <= chartSections.length; i++){
@@ -121,6 +116,18 @@
 
 				var button = "<button id=" + buttonId + " class='button data-section-button " + additionalClass +"' onclick='loadNewData(" + (i-1) + ")'>" + chartSections[i-1] + "</button>";
 				$('.data-section-buttons').append(button);
+			}
+		}
+
+		function addDataComparisonItems(chartComparisonItems){
+
+			var colorsClass = ["blue", "red"];
+
+			for(var i = 1; i <= chartComparisonItems.length; i++){
+				var additionalClass = colorsClass[i-1];
+				var div = "<div class='data-comparison-item text-left'><span class='data-comparison-item-title'>" + chartComparisonItems[i-1] + "</span><span class='data-comparison-item-icon " + additionalClass + "'></span></div>";
+
+				$('.data-comparison-items').append(div);
 			}
 		}
 

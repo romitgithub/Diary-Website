@@ -57,9 +57,9 @@
 				<h5><strong>Male vs Female this year</strong></h5>
 			</div>
 			<div class="row col-12 multiple-charts-container mt-4">
-				<div class="col-6 chart-item" id="chart">
+				<!-- <div class="col-6 chart-item" id="chart">
+					<h6 class="text-left chart-title"><strong>Sent Emails</strong></h6>
 					<div class="text-left">
-						<h6 class="text-left chart-title"><strong>Sent Emails</strong></h6>
 						<div class="data-comparison-item text-left">
 							<span class="data-comparison-item-title">Male</span>
 							<span class="data-comparison-item-icon blue"></span>
@@ -84,7 +84,7 @@
 						</div>
 					</div>
 					<div class="chart-6 lg-chart mt-4"></div>
-				</div>
+				</div> -->
 			</div>
 			<div class="container col-12 single-chart-container mt-4">	
 				<div class="col-12 text-left">
@@ -116,5 +116,64 @@
 		<script type="text/javascript" src="js/chart.js"></script>
 	</body>
 	<script type="text/javascript">
+
+		var dataJson;
+		var url = "https://api.myjson.com/bins/1g2nep";
+
+		$(document).ready(function(){
+			addInitialData();
+		})
+
+		function addInitialData(){
+			$.getJSON( url, function( data ) {
+			  if(data!=null){
+			  	dataJson = data;
+			  	$('.data-title').html("<strong>" + data.dataTitle + "</strong>");
+			  	
+			  	addCharts(data);
+			  }
+			});
+		}
+
+		function addCharts(data){
+
+			var charts = data.charts;
+			console.log(charts);
+
+			for(var i = 0; i < charts.length; i++){
+				var chartId = "chart"+ i;
+				var chartItemId = "chart_item_"+ i;
+				var chartItem = "<div class='col-6 chart-item' id='" + chartItemId + "'></div";
+				var chartHeaderItem = "<h6 class='text-left chart-title'><strong>" + charts[i].chartTitle + "</strong></h6>";
+				var dataComparisonContainer = "<div class='text-left data-comparison-items'></div>";
+				var chart = "<div class='lg-chart mt-4' id='" + chartId + "'></div>";
+
+				console.log($('.chart-item'));
+
+				$('.multiple-charts-container').append(chartItem);
+				$('#' + chartItemId).append(chartHeaderItem);
+				$('#' + chartItemId).append(dataComparisonContainer);
+				$('#' + chartItemId).append(chart);
+				$('#' + chartItemId + ' > .data-comparison-items').append(getDataComparisonItems(data.chartComparisonItems));
+			 	
+			 	drawChart("#"+chartId, charts[i].chartData, 0.6);
+			}
+		}
+
+		function getDataComparisonItems(chartComparisonItems){
+
+			var colorsClass = ["blue", "red"];
+			var items = [];
+
+			for(var j = 0; j < chartComparisonItems.length; j++){
+				var additionalClass = colorsClass[j];
+				var div = "<div class='data-comparison-item text-left'><span class='data-comparison-item-title'>" + chartComparisonItems[j] + "</span><span class='data-comparison-item-icon " + additionalClass + "'></span></div>";
+
+				items.push(div);
+			}
+
+			return items;
+		}
+
 	</script>
 </html>

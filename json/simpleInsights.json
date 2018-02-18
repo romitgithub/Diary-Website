@@ -1,0 +1,50 @@
+{
+  "dataTitle": "Male vs Female this year",
+  "chartComparisonItems": [
+    "Male", "Female"
+  ],
+  "charts": [
+    {
+      "chartTitle": "Sent Emails",
+      "chartData": [
+        {
+          "Groups": "Politeness",
+          "Male": 4,
+          "Female": 6
+        },
+        {
+          "Groups": "Request",
+          "Male": 3,
+          "Female": 4
+        },
+        {
+          "Groups": "Balance",
+          "Male": 6,
+          "Female": 4
+        }
+      ]
+    },
+    {
+      "chartTitle": "Received Emails",
+      "chartData": [
+        {
+          "Groups": "Politeness",
+          "Male": 2,
+          "Female": 4
+        },
+        {
+          "Groups": "Request",
+          "Male": 3,
+          "Female": 5
+        },
+        {
+          "Groups": "Balance",
+          "Male": 6,
+          "Female": 8
+        }
+      ]
+    }
+  ],
+  "maleRelativeLengthEmails" : 0.7,
+  "femaleRelativeLengthEmails" : 0.9,
+}

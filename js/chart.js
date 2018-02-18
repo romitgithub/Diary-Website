@@ -151,11 +151,6 @@ function drawChart(chartClassName, data, spacing){
         .attr("y", function(d) { return y(d.value); })
         .attr("rx", 4)
         .attr("ry", 4)
-        .transition()
-        .duration(1000)
-        .delay(function (d, i) {
-          return i * 50;
-        })
         .attr("height", function(d) { return height - y(d.value); })
         .style("fill", function(d) { return color(d.name); });
 
