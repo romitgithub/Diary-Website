@@ -115,24 +115,14 @@
 			</div>
 			<div class="container row mt-4">
 				<div class="col-lg-4 col-md-4 col-sm-8 extra-padding">
-					<div class="group">
+					<div class="group" id="group_a">
 						<p><strong>Group A</strong></p>
-						<div>
-							<button class="button unselected">All</button>
-							<button class="button unselected">Personal</button>
-							<button class="button unselected">Work</button>
-							<button class="button selected">Female</button>
-							<button class="button unselected">Male</button>
-						</div>
+						
 					</div>
 
-					<div class="group mt-4">
+					<div class="group mt-4" id="group_b">
 						<p><strong>Group B</strong></p>
-						<button class="button unselected">All</button>
-						<button class="button selected">Personal</button>
-						<button class="button unselected">Work</button>
-						<button class="button unselected">Female</button>
-						<button class="button unselected">Male</button>
+						
 					</div>
 				</div>
 				<div class="col-lg-5 col-md-5 col-sm-8 border-left-right extra-padding">
@@ -322,5 +312,55 @@
 		$( "#datepicker3" ).datepicker();
 		$( "#datepicker4" ).datepicker();
 		$( "#datepicker5" ).datepicker();
+
+		var url = "https://api.myjson.com/bins/a4wbt";
+		var jsonData;
+
+		$(document).ready(function(){
+			loadData();
+		});
+
+		function loadData(){
+			$.getJSON( url, function( data ) {
+			  if(data!=null){
+			  	jsonData = data;
+			  	addGroupsData(data.groups, "group_a");
+			  	addGroupsData(data.groups, "group_b");
+			  	addFavoritesData(data.favorites);
+			  }
+			});
+		}
+
+		function addGroupsData(groupsList, groupId){
+			for(var i = 0; i < groupsList.length; i++){
+				(function () {
+				var buttonId = groupId + '_button_' + i;
+				
+				var additionalClass;
+
+				var btn = document.createElement("BUTTON");        // Create a <button> element
+				var t = document.createTextNode(groupsList[i]);       // Create a text node
+				btn.appendChild(t);        
+				btn.classList.add('button');
+				btn.setAttribute("id", buttonId);
+				btn.classList.add('unselected');                        // Append the text to <button>
+				document.getElementById(groupId).appendChild(btn);        
+
+				btn.addEventListener('click', function(){
+				    changeSelection(buttonId, groupId);
+				}, false);
+			}())
+		  }
+		}
+
+		function changeSelection(buttonId, groupId){
+			var selectedItem = $('#'+ groupId + '.group > ' + '.selected');
+			console.log(selectedItem);
+			if(selectedItem.length != 0){
+				selectedItem.removeClass('selected').addClass('unselected');
+			}
+			$('#'+buttonId).removeClass('unselected').addClass('selected');
+		}
+
 	</script>
 </html>

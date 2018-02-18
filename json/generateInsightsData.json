@@ -1,0 +1,23 @@
+{
+	"groups": [
+		"All",
+		"Personal",
+		"Work",
+		"Female",
+		"Male"
+	],
+	"favorites": [
+		{
+			"group": "Personal vs Work",
+			"time": "This year"
+		},
+		{
+			"group": "Female vs Male",
+			"time": "Before Nov 1, 2017"
+		},
+		{
+			"group": "Female vs Male",
+			"time": "This year"
+		}
+	]
+}

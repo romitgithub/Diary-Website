@@ -9,6 +9,7 @@
 		<script src="libs/jquery.min.js"></script>
 		<script type="text/javascript" src="libs/bootstrap.js"></script>
 		<script type="text/javascript" src="libs/jquery.fullPage.js"></script>
+		<script type="text/javascript" src="js/chart.js"></script>
 	</head>
 	<body>
 		<header>
@@ -56,9 +57,18 @@
 							<p class="feature-desc-text mt-2 col-10 offset-1">
 								We analyze every entry and apply a score in each category.
 							</p>
-							<img src="images/calendars.png" class="calendars-img">
+							<div></div>
+							<div class="col-8 offset-2 email-card text-left mt-4">
+								<div class="email-from-block">
+									<img src="images/user.png" class="small-icon">
+									<p>Annabel Scott (ascott@email.com)</p>
+								</div>
+								<div class="email-content">
+									<p><strong>Last Meeting</strong><br>Hi, We meet in the last <mark>congeerec</mark> post anfuere new diam <mark>fringilla</mark>, vel malesuada reation tristique.<br><br>I'm writing because we want to wullam matis amazinf nutella ac maattis. <mark>Phasellaus</mark> massa happy. <mark>Aliquam</mark> variuous masssa blandit.<br><br>Best Regards,<br><strong>Sophia Brown</strong></p>
+								</div>
+							</div>
 						</div>
-						<div class="progress col-2 offset-5 mt-3">
+						<div class="progress col-2 offset-5 mt-4">
 						  <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 						</div>
 					</div>
@@ -73,6 +83,9 @@
 								Then we show you aggregate results for dates, locations, and a group of contacts.<br>
 								Based on that you can create all the custom insight you desire.
 							</p>
+						</div>
+						<div class="col-4 offset-4">
+							<div class="sm-chart" id="chart"></div>
 						</div>
 						<div class="col-12 mt-8">
 							<button class="button get-started col-4">
@@ -94,7 +107,24 @@
 				</div>
 			</div>
 		</footer>
+		<script src="https://d3js.org/d3.v3.min.js"></script>
+		<script type="text/javascript" src="js/chart.js"></script>
 		<script type="text/javascript">
+
+			var url = "https://api.myjson.com/bins/uls3t";
+
+			$(document).ready(function(){
+				loadData();
+			});
+
+			function loadData(){
+				$.getJSON( url, function( data ) {
+				  if(data!=null){
+				  	drawMultiLineChart('#chart', data.chartData, data.chartElems);
+				  }
+				});
+			}
+
 			var progressValue, interval;
 			$('#fullpage').fullpage({
 				//Navigation

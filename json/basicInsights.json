@@ -245,6 +245,11 @@
       "charts": [
         {
           "chartTitle": "Email sent by time of day",
+          "chartElems": {
+              "Groups": -1,
+              "Male": 0,
+              "Female": 1
+          },
           "chartData": [
             {
               "Groups": "6am",
@@ -280,6 +285,11 @@
         },
         {
           "chartTitle": "Email received by time of day",
+          "chartElems": {
+              "Groups": -1,
+              "Male": 0,
+              "Female": 1
+          },
           "chartData": [
             {
               "Groups": "6am",

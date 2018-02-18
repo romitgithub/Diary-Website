@@ -1,62 +1,4 @@
-var data1 = [
-  {
-    "Groups": "Politeness",
-    "Level 1": 4,
-    "Level 2": 6
-  },
-  {
-    "Groups": "Request",
-    "Level 1": 3,
-    "Level 2": 4
-  },
-  {
-    "Groups": "Balance",
-    "Level 1": 6,
-    "Level 2": 4
-  }
-]
-
-var data2 = [
-  {
-    "Groups": "Politeness",
-    "Level 1": 4,
-    "Level 2": 6
-  },
-  {
-    "Groups": "Request",
-    "Level 1": 2,
-    "Level 2": 4
-  },
-  {
-    "Groups": "Balance",
-    "Level 1": 6,
-    "Level 2": 4
-  }
-]
-
-var data3 = [
-  {
-    "Groups": "Politeness",
-    "Level 1": 4,
-    "Level 2": 6
-  },
-  {
-    "Groups": "Request",
-    "Level 1": 2,
-    "Level 2": 4
-  }
-]
-
-// drawChart(".chart-1", data3, 0.6);
-// drawChart(".chart-2", data3, 0.6);
-// drawChart(".chart-3", data3, 0.6);
-// drawChart(".chart-4", data3, 0.6);
-// drawChart(".chart-5", data1, 0.7);
-// drawChart(".chart-6", data2, 0.7);
-
 function drawChart(chartClassName, data, spacing){
-
-  console.log(data);
 
     var div = d3.select("body").append("div")
     .attr("class", "custom-tooltip text-center")
@@ -211,7 +153,7 @@ function drawMultiLineChart(chartClassName, data, elems){
       height = divHeight - margin.top - margin.bottom;
     
   var x = d3.scale.linear()
-      .domain([0, 11])
+      .domain([0, data[0].length-1])
       .range([0, width]);
    
   var y = d3.scale.linear()
@@ -276,6 +218,7 @@ function drawMultiLineChart(chartClassName, data, elems){
     .append("path")
       .attr("class", "line")
     .attr("clip-path", "url(#clip)")
+    .attr("stroke-width", 6)
     .attr('stroke', function(d,i){      
       return colors[i%colors.length];
     })

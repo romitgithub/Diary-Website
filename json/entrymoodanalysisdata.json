@@ -1,0 +1,32 @@
+{
+  "chartElems": {
+    "Groups": -1,
+    "Data": 0
+  },
+  "chartData": [
+    {
+      "Groups": "Jul",
+      "Data": 4
+    },
+    {
+      "Groups": "Aug",
+      "Data": 3
+    },
+    {
+      "Groups": "Sep",
+      "Data": 6
+    },
+    {
+      "Groups": "Oct",
+      "Data": 4
+    },
+    {
+      "Groups": "Nov",
+      "Data": 8
+    },
+    {
+      "Groups": "Dec",
+      "Data": 6
+    }
+  ]
+}
