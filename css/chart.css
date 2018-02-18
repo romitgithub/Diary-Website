@@ -254,7 +254,7 @@ div.custom-tooltip span.data-comparison-item-group{
 	vertical-align: middle;
 }
 
-.selected-blue-border{
+.data-section-button.selected{
 	border: 1px solid #2590f4;
 	min-width: 0px;
 	border-radius: 4px;
@@ -264,9 +264,10 @@ div.custom-tooltip span.data-comparison-item-group{
 	padding-bottom: 4px;
 	font-size: 12px;
 	margin: 12px;
+	cursor: pointer;
 }
 
-.unselected-grey-border{
+.data-section-button.unselected{
 	min-width: 0px;
 	border-radius: 4px;
 	padding-left: 6px;
@@ -276,6 +277,7 @@ div.custom-tooltip span.data-comparison-item-group{
 	font-size: 12px;
 	margin: 12px;
 	color: #b5b5b5;
+	cursor: pointer;
 }
 
 .chart-title{

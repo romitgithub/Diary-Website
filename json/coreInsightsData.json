@@ -1,0 +1,102 @@
+{
+  "dataTitle": "Male vs Female this year",
+  "chartComparisonItems": [
+    "Male", "Female"
+  ],
+  "chartSections": [
+    "Politeness", "Sentiment", "Mirroring"
+  ],
+  "charts": [
+    {
+      "Politeness": [
+        {
+          "Groups": "Politeness",
+          "Male": 4,
+          "Female": 6
+        },
+        {
+          "Groups": "Request",
+          "Male": 3,
+          "Female": 4
+        },
+        {
+          "Groups": "Balance",
+          "Male": 6,
+          "Female": 4
+        }
+      ],
+      "Sentiment": [
+        {
+          "Groups": "Politeness",
+          "Male": 2,
+          "Female": 4
+        },
+        {
+          "Groups": "Request",
+          "Male": 3,
+          "Female": 5
+        },
+        {
+          "Groups": "Balance",
+          "Male": 6,
+          "Female": 8
+        }
+      ],
+      "Mirroring": [
+        {
+          "Groups": "Politeness",
+          "Male": 7,
+          "Female": 11
+        },
+        {
+          "Groups": "Request",
+          "Male": 5,
+          "Female": 2
+        },
+        {
+          "Groups": "Balance",
+          "Male": 6,
+          "Female": 10
+        }
+      ]
+    },
+    {
+      "Politeness": [
+        {
+          "Groups": "Politeness",
+          "Male": 3,
+          "Female": 7
+        },
+        {
+          "Groups": "Request",
+          "Male": 3,
+          "Female": 5
+        }
+      ],
+      "Sentiment": [
+        {
+          "Groups": "Politeness",
+          "Male": 4,
+          "Female": 6
+        },
+        {
+          "Groups": "Request",
+          "Male": 7,
+          "Female": 9
+        }
+      ],
+      "Mirroring": [
+        {
+          "Groups": "Politeness",
+          "Male": 9,
+          "Female": 4
+        },
+        {
+          "Groups": "Request",
+          "Male": 2,
+          "Female": 5
+        }
+      ]
+    }
+  ]
+}
