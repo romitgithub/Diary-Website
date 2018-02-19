@@ -1,24 +1,26 @@
 body{
 	height: 100vh;
-	background: linear-gradient(rgba(9, 63, 91, 0.9), rgba(9, 63, 91, 0.9)), url(../images/banner.jpg);
+	background: url(../images/background.png);
 	background-size: cover;
 	color: #5a5a5a;
 	text-align: center;
 }
 
 .card-bg{
-	width: 900px;
+	width: 80vw;
+	min-width: 400px;
+	/* min-height: 80vh; */
 	padding: 20px;
 	background: white;
 	box-shadow: 8px 8px 24px #00000038;
-	margin: 60px auto;
+	margin: 70px auto;
 	display: block;
 	border-radius: 24px;
 	text-align: center;
 }
 
 .logo-section img{
-	width: 40px;
+	width: 260px;
 	line-height: 80px;
 	vertical-align: top;
 	font-family: arial;
@@ -31,7 +33,7 @@ body{
 }
 
 .red-button{
-	background: #F54040;
+	background: #df4b38;
 	box-shadow: 8px 8px 24px #00000038;
 	color: white;
 	width: 220px;
