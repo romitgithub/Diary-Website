@@ -165,6 +165,7 @@ function drawMultiLineChart(chartClassName, data, elems){
     .tickSize(-height)
     .tickPadding(10)  
     .tickSubdivide(true)  
+    .tickFormat(d3.format("d"))
       .orient("bottom");  
     
   var yAxis = d3.svg.axis()

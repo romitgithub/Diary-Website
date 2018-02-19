@@ -63,10 +63,9 @@
 							<div class="col-8 offset-2 email-card text-left mt-4">
 								<div class="email-from-block">
 									<img src="images/user.png" class="small-icon" alt="user-icon">
-									<p>Annabel Scott (ascott@email.com)</p>
+									<p></p>
 								</div>
 								<div class="email-content">
-									<p><strong>Last Meeting</strong><br>Hi, We meet in the last <mark>congeerec</mark> post anfuere new diam <mark>fringilla</mark>, vel malesuada reation tristique.<br><br>I'm writing because we want to wullam matis amazinf nutella ac maattis. <mark>Phasellaus</mark> massa happy. <mark>Aliquam</mark> variuous masssa blandit.<br><br>Best Regards,<br><strong>Sophia Brown</strong></p>
 								</div>
 							</div>
 						</div>
@@ -111,7 +110,8 @@
 		</footer>
 		<script >
 
-			var url = "https://api.myjson.com/bins/uls3t";
+			var url = "https://api.myjson.com/bins/bnzcp";
+			var jsonData;
 
 			$(document).ready(function(){
 				loadData();
@@ -120,7 +120,8 @@
 			function loadData(){
 				$.getJSON( url, function( data ) {
 				  if(data!=null){
-				  	drawMultiLineChart('#chart', data.chartData, data.chartElems);
+				  	jsonData = data;
+				  	
 				  }
 				});
 			}
@@ -140,9 +141,18 @@
     		function moveToSlide(slideNum){
     			$.fn.fullpage.silentMoveTo(slideNum);
     			if(slideNum==2){
+    				loadEmailData(jsonData.emails);
     				showLoader();
     				$('.progress-bar').css('width', '100%').attr('aria-valuenow', 100);
     			}
+    			else if(slideNum==3){
+    				drawMultiLineChart('#chart', jsonData.chartData, jsonData.chartElems);
+    			}
+    		}
+
+    		function loadEmailData(emails){
+    			$('.email-from-block p').text(emails[0].emailFrom);
+    			$('.email-content').html(emails[0].emailContent);
     		}
 
     		function showLoader(){

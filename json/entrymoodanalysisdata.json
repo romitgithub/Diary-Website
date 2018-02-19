@@ -1,4 +1,10 @@
 {
+  "emails":[
+    {
+      "emailContent": "<p><strong>Last Meeting</strong><br>Hi, We meet in the last <mark>congeerec</mark> post anfuere new diam <mark>fringilla</mark>, vel malesuada reation tristique.<br><br>I'm writing because we want to wullam matis amazinf nutella ac maattis. <mark>Phasellaus</mark> massa happy. <mark>Aliquam</mark> variuous masssa blandit.<br><br>Best Regards,<br><strong>Sophia Brown</strong></p>",
+      "emailFrom": "Annabel Scott (ascott@email.com)"
+    }
+  ],
   "chartElems": {
     "Groups": -1,
     "Data": 0
