@@ -197,7 +197,7 @@ div.dropdown-button-group > div{
 	margin: 8px;
 }
 
-a#dropdownMenuLink{
+a#groupDropdownMenuLink, a#favoritesDropdownMenuLink{
 	font-size: 14px;
     background: transparent;
     color: #3c8feb;

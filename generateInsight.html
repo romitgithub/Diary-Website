@@ -1,25 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
+		<meta charset="UTF-8">
 		<title>MyDiary</title>
 		<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="css/base.css">
 		<link rel="stylesheet" type="text/css" href="css/generateInsight.css">
 		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		
 		<script src="libs/jquery.min.js"></script>
-
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-		<script type="text/javascript" src="libs/bootstrap.js"></script>
-		<script type="text/javascript" src="libs/jquery.fullPage.js"></script>
+		<script src="libs/bootstrap.js"></script>
 	</head>
 	<body>
-		
 		<header>
 			<div class="row">
 				<div class="col-3 text-left">
-					<img src="images/full-logo-white.png" class="header-logo">
+					<img src="images/full-logo-white.png" class="header-logo" alt="mydiary-logo">
 				</div>
 				<div class="row col-6 menu-buttons">
 					<div class="col-4 active">
@@ -33,9 +32,9 @@
 					</div>
 				</div>
 				<div class="col-3 text-right">
-					<img src="images/user-profile.jpg" class="user-profile-icon">
+					<img src="images/user-profile.jpg" class="user-profile-icon" alt="user-photo">
 					<p class="user-profile-name">John Mathis</p>
-					<img src="images/down-arrow.png" class="profile-more-icon">
+					<img src="images/down-arrow.png" class="profile-more-icon" alt="dropdown-icon">
 				</div>
 			</div>
 		</header>
@@ -44,19 +43,19 @@
 				<h5 class="col-4 extra-padding"><strong>Insights Criteria</strong></h5>
 				<div class="col-8 dropdown-button-group text-right extra-padding">
 					<div class="dropdown show custom-dropdown">
-					  <img src="images/user.png" class="btn-small-icon">
-					  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					  <img src="images/user.png" class="btn-small-icon" alt="user-icon">
+					  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="groupDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					    Groups
 					  </a>
-					  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="group_dropdown_container">
+					  <div class="dropdown-menu" aria-labelledby="groupDropdownMenuLink" id="group_dropdown_container">
 					  </div>
 					</div>
 					<div class="dropdown show">
-					  <img src="images/star.png" class="btn-small-icon">
-					  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					  <img src="images/star.png" class="btn-small-icon" alt="star-icon">
+					  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="favoritesDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					    Favorites
 					  </a>
-					  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="favorites_dropdown_container">
+					  <div class="dropdown-menu" aria-labelledby="favoritesDropdownMenuLink" id="favorites_dropdown_container">
 					  </div>
 					</div>
 				</div>
@@ -65,12 +64,10 @@
 				<div class="col-lg-4 col-md-4 col-sm-8 extra-padding">
 					<div class="group" id="group_a">
 						<p><strong>Group A</strong></p>
-						
 					</div>
 
 					<div class="group mt-4" id="group_b">
 						<p><strong>Group B</strong></p>
-						
 					</div>
 				</div>
 				<div class="col-lg-5 col-md-5 col-sm-8 border-left-right extra-padding">
@@ -81,12 +78,12 @@
 						<p><strong>Custom Period</strong></p>
 						<div class="button calendar mt-3">
 							<input type="text" id="datepicker1" placeholder="MM/DD/YYYY">
-							<label for="datepicker1"><img src="images/calendar-light.png" class="btn-small-icon"></label>
+							<label for="datepicker1"><img src="images/calendar-light.png" alt="calendar" class="btn-small-icon"></label>
 						</div>
 						<span class="margin-left-right"><strong>to</strong></span>
 						<div class="button calendar mt-3">
 							<input type="text" id="datepicker2" placeholder="MM/DD/YYYY">
-							<label for="datepicker2"><img src="images/calendar-light.png" class="btn-small-icon"></label>
+							<label for="datepicker2"><img src="images/calendar-light.png" alt="calendar" class="btn-small-icon"></label>
 						</div>
 					</div>
 					<div class="group mt-4">
@@ -94,14 +91,14 @@
 							<p><strong>Before</strong></p>	
 							<div class="button calendar mt-3">
 								<input type="text" id="datepicker3" placeholder="MM/DD/YYYY">
-								<label for="datepicker3"><img src="images/calendar-light.png" class="btn-small-icon"></label>
+								<label for="datepicker3"><img src="images/calendar-light.png" alt="calendar" class="btn-small-icon"></label>
 							</div>
 						</div>
 						<div class="before-after-col">
 							<p><strong>After</strong></p>	
 							<div class="button calendar mt-3">
 								<input type="text" id="datepicker4" placeholder="MM/DD/YYYY">
-								<label for="datepicker4"><img src="images/calendar-light.png" class="btn-small-icon"></label>
+								<label for="datepicker4"><img src="images/calendar-light.png" alt="calendar" class="btn-small-icon"></label>
 							</div>
 						</div>
 						
@@ -112,7 +109,7 @@
 						<p><strong>Exact Period</strong></p>
 						<div class="button calendar mt-3">
 							<input type="text" id="datepicker5" placeholder="MM/DD/YYYY">
-							<label for="datepicker5"><img src="images/calendar-light.png" class="btn-small-icon"></label>
+							<label for="datepicker5"><img src="images/calendar-light.png" alt="calendar" class="btn-small-icon"></label>
 						</div>
 					</div>
 				</div>
@@ -120,7 +117,7 @@
 			<div class="row mt-5" id="bottom-buttons">
 				<div class="col-2">
 					<button class="button blue-border-bg" onclick="window.location='dashboard.html'">
-						<img src="images/left-arrow-blue.png" class="btn-small-icon">
+						<img src="images/left-arrow-blue.png" class="btn-small-icon" alt="left-arrow">
 						<span><strong>Back</strong></span>
 					</button>
 				</div>
@@ -137,125 +134,149 @@
 				</div>
 			</div>
 		</div>
-		<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
 		  <div class="modal-dialog modal-dialog-centered" role="document">
 		    <div class="modal-content">
 		      <div class="modal-body container">
 		      	<div class="row group-header">
 		      		<p class="col-6"><strong>Female</strong> (25)</p>
-		      		<img src="images/edit.png" class="edit-icon">
+		      		<img src="images/edit.png" class="edit-icon" alt="edit">
 		      	</div>
 		      	<div class="row group-search-card">
 		      		<input type="text" placeholder="Find email contacts" class="col-12">
-		      		<img src="images/search.png" class="search-icon">
+		      		<img src="images/search.png" class="search-icon" alt="search">
 		      	</div>
 		      	<div class="container group-items mt-2">
 	  				<div class="row card-item">
 	  					<div class="col-2 text-left ">
-	  						<img src="images/user-profile.jpg" class="user-profile-icon-small">
+	  						<img src="images/user-profile.jpg" class="user-profile-icon-small" alt="user-photo">
 	  					</div>
 	  					<div class="col-8 text-left">
 	  						<p><strong>Isabella Thompson</strong></p>
 	  						<p>isabella@gmail.com</p>
 	  					</div>
 	  					<div class="col-2 text-right">
-	  						<img src="images/success.png" class="user-check-mark-icon">
+	  						<img src="images/success.png" class="user-check-mark-icon" alt="check-mark">
 	  					</div>
 	  				</div>
 	  				<div class="row card-item">
 	  					<div class="col-2 text-left ">
-	  						<img src="images/user-profile.jpg" class="user-profile-icon-small">
+	  						<img src="images/user-profile.jpg" class="user-profile-icon-small" alt="user-photo">
 	  					</div>
 	  					<div class="col-8 text-left">
 	  						<p><strong>Isabella Thompson</strong></p>
 	  						<p>isabella@gmail.com</p>
 	  					</div>
 	  					<div class="col-2 text-right">
-	  						<img src="images/success.png" class="user-check-mark-icon">
+	  						<img src="images/success.png" class="user-check-mark-icon" alt="check-mark">
 	  					</div>
 	  				</div>
 	  				<div class="row card-item">
 	  					<div class="col-2 text-left ">
-	  						<img src="images/user-profile.jpg" class="user-profile-icon-small">
+	  						<img src="images/user-profile.jpg" class="user-profile-icon-small" alt="user-photo">
 	  					</div>
 	  					<div class="col-8 text-left">
 	  						<p><strong>Isabella Thompson</strong></p>
 	  						<p>isabella@gmail.com</p>
 	  					</div>
 	  					<div class="col-2 text-right">
-	  						<img src="images/success.png" class="user-check-mark-icon">
+	  						<img src="images/success.png" class="user-check-mark-icon" alt="check-mark">
 	  					</div>
 	  				</div>
 	  				<div class="row card-item">
 	  					<div class="col-2 text-left ">
-	  						<img src="images/user-profile.jpg" class="user-profile-icon-small">
+	  						<img src="images/user-profile.jpg" class="user-profile-icon-small" alt="user-photo">
 	  					</div>
 	  					<div class="col-8 text-left">
 	  						<p><strong>Isabella Thompson</strong></p>
 	  						<p>isabella@gmail.com</p>
 	  					</div>
 	  					<div class="col-2 text-right">
-	  						<img src="images/success.png" class="user-check-mark-icon">
+	  						<img src="images/success.png" class="user-check-mark-icon" alt="check-mark">
 	  					</div>
 	  				</div>
 	  				<div class="row card-item">
 	  					<div class="col-2 text-left ">
-	  						<img src="images/user-profile.jpg" class="user-profile-icon-small">
+	  						<img src="images/user-profile.jpg" class="user-profile-icon-small" alt="user-photo">
 	  					</div>
 	  					<div class="col-8 text-left">
 	  						<p><strong>Isabella Thompson</strong></p>
 	  						<p>isabella@gmail.com</p>
 	  					</div>
 	  					<div class="col-2 text-right">
-	  						<img src="images/success.png" class="user-check-mark-icon">
+	  						<img src="images/success.png" class="user-check-mark-icon" alt="check-mark">
 	  					</div>
 	  				</div>
 	  				<div class="row card-item">
 	  					<div class="col-2 text-left ">
-	  						<img src="images/user-profile.jpg" class="user-profile-icon-small">
+	  						<img src="images/user-profile.jpg" class="user-profile-icon-small" alt="user-photo">
 	  					</div>
 	  					<div class="col-8 text-left">
 	  						<p><strong>Isabella Thompson</strong></p>
 	  						<p>isabella@gmail.com</p>
 	  					</div>
 	  					<div class="col-2 text-right">
-	  						<img src="images/success.png" class="user-check-mark-icon">
+	  						<img src="images/success.png" class="user-check-mark-icon" alt="check-mark">
 	  					</div>
 	  				</div>
 	  				<div class="row card-item">
 	  					<div class="col-2 text-left ">
-	  						<img src="images/user-profile.jpg" class="user-profile-icon-small">
+	  						<img src="images/user-profile.jpg" class="user-profile-icon-small" alt="user-photo">
 	  					</div>
 	  					<div class="col-8 text-left">
 	  						<p><strong>Isabella Thompson</strong></p>
 	  						<p>isabella@gmail.com</p>
 	  					</div>
 	  					<div class="col-2 text-right">
-	  						<img src="images/success.png" class="user-check-mark-icon">
+	  						<img src="images/success.png" class="user-check-mark-icon" alt="check-mark">
 	  					</div>
 	  				</div>
 	  				<div class="row card-item">
 	  					<div class="col-2 text-left ">
-	  						<img src="images/user-profile.jpg" class="user-profile-icon-small">
+	  						<img src="images/user-profile.jpg" class="user-profile-icon-small" alt="user-photo">
 	  					</div>
 	  					<div class="col-8 text-left">
 	  						<p><strong>Isabella Thompson</strong></p>
 	  						<p>isabella@gmail.com</p>
 	  					</div>
 	  					<div class="col-2 text-right">
-	  						<img src="images/success.png" class="user-check-mark-icon">
+	  						<img src="images/success.png" class="user-check-mark-icon" alt="check-mark">
 	  					</div>
 	  				</div>
 	  				<div class="row card-item">
 	  					<div class="col-2 text-left ">
-	  						<img src="images/user-profile.jpg" class="user-profile-icon-small">
+	  						<img src="images/user-profile.jpg" class="user-profile-icon-small" alt="user-photo">
 	  					</div>
 	  					<div class="col-8 text-left">
 	  						<p><strong>Isabella Thompson</strong></p>
 	  						<p>isabella@gmail.com</p>
 	  					</div>
 	  					<div class="col-2 text-right">
-	  						<img src="images/success.png" class="user-check-mark-icon">
+	  						<img src="images/success.png" class="user-check-mark-icon" alt="check-mark">
+	  					</div>
+	  				</div>
+	  				<div class="row card-item">
+	  					<div class="col-2 text-left ">
+	  						<img src="images/user-profile.jpg" class="user-profile-icon-small" alt="user-photo">
+	  					</div>
+	  					<div class="col-8 text-left">
+	  						<p><strong>Isabella Thompson</strong></p>
+	  						<p>isabella@gmail.com</p>
+	  					</div>
+	  					<div class="col-2 text-right">
+	  						<img src="images/success.png" class="user-check-mark-icon" alt="check-mark">
+	  					</div>
+	  				</div>
+	  				<div class="row card-item">
+	  					<div class="col-2 text-left ">
+	  						<img src="images/user-profile.jpg" class="user-profile-icon-small" alt="user-photo">
+	  					</div>
+	  					<div class="col-8 text-left">
+	  						<p><strong>Isabella Thompson</strong></p>
+	  						<p>isabella@gmail.com</p>
+	  					</div>
+	  					<div class="col-2 text-right">
+	  						<img src="images/success.png" class="user-check-mark-icon" alt="check-mark">
 	  					</div>
 	  				</div>
 		      	</div>
@@ -263,20 +284,19 @@
 		    </div>
 		  </div>
 		</div>
-	</body>
-	<script type="text/javascript">
-		$( "#datepicker1" ).datepicker();
-		$( "#datepicker2" ).datepicker();
-		$( "#datepicker3" ).datepicker();
-		$( "#datepicker4" ).datepicker();
-		$( "#datepicker5" ).datepicker();
-
+		<script>
 		var url = "https://api.myjson.com/bins/jq6vt";
 		var jsonData;
 
 		$(document).ready(function(){
 			loadData();
-		});
+
+			$( "#datepicker1" ).datepicker();
+			$( "#datepicker2" ).datepicker();
+			$( "#datepicker3" ).datepicker();
+			$( "#datepicker4" ).datepicker();
+			$( "#datepicker5" ).datepicker();
+			});
 
 		function loadData(){
 			$.getJSON( url, function( data ) {
@@ -362,4 +382,5 @@
 		}
 
 	</script>
+	</body>
 </html>

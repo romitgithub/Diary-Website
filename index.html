@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
+		<meta charset="UTF-8">
 		<title>MyDiary</title>
 		<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="css/base.css">
 		<link rel="stylesheet" type="text/css" href="css/home.css">
 		<script src="libs/jquery.min.js"></script>
-		<script type="text/javascript" src="libs/bootstrap.js"></script>
-		<script type="text/javascript" src="libs/jquery.fullPage.js"></script>
+		<script src="libs/bootstrap.js"></script>
+		<script src="libs/jquery.fullPage.js"></script>
 	</head>
 	<body>
 		
 		<header>
-			<img src="images/full-logo-white.png" class="header-logo">
+			<img src="images/full-logo-white.png" class="header-logo" alt="mydiary-logo">
 			<div class="buttons">
 				<button class="button login" onclick="window.location='login.html'">Login</button>
 				<button class="button signup" onclick="window.location='signup.html'">Sign Up</button>
@@ -69,15 +70,15 @@
 					<div class="row mt-8 col-12 ">
 						<div class="col-6">
 							<div class="text-left col-11 offset-1">
-								<img src="images/left-arrow.png" class="arrow-img left text-left">
-								<img src="images/left-arrow.png" class="arrow-img right text-left">
+								<img src="images/left-arrow.png" class="arrow-img left text-left" alt="left-arrow">
+								<img src="images/left-arrow.png" class="arrow-img right text-left" alt="left-arrow">
 							</div>
 							<h5 class="bold-text text-left mt-4 col-11 offset-1"><strong>Academic heft</strong></h5>
 							<p class="text-left mt-3 col-11 offset-1">We've combed papers and studies written by world-leading academics to find the most relevant and cutting-edge ways of analyzing text to generate meaningful insights.</p>
 						</div>
 						<div class="col-5 offset-1 justify-content-right">
 							<div class="card-bg-container"></div>
-							<img src="images/banner.jpg" class="small-banner-img">
+							<img src="images/banner.jpg" class="small-banner-img" alt="group-of-people">
 							<div class="card-bg-container"></div>
 						</div>
 					</div>
@@ -92,23 +93,23 @@
 						<div class="col-7 mt-4">
 							<ul class="ul-without-dots">
 								<li>
-									<img src="images/check-mark.png" class="tick-mark">
+									<img src="images/check-mark.png" class="tick-mark" alt="check-mark">
 									<p><strong>We're people focused nerds.</strong></p>
 								</li>
 								<li>
-									<img src="images/check-mark.png" class="tick-mark">
+									<img src="images/check-mark.png" class="tick-mark" alt="check-mark">
 									<p>We've studied behavioural economics and psychology, as well as more techy pursuits - machine learning and algorithm training, coding and programming.</p>
 								</li>
 								<li>
-									<img src="images/check-mark.png" class="tick-mark">
+									<img src="images/check-mark.png" class="tick-mark" alt="check-mark">
 									<p><strong>We see that each of us creates a huge data trail in our modern lives,</strong> and we're excited about what our data can help us understand about ourselves.</p>
 								</li>
 								<li>
-									<img src="images/check-mark.png" class="tick-mark">
+									<img src="images/check-mark.png" class="tick-mark" alt="check-mark">
 									<p><strong>There's so much that we can learn about ourselves</strong> from the way we write - and where, when and about what we write.</p>
 								</li>
 								<li>
-									<img src="images/check-mark.png" class="tick-mark">
+									<img src="images/check-mark.png" class="tick-mark" alt="check-mark">
 									<p><strong>We've developed our analytical tools to help you uncover insights</strong> about yourself, and we've built this app to let you customise those insights to learn what matters to you, about you.</p>
 								</li>
 							</ul>
@@ -130,15 +131,20 @@
 				<footer>
 					<div class="container">
 						<div class="row justify-content-center">
-							<img src="images/google-plus-logo.png" class="footer-social-icons google">
-							<img src="images/facebook-logo.png" class="footer-social-icons facebook">
-							<img src="images/twitter-logo.png" class="footer-social-icons twitter">
+							<a href="https://www.plus.google.com">
+								<img src="images/google-plus-logo.png" class="footer-social-icons google" alt="google"></a>
+							<a href="https://www.facebook.com">
+								<img src="images/facebook-logo.png" class="footer-social-icons facebook" alt="facebook">
+							</a>
+							<a href="https://www.twitter.com">
+								<img src="images/twitter-logo.png" class="footer-social-icons twitter" alt="twitter">
+							</a>
 						</div>
 					</div>
 				</footer>
 			</div>
 		</div>
-		<script type="text/javascript">
+		<script>
 			$('#fullpage').fullpage({
 				//Navigation
 				navigation: true,
@@ -160,4 +166,4 @@
 			});
 		</script>
 	</body>
-</html>
+</html>	

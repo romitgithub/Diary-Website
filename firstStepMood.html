@@ -1,28 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
+		<meta charset="UTF-8">
 		<title>MyDiary</title>
 		<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="css/base.css">
 		<link rel="stylesheet" type="text/css" href="css/first_step_birthday.css">
 		<script src="libs/jquery.min.js"></script>
-		<script type="text/javascript" src="libs/bootstrap.js"></script>
-		<script type="text/javascript" src="libs/jquery.fullPage.js"></script>
-		<script type="text/javascript" src="js/chart.js"></script>
+		<script src="libs/bootstrap.js"></script>
+		<script src="libs/jquery.fullPage.js"></script>
+		<script src="https://d3js.org/d3.v3.min.js"></script>
+		<script src="js/chart.js"></script>
 	</head>
 	<body>
 		<header>
 			<div class="row">
 				<div class="col-6 text-right">
 					<button class="button birthday active">
-						<img src="images/cake-blue.png" class="birthday-icon-small">
+						<img src="images/cake-blue.png" class="birthday-icon-small" alt="birthday-cake">
 						<span><strong>Your Birthday</strong></span>
 					</button>
 				</div>
 				<div class="col-6 text-left">
 					<button class="button mood active">
-						<img src="images/hand-blue.png" class="mood-icon-small">
+						<img src="images/hand-blue.png" class="mood-icon-small" alt="hand">
 						<span><strong>Entries Mood</strong></span>
 					</button>
 				</div>
@@ -33,7 +35,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-8 offset-2 col-lg-10 offset-lg-1 col-md-12 offset-md-0 col-sm-12 offset-sm-0">
-							<img src="images/hand-dark.png" class="big-icon">
+							<img src="images/hand-dark.png" class="big-icon" alt="hand">
 							<h1 class="big-header mt-4"><strong>Entries Mood</strong></h1>
 							<p class="feature-desc-text mt-4 col-10 offset-1">
 								Every one of your emails has associated <strong>Politeness, Sentiment and Mirroring</strong> scores based on the words you use, the frequency and the context you use it. The hights score will be a 100% and with that in mind, you will be able to track how those elements vary by contacts and periods of time.</p>
@@ -53,14 +55,14 @@
 				<div class="container mt-5">
 					<div class="row">
 						<div class="col-8 offset-2 col-lg-10 offset-lg-1 col-md-12 offset-md-0 col-sm-12 offset-sm-0">
-							<h3 class="mt-4"><strong>Entry Analysis</strong></h1>
+							<h3 class="mt-4"><strong>Entry Analysis</strong></h3>
 							<p class="feature-desc-text mt-2 col-10 offset-1">
 								We analyze every entry and apply a score in each category.
 							</p>
 							<div></div>
 							<div class="col-8 offset-2 email-card text-left mt-4">
 								<div class="email-from-block">
-									<img src="images/user.png" class="small-icon">
+									<img src="images/user.png" class="small-icon" alt="user-icon">
 									<p>Annabel Scott (ascott@email.com)</p>
 								</div>
 								<div class="email-content">
@@ -99,7 +101,7 @@
 		<footer>
 			<div class="container">
 				<div class="row justify-content-center">
-					<img src="images/logo-blue.png" class="footer-logo">
+					<img src="images/logo-blue.png" class="footer-logo" alt="mydiary-logo">
 					<p class="footer-text">
 						<span><strong>MY</strong></span>
 						<span>DIARY</span>
@@ -107,9 +109,7 @@
 				</div>
 			</div>
 		</footer>
-		<script src="https://d3js.org/d3.v3.min.js"></script>
-		<script type="text/javascript" src="js/chart.js"></script>
-		<script type="text/javascript">
+		<script >
 
 			var url = "https://api.myjson.com/bins/uls3t";
 

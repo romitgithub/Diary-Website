@@ -1,27 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
+		<meta charset="UTF-8">
 		<title>MyDiary</title>
-		<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="css/base.css">
 		<link rel="stylesheet" type="text/css" href="css/chart.css">
-		<link rel="stylesheet" type="text/css" href="css/c3.css">
-		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		
 		<script src="libs/jquery.min.js"></script>
-
-		<script src="libs/c3.js"></script>
-
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-		<script type="text/javascript" src="libs/bootstrap.js"></script>
-		<script type="text/javascript" src="libs/jquery.fullPage.js"></script>
+		<script src="libs/bootstrap.js"></script>
+		<script src="https://d3js.org/d3.v3.min.js"></script>
+		<script src="js/chart.js"></script>
 	</head>
 	<body>
 		<header>
 			<div class="row">
 				<div class="col-3 text-left">
-					<img src="images/full-logo-white.png" class="header-logo">	
+					<img src="images/full-logo-white.png" class="header-logo" alt="mydiary-logo">	
 				</div>
 				<div class="row col-6 menu-buttons">
 					<div class="col-4">
@@ -41,9 +36,9 @@
 					</div>
 				</div>
 				<div class="col-3 text-right">
-					<img src="images/user-profile.jpg" class="user-profile-icon">
+					<img src="images/user-profile.jpg" class="user-profile-icon" alt="user-photo">
 					<p class="user-profile-name">John Mathis</p>
-					<img src="images/down-arrow.png" class="profile-more-icon">
+					<img src="images/down-arrow.png" class="profile-more-icon" alt="down-arrow">
 				</div>
 			</div>
 		</header>
@@ -63,7 +58,7 @@
 						<span class="data-comparison-item-value"></span>
 						<span class="data-comparison-item-title"></span>
 					</div>
-					<div class="col-10 progress big blue">
+					<div class="col-9 progress big blue">
 					  <div class="progress-bar" role="progressbar" style="width: 0;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 					</div>
 				</div>
@@ -73,16 +68,13 @@
 						<span class="data-comparison-item-value"></span>
 						<span class="data-comparison-item-title"></span>
 					</div>
-					<div class="col-10 progress big red">
+					<div class="col-9 progress big red">
 					  <div class="progress-bar" role="progressbar" style="width: 0;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<script src="https://d3js.org/d3.v3.min.js"></script>
-		<script type="text/javascript" src="js/chart.js"></script>
-	</body>
-	<script type="text/javascript">
+		<script>
 
 		var dataJson;
 		var url = "https://api.myjson.com/bins/1g2nep";
@@ -152,4 +144,5 @@
 		}
 
 	</script>
+	</body>
 </html>
