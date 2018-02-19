@@ -32,6 +32,17 @@ img.birthday-icon-small, img.mood-icon-small{
 img.big-icon{
 	width: 56px;
 	height: 56px;
+	filter: saturate(-80);
+.saturate {
+	filter: saturate(3); }
+.saturate {
+	filter: saturate(3); }
+.saturate {
+	filter: saturate(3); }
+.saturate {
+	filter: saturate(3); }
+.saturate {
+	filter: saturate(3); }
 }
 
 img.big-icon.result{
@@ -120,13 +131,14 @@ footer{
 }
 
 img.footer-logo{
-	width: 20px;
-	height: 20px;
+	height: 19px;
+	width: 144px;
 	margin-top: 8px;
 	margin-bottom: 8px;
 	margin-right: 4px;
 	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(100%);
+	filter: grayscale(100%);
+	opacity: 0.5;
 }
 
 .footer-text{

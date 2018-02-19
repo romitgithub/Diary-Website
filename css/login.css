@@ -11,6 +11,7 @@ body{
 	min-width: 400px;
 	/* min-height: 80vh; */
 	padding: 20px;
+	padding-bottom: 50px;
 	background: white;
 	box-shadow: 8px 8px 24px #00000038;
 	margin: 70px auto;

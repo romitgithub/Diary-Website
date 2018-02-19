@@ -39,10 +39,11 @@ p.light-bg-header{
 }
 
 img.header-logo{
-	width: 24px;
+	width: 200px;
 	vertical-align: middle;
 	font-family: quicksand-bold;
 	font-style:  italic;
+	margin-top: 3px;
 }
 
 img.user-profile-icon{
@@ -318,6 +319,10 @@ img.edit-icon{
 
 button > img.btn-small-icon{
 	margin: 0px;
+	width: 12px;
+	height: 12px;
+	margin-top: -4px;
+	margin-left: -4px;
 }
 
 button.button.disabled{

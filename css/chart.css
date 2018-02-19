@@ -39,10 +39,11 @@ p.light-bg-header{
 }
 
 img.header-logo{
-	width: 24px;
+	width: 200px;
 	vertical-align: middle;
 	font-family: quicksand-bold;
 	font-style:  italic;
+	margin-top:  3px;
 }
 
 img.user-profile-icon{
