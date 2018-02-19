@@ -112,11 +112,10 @@ button.button.unselected{
 button.button.selected{
 	background: #2590f4;
 	color: #fff;
-	padding-top: 4px;
-	padding-bottom: 4px;
-	padding-left: 8px;
-	padding-right: 8px;
-	border: 2px solid #2590f4;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	padding-left: 10px;
+	padding-right: 10px;
 	border-radius: 4px;
 	font-size: 12px;
 	font-family: quicksand-bold;
@@ -186,9 +185,7 @@ div.button.calendar label{
 
 img.btn-small-icon{
 	width: 16px;
-	/* height: 16px; */
 	margin: 2px;
-	filter: hue-rotate;
 	margin-left: 8px;
 }
 
@@ -331,7 +328,7 @@ button.button.disabled{
 
 .button.blue-filled-bg{
 	background: #2590f4;
-	box-shadow: 1px 1px 2px #00000038;
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2196078431372549);
 	color: white;
 	padding-top: 8px;
 	padding-bottom: 8px;
@@ -343,7 +340,7 @@ button.button.disabled{
 }
 
 .button.blue-border-bg{
-	background: #00000000;
+	background: transparent;
 	color: #2590f4;
 	padding-top: 4px;
 	padding-bottom: 4px;

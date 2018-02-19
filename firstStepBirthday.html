@@ -7,7 +7,11 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="css/base.css">
 		<link rel="stylesheet" type="text/css" href="css/first_step_birthday.css">
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		
 		<script src="libs/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script src="libs/bootstrap.js"></script>
 		<script src="libs/jquery.fullPage.js"></script>
 	</head>
@@ -72,7 +76,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-8 offset-2 col-lg-10 offset-lg-1 col-md-12 offset-md-0 col-sm-12 offset-sm-0">
-							<img src="images/cake-large.png" class="big-icon" alt="birthday-cake">
+							<img src="images/cake-dark.png" class="big-icon" alt="birthday-cake">
 							<h1 class="big-header mt-4"><strong>Your birthday is November 13th</strong></h1>
 							<p class="feature-desc-text mt-4 col-12">
 								Based on our analytics, it looks like this is the special date, <strong>Is that right?</strong>
@@ -104,13 +108,14 @@
 							</p>
 						</div>
 						<div class="col-12 mt-8">
-							<button class="button blue-border-bg col-4" id="maybelaterbutton">
+							<button class="button blue-border-bg col-4" id="maybelaterbutton" onclick="window.location='firstStepMood.html'">
 								<span><strong>Maybe later</strong></span>
 							</button>
-							<button class="button blue-border-bg col-4" id="birthdatebutton">
-								<span><strong>DD/MM/YYYY</strong></span>
-							</button>
-							<button class="button get-started col-4" id="entriesmoodbutton">
+							<div class="button calendar mt-3">
+								<input type="text" id="datepicker" placeholder="MM/DD/YYYY">
+								<label for="datepicker"><img src="images/calendar-light.png" alt="calendar" class="btn-small-icon"></label>
+							</div>
+							<button class="button get-started col-4" id="entriesmoodbutton" onclick="window.location='firstStepMood.html'">
 								<span><strong>Entries Mood</strong></span>
 							</button>
 						</div>
@@ -129,16 +134,24 @@
 			</div>
 		</footer>
 		<script>
-			$('#fullpage').fullpage({
-				//Navigation
-				navigation: false,
-				showActiveTooltip: false,
-				scrollingSpeed: 600,
+
+			$(document).ready(function(){
+				setPagerNavigation();
+				$( "#datepicker" ).datepicker();
 			});
-			$.fn.fullpage.setMouseWheelScrolling(false);
-    		$.fn.fullpage.setAllowScrolling(false);
-    		$.fn.fullpage.setMouseWheelScrolling(false);
-    		$.fn.fullpage.setKeyboardScrolling(false);	
+
+			function setPagerNavigation(){
+				$('#fullpage').fullpage({
+					//Navigation
+					navigation: false,
+					showActiveTooltip: false,
+					scrollingSpeed: 600,
+				});
+				$.fn.fullpage.setMouseWheelScrolling(false);
+	    		$.fn.fullpage.setAllowScrolling(false);
+	    		$.fn.fullpage.setMouseWheelScrolling(false);
+	    		$.fn.fullpage.setKeyboardScrolling(false);
+			}
 
     		function moveToSlide(slideNum){
     			$.fn.fullpage.silentMoveTo(slideNum);

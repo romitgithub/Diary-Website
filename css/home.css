@@ -34,7 +34,7 @@
 */
 div#fp-nav{
 	margin-top: -53.5px;
-	background: #00000024;
+	background: rgba(0, 0, 0, 0.1411764705882353);
 	border-radius: 20px;
 }
 
@@ -149,7 +149,7 @@ img.header-logo{
 
 .button.get-started{
 	background: #2590f4;
-	box-shadow: 8px 8px 24px #00000038;
+	box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.2196078431372549);
 	color: white;
 	width: 220px;
 	padding-top: 16px;
@@ -185,7 +185,7 @@ img.arrow-img.right{
 
 img.small-banner-img{
 	width: inherit;
-	box-shadow: 8px 8px 24px #00000038;
+	box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.2196078431372549);
 }
 
 .card-bg-container{

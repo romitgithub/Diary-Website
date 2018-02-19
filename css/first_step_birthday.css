@@ -32,17 +32,6 @@ img.birthday-icon-small, img.mood-icon-small{
 img.big-icon{
 	width: 56px;
 	height: 56px;
-	filter: saturate(-80);
-.saturate {
-	filter: saturate(3); }
-.saturate {
-	filter: saturate(3); }
-.saturate {
-	filter: saturate(3); }
-.saturate {
-	filter: saturate(3); }
-.saturate {
-	filter: saturate(3); }
 }
 
 img.big-icon.result{
@@ -93,7 +82,7 @@ h1.big-header{
 
 .button.get-started{
 	background: #2590f4;
-	box-shadow: 8px 8px 24px #00000038;
+	box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.2196078431372549);
 	color: white;
 	width: 240px;
 	padding-top: 16px;
@@ -105,7 +94,7 @@ h1.big-header{
 }
 
 .button.blue-border-bg{
-	background: #00000000;
+	background: transparent;
 	color: #2590f4;
 	width: 240px;
 	padding-top: 16px;
@@ -136,7 +125,7 @@ img.footer-logo{
 	margin-top: 8px;
 	margin-bottom: 8px;
 	margin-right: 4px;
-	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+	-webkit-filter: grayscale(100%);
 	filter: grayscale(100%);
 	opacity: 0.5;
 }
@@ -162,7 +151,7 @@ img.calendars-img{
 }
 
 div.email-from-block{
-	padding-left: : 12px;
+	padding-left: 12px;
 	padding-right: 12px;
 	padding-top: 16px;
 	padding-bottom: 16px;
@@ -223,9 +212,49 @@ div.email-content{
 }
 
 .domain{
-	fill: #00000000;
+	fill: transparent;
 }
 
 /*
 ** line chart css end
 */
+
+div.button.calendar span, div.button.calendar img{
+	vertical-align: middle;
+	color: #bcbcbc;
+} 
+
+div.button.calendar img{
+	width: 20px;
+	height: 20px;
+}
+
+div.button.calendar{
+	background: #fff;
+	color: #bcbcbc;
+	padding: 10px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	padding-left: 16px;
+	padding-right: 16px;
+	border: 2px solid #2590f4;
+	border-radius: 26px;
+	font-size: 12px;
+}
+
+div.button.calendar input{
+	background: white;
+	box-shadow: none;
+	border: none;
+	width: 110px;
+	vertical-align: middle;
+	color: #b4b4b4;
+	margin-top: 2px;
+	padding: 0px;
+	margin-right: 0px;
+	font-size: 16px;
+}
+
+div.button.calendar label{
+	margin: 0px;
+}

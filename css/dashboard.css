@@ -97,7 +97,7 @@ img.big-icon{
 
 .button.get-started{
 	background: #2590f4;
-	box-shadow: 8px 8px 24px #00000038;
+	box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.2196078431372549);
 	color: white;
 	width: 160px;
 	padding-top: 12px;

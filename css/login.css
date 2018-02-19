@@ -13,7 +13,7 @@ body{
 	padding: 20px;
 	padding-bottom: 50px;
 	background: white;
-	box-shadow: 8px 8px 24px #00000038;
+	box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.2196078431372549);
 	margin: 70px auto;
 	display: block;
 	border-radius: 24px;
@@ -35,7 +35,7 @@ body{
 
 .red-button{
 	background: #df4b38;
-	box-shadow: 8px 8px 24px #00000038;
+	box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.2196078431372549);
 	color: white;
 	width: 220px;
 	padding-top: 16px;
@@ -74,7 +74,7 @@ img.email-icon{
 
 .button.get-started{
 	background: #2590f4;
-	box-shadow: 8px 8px 24px #00000038;
+	box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.2196078431372549);
 	color: white;
 	width: 220px;
 	padding-top: 16px;
