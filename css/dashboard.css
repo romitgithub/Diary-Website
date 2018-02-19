@@ -41,6 +41,7 @@ img.header-logo{
 	font-family: quicksand-bold;
 	font-style:  italic;
 	margin-top: 3px;
+	cursor: pointer;
 }
 
 img.user-profile-icon{

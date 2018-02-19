@@ -78,6 +78,10 @@ div#fp-nav{
 	background: #2590f4;
 }
 
+/*
+** Navigaiton dots settings ends here
+*/
+
 header{
 	position: fixed;
 	top: 0;
@@ -109,6 +113,7 @@ img.header-logo{
 	vertical-align: middle;
 	font-family: arial;
 	font-style:  italic;
+	cursor: pointer;
 }
 
 .button.signup{

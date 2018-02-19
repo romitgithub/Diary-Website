@@ -145,6 +145,10 @@ function drawMultiLineChart(chartClassName, data, elems, numAxisLabels, showDots
     divHeight = 300;
   }
 
+  var div = d3.select("body").append("div")
+    .attr("class", "custom-tooltip text-center")
+    .style("opacity", 0);
+
   var colors = [
     "#2590f4", "#F54040",
     "#2590f4", "#F54040"
@@ -158,7 +162,7 @@ function drawMultiLineChart(chartClassName, data, elems, numAxisLabels, showDots
   //************************************************************
   // Create Margins and Axis and hook our zoom function
   //************************************************************
-  var margin = {top: 20, right: 0, bottom: 30, left: 0},
+  var margin = {top: 20, right: 30, bottom: 30, left: 30},
       width = divWidth - margin.left - margin.right,
       height = divHeight - margin.top - margin.bottom;
     
@@ -174,8 +178,7 @@ function drawMultiLineChart(chartClassName, data, elems, numAxisLabels, showDots
       .scale(x)
       .ticks(ticksCount)
     .tickSize(-height)
-    .tickPadding(12)  
-    .tickSubdivide(true)  
+    .tickPadding(5)  
     .tickFormat(function(d, i){
         return labelsArray[i%(labelsArray.length)] //"Year1 Year2, etc depending on the tick value - 0,1,2,3,4"
     })
@@ -203,14 +206,6 @@ function drawMultiLineChart(chartClassName, data, elems, numAxisLabels, showDots
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis);
    
-  svg.append("g")
-    .attr("class", "y axis")
-    .append("text")
-    .attr("class", "axis-label")
-    .attr("transform", "rotate(-90)")
-    .attr("y", (-margin.left) + 10)
-    .attr("x", -height/2);  
-   
   svg.append("clipPath")
     .attr("id", "clip")
     .append("rect")
@@ -232,10 +227,25 @@ function drawMultiLineChart(chartClassName, data, elems, numAxisLabels, showDots
     .append("path")
       .attr("class", "line")
     .attr("clip-path", "url(#clip)")
-    .attr("stroke-width", 6)
+    .attr("stroke-width", 12)
     .attr('stroke', function(d,i){      
       return colors[i%colors.length];
     })
+    .on("click", function(d) {
+       div.transition()
+         .duration(200)
+         .style("opacity", 1);
+       div.html(
+        "<p><strong>Politeness Received</strong></p><div><span class='data-comparison-item-icon blue'></span><span class='data-comparison-item-percent'><strong>73%</strong></span><span class='data-comparison-item-group'>Male</span></div><div><span class='data-comparison-item-icon red'></span><span class='data-comparison-item-percent'><strong>63%</strong></span><span class='data-comparison-item-group'>Female</span></div>"
+        )
+         .style("left", (d3.event.pageX - 80) + "px")
+         .style("top", (d3.event.pageY - 100) + "px");
+       })
+     .on("mouseout", function(d) {
+       div.transition()
+         .duration(500)
+         .style("opacity", 0);
+       })
     .style("stroke-dasharray", function(d,i){      
       if(i%colors.length == 2 || i%colors.length == 3){
         return "3";
@@ -244,7 +254,8 @@ function drawMultiLineChart(chartClassName, data, elems, numAxisLabels, showDots
         return "0";
       }
     })
-      .attr("d", line); 
+    .style("stroke-width", 3)
+    .attr("d", line); 
 
   if(showDots){
     var points = svg.selectAll('.dots')

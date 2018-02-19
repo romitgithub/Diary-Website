@@ -15,7 +15,7 @@
 	<body>
 		<header>
 			<div class="row">
-				<div class="col-3 text-left">
+				<div class="col-3 text-left" onclick="window.location='index.html'">
 					<img src="images/full-logo-white.png" class="header-logo" alt="mydiary-logo">	
 				</div>
 				<div class="row col-6 menu-buttons">
@@ -129,13 +129,13 @@
 
 		function addMultipleBarChartContainer(data, position){
 			var chartContainerId = "chart_container_" + position;
-			var chartContainer = "<div class='row col-12 multiple-charts-container mt-4' id='" + chartContainerId + "'></div>";
+			var chartContainer = "<div class='row multiple-charts-container mt-4' id='" + chartContainerId + "'></div>";
 
 			$(chartsMainContainerClassName).append(chartContainer);
 			
 			for(var i = 0; i < data.charts.length; i++){
 				var chartItemContainerId  = chartContainerId + "_chart_item_container_" + i;
-				var chartItemContainer = "<div class='col-6 chart-item' id='" + chartItemContainerId + "'></div>";
+				var chartItemContainer = "<div class='col-6'><div class='col-12 chart-item' id='" + chartItemContainerId + "'></div></div>";
 
 				var chartHeaderItem = "<h5 class='col-12 text-left chart-title'><strong>" + data.charts[i].chartTitle + "</strong></h5>";
 				var chartComparisonItemsContainer = "<div class='col-12 text-left data-comparison-items'></div>";	
@@ -154,13 +154,13 @@
 
 		function addMultipleLineChartContainer(data, position){
 			var chartContainerId = "chart_container_" + position;
-			var chartContainer = "<div class='row col-12 multiple-charts-container mt-4' id='" + chartContainerId + "'></div>";
+			var chartContainer = "<div class='row multiple-charts-container mt-4' id='" + chartContainerId + "'></div>";
 
 			$(chartsMainContainerClassName).append(chartContainer);
 			
 			for(var i = 0; i < data.charts.length; i++){
 				var chartItemContainerId  = chartContainerId + "_chart_item_container_" + i;
-				var chartItemContainer = "<div class='col-6 chart-item' id='" + chartItemContainerId + "'></div>";
+				var chartItemContainer = "<div class='col-6'><div class='col-12 chart-item' id='" + chartItemContainerId + "'></div></div>";
 
 				var chartHeaderItem = "<h5 class='col-12 text-left chart-title'><strong>" + data.charts[i].chartTitle + "</strong></h5>";
 				var chartComparisonItemsContainer = "<div class='col-12 text-left data-comparison-items'></div>";	
