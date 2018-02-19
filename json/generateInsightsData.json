@@ -6,6 +6,17 @@
 		"Female",
 		"Male"
 	],
+	"timePeriods": [
+		"Today",
+		"This week",
+		"This month",
+		"Last month",
+		"Last 3 months",
+		"Last 6 months",
+		"Last 12 months",
+		"This year",
+		"Last year"
+	],
 	"favorites": [
 		{
 			"group": "Personal vs Work",

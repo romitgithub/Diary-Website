@@ -84,7 +84,7 @@ div.menu-buttons div.active p{
 
 div.create-insight-container{
 	width: 94vw;
-	height: 82vh;
+	min-height: 82vh;
 	margin: 100px auto;
 	background: #fff;
 	box-shadow: 1px 1px 12px #e5e5e5;
@@ -104,7 +104,7 @@ button.button.unselected{
 	font-size: 12px;
 	font-family: quicksand-bold;
 	cursor: pointer;
-	margin-right: 4px;
+	margin-right: 10px;
 	margin-top: 16px;
 }
 
@@ -120,7 +120,7 @@ button.button.selected{
 	font-size: 12px;
 	font-family: quicksand-bold;
 	cursor: pointer;
-	margin-right: 4px;
+	margin-right: 10px;
 }
 
 div.group p{
@@ -313,4 +313,42 @@ img.edit-icon{
 	position: absolute;
 	right: 8px;
 	margin: 4px;	
+}
+
+button > img.btn-small-icon{
+	margin: 0px;
+}
+
+button.button.disabled{
+	color: #b5b5b5;
+}
+
+.button.blue-filled-bg{
+	background: #2590f4;
+	box-shadow: 1px 1px 2px #00000038;
+	color: white;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	border-radius: 36px;
+	margin: 12px;
+	cursor: pointer;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+.button.blue-border-bg{
+	background: #00000000;
+	color: #2590f4;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	border: 2px solid #2590f4;
+	border-radius: 36px;
+	margin: 12px;
+	cursor: pointer;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+button#generateInsightButton:hover{
+	background: linear-gradient(rgba(9, 63, 91, 1), rgba(9, 63, 91, 1));
 }

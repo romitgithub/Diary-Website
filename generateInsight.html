@@ -52,33 +52,7 @@
 					  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					    Groups
 					  </a>
-
-					  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-					    <a class="dropdown-item" href="#action">
-					    	<div>
-					    		<p><strong>Personal</strong></p>
-					    	</div>
-					    </a>
-					    <a class="dropdown-item" href="#">
-					    	<div>
-					    		<p><strong>Work</strong></p>
-					    	</div>
-					    </a>
-					    <a class="dropdown-item" href="#">
-					    	<div>
-					    		<p><strong>Female</strong></p>
-					    	</div>
-					    </a>
-					    <a class="dropdown-item" href="#">
-					    	<div>
-					    		<p><strong>Male</strong></p>
-					    	</div>
-					    </a>
-					    <a class="dropdown-item add-new" href="#" data-toggle="modal" data-target="#exampleModalCenter">
-					    	<div>
-					    		<p><strong>New Group</strong></p>
-					    	</div>
-					    </a>
+					  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="group_dropdown_container">
 					  </div>
 					</div>
 					<div class="dropdown show">
@@ -86,29 +60,7 @@
 					  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					    Favorites
 					  </a>
-
-					  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-					    <a class="dropdown-item" href="#" onclick="alert('test')">
-					    	<div>
-					    		<img src="images/delete.png">
-					    		<p><strong>Personal vs Work</strong></p>
-					    		<p>This work</p>
-					    	</div>
-					    </a>
-					    <a class="dropdown-item" href="#">
-					    	<div>
-					    		<img src="images/delete.png">
-					    		<p><strong>Personal vs Work</strong></p>
-					    		<p>This work</p>
-					    	</div>
-					    </a>
-					    <a class="dropdown-item" href="#">
-					    	<div>
-					    		<img src="images/delete.png">
-					    		<p><strong>Personal vs Work</strong></p>
-					    		<p>This work</p>
-					    	</div>
-					    </a>
+					  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="favorites_dropdown_container">
 					  </div>
 					</div>
 				</div>
@@ -126,17 +78,8 @@
 					</div>
 				</div>
 				<div class="col-lg-5 col-md-5 col-sm-8 border-left-right extra-padding">
-					<div class="group">
+					<div class="group" id="time_period_group">
 						<p><strong>Time periods</strong></p>
-						<button class="button unselected">Today</button>
-						<button class="button unselected">This week</button>
-						<button class="button unselected">This month</button>
-						<button class="button selected">Last month</button>
-						<button class="button unselected">Last 3 months</button>
-						<button class="button unselected">Last 6 months</button>
-						<button class="button unselected">Last 12 months</button>
-						<button class="button unselected">This year</button>
-						<button class="button unselected">Last year</button>
 					</div>
 					<div class="group mt-4">
 						<p><strong>Custom Period</strong></p>
@@ -176,6 +119,25 @@
 							<label for="datepicker5"><img src="images/calendar-light.png" class="btn-small-icon"></label>
 						</div>
 					</div>
+				</div>
+			</div>
+			<div class="row mt-5" id="bottom-buttons">
+				<div class="col-2">
+					<button class="button blue-border-bg">
+						<img src="images/left-arrow-blue.png" class="btn-small-icon">
+						<span><strong>Back</strong></span>
+					</button>
+				</div>
+				<div class="col-8 offset-2 text-right">
+					<button class="button disabled">
+						<span><strong>Clear</strong></span>
+					</button>
+					<button class="button blue-border-bg">
+						<span><strong>Add to favorites</strong></span>
+					</button>
+					<button class="button blue-filled-bg" id="generateInsightButton">
+						<span><strong>Generate insights</strong></span>
+					</button>
 				</div>
 			</div>
 		</div>
@@ -313,7 +275,7 @@
 		$( "#datepicker4" ).datepicker();
 		$( "#datepicker5" ).datepicker();
 
-		var url = "https://api.myjson.com/bins/a4wbt";
+		var url = "https://api.myjson.com/bins/jq6vt";
 		var jsonData;
 
 		$(document).ready(function(){
@@ -326,7 +288,9 @@
 			  	jsonData = data;
 			  	addGroupsData(data.groups, "group_a");
 			  	addGroupsData(data.groups, "group_b");
-			  	addFavoritesData(data.favorites);
+			  	addDropdownGroupData(data.groups, "group_dropdown_container");
+			  	addTimePeriodData(data.timePeriods, "time_period_group");
+			  	addFavoritesDropdownData(data.favorites, "favorites_dropdown_container");
 			  }
 			});
 		}
@@ -351,6 +315,45 @@
 				}, false);
 			}())
 		  }
+		}
+
+		function addTimePeriodData(groupsList, groupId){
+			for(var i = 0; i < groupsList.length; i++){
+				(function () {
+				var buttonId = groupId + '_button_' + i;
+				
+				var additionalClass;
+
+				var btn = document.createElement("BUTTON");        // Create a <button> element
+				var t = document.createTextNode(groupsList[i]);       // Create a text node
+				btn.appendChild(t);        
+				btn.classList.add('button');
+				btn.setAttribute("id", buttonId);
+				btn.classList.add('unselected');                        // Append the text to <button>
+				document.getElementById(groupId).appendChild(btn);        
+
+				btn.addEventListener('click', function(){
+				    changeSelection(buttonId, groupId);
+				}, false);
+			}())
+		  }
+		}
+
+		function addDropdownGroupData(groupsList, containerId){
+			for(var i = 0; i < groupsList.length; i++){
+				var dropDownItem = "<a class='dropdown-item' href='#'><div><p><strong>" + groupsList[i] + "</strong></p></div></a>";
+				$('#' + containerId).append(dropDownItem);
+			}
+			var newGroupItem = "<a class='dropdown-item add-new' href='#' data-toggle='modal' data-target='#exampleModalCenter'><div><p><strong>New Group</strong></p></div></a>"
+			$('#'+containerId).append(newGroupItem);
+		}
+
+		function addFavoritesDropdownData(dataList, containerId){
+			console.log(dataList);
+			for(var i = 0; i < dataList.length; i++){
+				var dropDownItem = "<a class='dropdown-item' href='#' onclick='alert('test')'><div><img src='images/delete.png'><p><strong>" + dataList[i].group + "</strong></p><p>" + dataList[i].time + "</p></div></a>";
+				$('#' + containerId).append(dropDownItem);
+			}
 		}
 
 		function changeSelection(buttonId, groupId){
