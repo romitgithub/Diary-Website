@@ -13,11 +13,8 @@
 	<body>
 		
 		<header>
-			<img src="images/logo-white.png" class="header-logo">
-			<p>
-				<span><strong>MY</strong></span>
-				<span>DIARY</span>
-			</p>
+			<img src="images/full-logo-white.png" class="header-logo">
+			<!--  -->
 			<div class="buttons">
 				<button class="button login">Login</button>
 				<button class="button signup">Sign Up</button>
@@ -29,7 +26,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-8 offset-2 col-lg-8 offset-lg-2 col-md-12 offset-md-0 col-sm-12 offset-sm-0">
-							<h1 class="big-header mt-4">You are what you write</h1>
+							<h1 class="big-header white mt-4">You are what you write</h1>
 							<p class="col-lg-10 offset-lg-1 mt-4 feature-desc-text">Our analytical machine processes your diary entries to generate relevant insights of whats the most interesting to you.</p>
 							<button class="button get-started mt-5">Let's start</button>
 						</div>
@@ -58,7 +55,7 @@
 							<p>How your mood changes based on the topics you aboard.</p>
 						</div>	
 						<div class="col-10 offset-1 mt-8">
-							<p class="bold-text">We're so excited to guide you on a personal journey that will help you unlock insights that you almost-but-didn't-quite know about yourself.</p>
+							<p class="bold-text excited-text">We're so excited to guide you on a personal journey that will help you unlock insights that you almost-but-didn't-quite know about yourself.</p>
 						</div>
 					</div>
 				</div>
@@ -70,16 +67,16 @@
 							<h1 class="big-header mt-4">How it works?</h1>
 						</div>
 					</div>
-					<div class="row mt-8 col-10 offset-1 align-items-center">
+					<div class="row mt-8 col-12 ">
 						<div class="col-6">
-							<div class="text-left">
+							<div class="text-left col-11 offset-1">
 								<img src="images/left-arrow.png" class="arrow-img left text-left">
 								<img src="images/left-arrow.png" class="arrow-img right text-left">
 							</div>
-							<h5 class="bold-text text-left mt-4">Academic heft</h5>
-							<p class="text-left">We've combed papers and studies written by world-leading academics to find the most relevant and cutting-edge ways of analyzing text to generate meaningful insights.</p>
+							<h5 class="bold-text text-left mt-4 col-11 offset-1"><strong>Academic heft</strong></h5>
+							<p class="text-left mt-3 col-11 offset-1">We've combed papers and studies written by world-leading academics to find the most relevant and cutting-edge ways of analyzing text to generate meaningful insights.</p>
 						</div>
-						<div class="col-6 justify-content-right">
+						<div class="col-5 offset-1 justify-content-right">
 							<div class="card-bg-container"></div>
 							<img src="images/banner.jpg" class="small-banner-img">
 							<div class="card-bg-container"></div>
@@ -91,7 +88,7 @@
 				<div class="container extra-margin-left">
 					<div class="row">
 						<div class="col-12">
-							<h1 class="big-header mt-1">Why we built it?</h1>
+							<h1 class="big-header white mt-1">Why we built it?</h1>
 						</div>
 						<div class="col-7 mt-4">
 							<ul class="ul-without-dots">
@@ -154,12 +151,12 @@
 
 					//using index
 					if(index == 2 || index == 3 || index == 5){
-						$('header p').css('color', '#5a5a5a');
-						$('header img').attr('src','images/logo-blue.png');
+						// $('header p').css('color', '#5a5a5a');
+						$('header img').attr('src','images/full-logo-blue.png');
 					}
 					else{
-						$('header p').css('color', '#ffffff');	
-						$('header img').attr('src','images/logo-white.png');
+						// $('header p').css('color', '#ffffff');	
+						$('header img').attr('src','images/full-logo-white.png');
 					}
 
 					//using anchorLink

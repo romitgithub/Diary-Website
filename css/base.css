@@ -31,12 +31,13 @@ strong{
 	border: none;
 	color: #2590f4;
 	font-size: 14px;
-	padding-top: 2px;
-	padding-bottom: 2px;
+	padding-top: 6px;
+	padding-bottom: 6px;
 	padding-left: 24px;
 	padding-right: 24px;
 	font-family: quicksand-bold;
 	display: inline-block;
+	cursor: pointer;
 }
 
 *:focus{

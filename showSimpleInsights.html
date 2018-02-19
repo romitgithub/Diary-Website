@@ -51,12 +51,11 @@
 				</div>
 			</div>
 		</header>
-		
 		<div class="container charts-main-container"> 
 			<div class="col-12 mt-8">
 				<h5><strong>Male vs Female this year</strong></h5>
 			</div>
-			<div class="row col-12 multiple-charts-container mt-4">
+			<div class="col-12 col-lg-12 col-md-12 multiple-charts-container mt-4">
 			</div>
 			<div class="container col-12 single-chart-container mt-4">	
 				<div class="col-12 text-left">
@@ -126,7 +125,7 @@
 			for(var i = 0; i < charts.length; i++){
 				var chartId = "chart"+ i;
 				var chartItemId = "chart_item_"+ i;
-				var chartItem = "<div class='col-6 chart-item' id='" + chartItemId + "'></div";
+				var chartItem = "<div class='col-6 col-lg-6 col-md-6 chart-item' id='" + chartItemId + "'></div";
 				var chartHeaderItem = "<h6 class='text-left chart-title'><strong>" + charts[i].chartTitle + "</strong></h6>";
 				var dataComparisonContainer = "<div class='text-left data-comparison-items'></div>";
 				var chart = "<div class='lg-chart mt-4' id='" + chartId + "'></div>";

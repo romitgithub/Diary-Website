@@ -1,5 +1,5 @@
 #section-1{
-	background: linear-gradient(rgba(9, 63, 91, 0.9), rgba(9, 63, 91, 0.9)), url(../images/banner.jpg);
+	background: url(../images/background.png);
 	text-align: center;
 	background-size: cover;
 	color: white;
@@ -19,6 +19,7 @@
 #section-4{
 	background: linear-gradient(rgba(9, 63, 91, 1), rgba(9, 63, 91, 1));
 	background-size: cover;
+	background: url('../images/bg-3.png');
 	color: white;
 	padding: 14px;
 }
@@ -88,13 +89,14 @@ header{
 
 header p{
 	display: inline-block;
-	vertical-align: top;
+	vertical-align: middle;
 	color: white;
-	font-size: 26px;
+	font-size: 24px;
 	letter-spacing: 3px;
+	line-height: 96px;
 	margin: 0;
 	line-height: 36px;
-	margin-left: 8px;
+	margin-left: -12px;
 }
 
 p.light-bg-header{
@@ -102,9 +104,9 @@ p.light-bg-header{
 }
 
 img.header-logo{
-	width: 32px;
-	line-height: 80px;
-	vertical-align: top;
+	width: 240px;
+	/* line-height: 80px; */
+	vertical-align: middle;
 	font-family: arial;
 	font-style:  italic;
 }
@@ -125,6 +127,19 @@ img.header-logo{
 	font-family: quicksand-bold;
 	letter-spacing: 0px;
 	word-spacing: 2px;
+	color: #003554;
+}
+
+.bold-text{
+	font-family: quicksand-bold;
+}
+
+.excited-text{
+	color: #3b5970;
+}
+
+.big-header.white{
+	color: white;
 }
 
 .feature-desc-text{
@@ -222,4 +237,8 @@ img.footer-social-icons.twitter{
 	width: 22px;
 	height: 22px;
 	margin: 8px;
+}
+
+p{
+	font-size: 18px;
 }

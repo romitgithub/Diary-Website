@@ -121,6 +121,9 @@ div.multiple-charts-container div.chart-item{
 	padding: 20px;
 	text-align: center;
 	/* margin: 100px auto; */
+	display: inline-block;
+	background-clip: padding-box;
+	/* border: 10px solid white; */
 }
 
 div.single-chart-container{

@@ -135,7 +135,7 @@
 					<button class="button blue-border-bg">
 						<span><strong>Add to favorites</strong></span>
 					</button>
-					<button class="button blue-filled-bg" id="generateInsightButton">
+					<button class="button blue-filled-bg" id="generateInsightButton" onclick="location.href='file:///Users/romit/Desktop/mydiary/showCoreInsights.html'">
 						<span><strong>Generate insights</strong></span>
 					</button>
 				</div>
@@ -341,7 +341,7 @@
 
 		function addDropdownGroupData(groupsList, containerId){
 			for(var i = 0; i < groupsList.length; i++){
-				var dropDownItem = "<a class='dropdown-item' href='#'><div><p><strong>" + groupsList[i] + "</strong></p></div></a>";
+				var dropDownItem = "<a class='dropdown-item' href='#' data-toggle='modal' data-target='#exampleModalCenter'><div><p><strong>" + groupsList[i] + "</strong></p></div></a>";
 				$('#' + containerId).append(dropDownItem);
 			}
 			var newGroupItem = "<a class='dropdown-item add-new' href='#' data-toggle='modal' data-target='#exampleModalCenter'><div><p><strong>New Group</strong></p></div></a>"
