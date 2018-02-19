@@ -10,48 +10,48 @@
       "chartData": [
         [
           {
-            "Groups": "Politeness",
+            "Groups": "Emails sent",
             "Male": 4,
             "Female": 6
           },
           {
-            "Groups": "Request",
+            "Groups": "Emails received",
             "Male": 3,
             "Female": 4
           }
         ],
         [
           {
-            "Groups": "Politeness",
+            "Groups": "First email",
             "Male": 4,
             "Female": 6
           },
           {
-            "Groups": "Request",
+            "Groups": "Last email",
             "Male": 3,
             "Female": 4
           }
         ],
         [
           {
-            "Groups": "Politeness",
+            "Groups": "Resp. received",
             "Male": 4,
             "Female": 6
           },
           {
-            "Groups": "Request",
+            "Groups": "Resp. time",
             "Male": 3,
             "Female": 4
           }
         ],
         [
           {
-            "Groups": "Politeness",
+            "Groups": "Resp. sent",
             "Male": 4,
             "Female": 6
           },
           {
-            "Groups": "Request",
+            "Groups": "Res. time",
             "Male": 3,
             "Female": 4
           }

@@ -8,17 +8,17 @@
       "chartTitle": "Sent Emails",
       "chartData": [
         {
-          "Groups": "Politeness",
+          "Groups": "Characters",
           "Male": 4,
           "Female": 6
         },
         {
-          "Groups": "Request",
+          "Groups": "Words",
           "Male": 3,
           "Female": 4
         },
         {
-          "Groups": "Balance",
+          "Groups": "Sentences",
           "Male": 6,
           "Female": 4
         }
@@ -28,17 +28,17 @@
       "chartTitle": "Received Emails",
       "chartData": [
         {
-          "Groups": "Politeness",
+          "Groups": "Characters",
           "Male": 2,
           "Female": 4
         },
         {
-          "Groups": "Request",
+          "Groups": "Words",
           "Male": 3,
           "Female": 5
         },
         {
-          "Groups": "Balance",
+          "Groups": "Sentences",
           "Male": 6,
           "Female": 8
         }

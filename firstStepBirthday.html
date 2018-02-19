@@ -7,11 +7,11 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="css/base.css">
 		<link rel="stylesheet" type="text/css" href="css/first_step_birthday.css">
-		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
 		
 		<script src="libs/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="libs/popper.min.js"></script>
+		<script src="libs/jquery-ui.js"></script>
 		<script src="libs/bootstrap.js"></script>
 		<script src="libs/jquery.fullPage.js"></script>
 	</head>
@@ -111,7 +111,7 @@
 							<button class="button blue-border-bg col-4" id="maybelaterbutton" onclick="window.location='firstStepMood.html'">
 								<span><strong>Maybe later</strong></span>
 							</button>
-							<div class="button calendar mt-3">
+							<div class="button calendar mt-3" id="birthdatebutton">
 								<input type="text" id="datepicker" placeholder="MM/DD/YYYY">
 								<label for="datepicker"><img src="images/calendar-light.png" alt="calendar" class="btn-small-icon"></label>
 							</div>
@@ -174,7 +174,7 @@
     			var imagePath = "images/error.png";
 
     			$('#maybelaterbutton').hide();
-    			$('#calendar').hide();
+    			$('#birthdatebutton').hide();
     			$('#entriesmoodbutton').hide();
     			$('#skiplink').hide();
 

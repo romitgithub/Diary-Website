@@ -1,11 +1,25 @@
-function drawChart(chartClassName, data, spacing){
+/*
+** Method to draw stacked bar chart 
+** @param chartDivIdentifier: id/class name of the div inside which the chart is drawn
+** @param data: dataset for drawing the chart
+** @param spacing: spacing is the space between different bar groups
+** sampleData can be found in json/coreInsights.json file
+**
+*/ 
+function drawChart(chartDivIdentifier, data, spacing){
 
+    // tooltip div
     var div = d3.select("body").append("div")
     .attr("class", "custom-tooltip text-center")
     .style("opacity", 0);
 
-    var divWidth = $(chartClassName).width();
-    var divHeight = $(chartClassName).height();
+    // colors array for multiple bars
+    var color = d3.scale.ordinal()
+        .range(["#2590f4", "#F54040"]);
+
+    // gets the container div's width and height to calculate svg dimensions
+    var divWidth = $(chartDivIdentifier).width();
+    var divHeight = $(chartDivIdentifier).height();
 
     if(divHeight==undefined || divHeight==0){
       divHeight = 300;
@@ -23,9 +37,6 @@ function drawChart(chartClassName, data, spacing){
     var y = d3.scale.linear()
         .range([height, 0]);
 
-    var color = d3.scale.ordinal()
-        .range(["#2590f4", "#F54040"]);
-
     var xAxis = d3.svg.axis()
         .scale(x0)
         .orient("bottom")
@@ -36,7 +47,7 @@ function drawChart(chartClassName, data, spacing){
         .orient("left")
         .tickFormat(d3.format(".2s"));
 
-    var svg = d3.select(chartClassName).append("svg")
+    var svg = d3.select(chartDivIdentifier).append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
@@ -99,47 +110,24 @@ function drawChart(chartClassName, data, spacing){
         .style("fill", function(d) { return color(d.name); });
 
 }
-
-function modifyData(data, elems){
-  var finalData = [];
-  finalData['labelsArray'] = [];
-  var count = getCount(data[0]);
-  for(var i = 0; i < data.length; i++){
-      for(var key in data[i]){
-        if(elems[key] >= 0){
-          if(i == 0){
-            finalData[elems[key]] = [{ 'x': i, 'y': data[i][key]}];
-          }
-          else{
-            finalData[elems[key]].push({ 'x': i, 'y': data[i][key]});
-          }
-        }
-        else{
-          finalData['labelsArray'].push(data[i][key]);
-        }
-      }
-  }
-  return finalData;
-}
-
-function getCount(json){
-  var i = 0;
-  for (var key in json) {
-    if (json.hasOwnProperty(key)) {
-        i++;
-    }
-  }
-  return i;
-}
  
-function drawMultiLineChart(chartClassName, data, elems, numAxisLabels, showDots){
+/*
+** Method to draw multiple line chart 
+** @param chartDivIdentifier: id/class name of the div inside which the chart is drawn
+** @param data: dataset for drawing the chart
+** @param elems: this is related to the data, which can be found in json/basicInsights.json
+** @param numAxisLabels: number of x axis labels to show
+** @param showDots: boolean to enable.disable showing of dots on line chart
+** sample data can be found at json/basicInsights.json, under chartTypes = SingleLineChartContainer, MultipleLineChartContainer
+*/ 
+function drawMultiLineChart(chartDivIdentifier, data, elems, numAxisLabels, showDots){
 
   var data = modifyData(data, elems);
 
   var labelsArray = data['labelsArray'];
 
-  var divWidth = $(chartClassName).width();
-  var divHeight = $(chartClassName).height();
+  var divWidth = $(chartDivIdentifier).width();
+  var divHeight = $(chartDivIdentifier).height();
 
   if(divHeight==undefined || divHeight==0){
     divHeight = 300;
@@ -195,7 +183,7 @@ function drawMultiLineChart(chartClassName, data, elems, numAxisLabels, showDots
   //************************************************************
   // Generate our SVG object
   //************************************************************  
-  var svg = d3.select(chartClassName).append("svg")
+  var svg = d3.select(chartDivIdentifier).append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
       .append("g")
@@ -241,7 +229,7 @@ function drawMultiLineChart(chartClassName, data, elems, numAxisLabels, showDots
          .style("left", (d3.event.pageX - 80) + "px")
          .style("top", (d3.event.pageY - 100) + "px");
        })
-     .on("mouseout", function(d) {
+    .on("mouseout", function(d) {
        div.transition()
          .duration(500)
          .style("opacity", 0);
@@ -262,8 +250,7 @@ function drawMultiLineChart(chartClassName, data, elems, numAxisLabels, showDots
     .data(data)
     .enter()
     .append("g")
-      .attr("class", "dots")
-    .attr("clip-path", "url(#clip)"); 
+    .attr("class", "dots"); 
    
     points.selectAll('.dot')
       .data(function(d, index){     
@@ -284,6 +271,43 @@ function drawMultiLineChart(chartClassName, data, elems, numAxisLabels, showDots
         return "translate(" + x(d.point.x) + "," + y(d.point.y) + ")"; }
       );
     }
+}
+
+/*  
+**  Helper methods to format the data to suit the chart drawing methods
+**  This methods are only used for the MultipleLineChart draw method
+*/
+
+function modifyData(data, elems){
+  var finalData = [];
+  finalData['labelsArray'] = [];
+  var count = getCount(data[0]);
+  for(var i = 0; i < data.length; i++){
+      for(var key in data[i]){
+        if(elems[key] >= 0){
+          if(i == 0){
+            finalData[elems[key]] = [{ 'x': i, 'y': data[i][key]}];
+          }
+          else{
+            finalData[elems[key]].push({ 'x': i, 'y': data[i][key]});
+          }
+        }
+        else{
+          finalData['labelsArray'].push(data[i][key]);
+        }
+      }
+  }
+  return finalData;
+}
+
+function getCount(json){
+  var i = 0;
+  for (var key in json) {
+    if (json.hasOwnProperty(key)) {
+        i++;
+    }
+  }
+  return i;
 }
 
 
