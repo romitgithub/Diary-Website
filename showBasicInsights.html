@@ -124,7 +124,7 @@
 			var chartItem = "<div class='col-12 md-chart mt-4' id='" + chartItemId + "'></div>";
 			$('#' + chartContainerId + ' > ' + '.chart-box').append(chartItem);
 
-			drawMultiLineChart("#"+chartItemId, data.chartData, data.chartElems);
+			drawMultiLineChart("#"+chartItemId, data.chartData, data.chartElems, 0, false);
 		}
 
 		function addMultipleBarChartContainer(data, position){
@@ -173,7 +173,7 @@
 				$('#' + chartItemContainerId).append(chartComparisonItemsContainer);
 				$('#' + chartItemContainerId + ' > ' + dataComparisonItemsClassName).append(getDataComparisonItems());
 				$('#' + chartItemContainerId).append(chart);
-				drawMultiLineChart('#'+chartId, data.charts[i].chartData, data.charts[i].chartElems);
+				drawMultiLineChart('#'+chartId, data.charts[i].chartData, data.charts[i].chartElems, 0, false);
 			}
 		}		
 

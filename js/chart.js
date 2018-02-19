@@ -102,6 +102,7 @@ function drawChart(chartClassName, data, spacing){
 
 function modifyData(data, elems){
   var finalData = [];
+  finalData['labelsArray'] = [];
   var count = getCount(data[0]);
   for(var i = 0; i < data.length; i++){
       for(var key in data[i]){
@@ -112,6 +113,9 @@ function modifyData(data, elems){
           else{
             finalData[elems[key]].push({ 'x': i, 'y': data[i][key]});
           }
+        }
+        else{
+          finalData['labelsArray'].push(data[i][key]);
         }
       }
   }
@@ -128,9 +132,11 @@ function getCount(json){
   return i;
 }
  
-function drawMultiLineChart(chartClassName, data, elems){
+function drawMultiLineChart(chartClassName, data, elems, numAxisLabels, showDots){
 
   var data = modifyData(data, elems);
+
+  var labelsArray = data['labelsArray'];
 
   var divWidth = $(chartClassName).width();
   var divHeight = $(chartClassName).height();
@@ -144,11 +150,15 @@ function drawMultiLineChart(chartClassName, data, elems){
     "#2590f4", "#F54040"
   ]
    
+  var ticksCount = labelsArray.length;
+  if(numAxisLabels!=0){
+    ticksCount = numAxisLabels;
+  }
    
   //************************************************************
   // Create Margins and Axis and hook our zoom function
   //************************************************************
-  var margin = {top: 20, right: 10, bottom: 30, left: 15},
+  var margin = {top: 20, right: 0, bottom: 30, left: 0},
       width = divWidth - margin.left - margin.right,
       height = divHeight - margin.top - margin.bottom;
     
@@ -162,10 +172,13 @@ function drawMultiLineChart(chartClassName, data, elems){
     
   var xAxis = d3.svg.axis()
       .scale(x)
+      .ticks(ticksCount)
     .tickSize(-height)
-    .tickPadding(10)  
+    .tickPadding(12)  
     .tickSubdivide(true)  
-    .tickFormat(d3.format("d"))
+    .tickFormat(function(d, i){
+        return labelsArray[i%(labelsArray.length)] //"Year1 Year2, etc depending on the tick value - 0,1,2,3,4"
+    })
       .orient("bottom");  
     
   var yAxis = d3.svg.axis()
@@ -232,5 +245,34 @@ function drawMultiLineChart(chartClassName, data, elems){
       }
     })
       .attr("d", line); 
+
+  if(showDots){
+    var points = svg.selectAll('.dots')
+    .data(data)
+    .enter()
+    .append("g")
+      .attr("class", "dots")
+    .attr("clip-path", "url(#clip)"); 
+   
+    points.selectAll('.dot')
+      .data(function(d, index){     
+        var a = [];
+        d.forEach(function(point,i){
+          a.push({'index': index, 'point': point});
+        });   
+        return a;
+      })
+      .enter()
+      .append('circle')
+      .attr('class','dot')
+      .attr("r", 4)
+      .attr('fill', function(d,i){  
+        return colors[d.index%colors.length];
+      })  
+      .attr("transform", function(d) { 
+        return "translate(" + x(d.point.x) + "," + y(d.point.y) + ")"; }
+      );
+    }
 }
+
 

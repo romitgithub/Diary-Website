@@ -100,11 +100,7 @@
 		<footer>
 			<div class="container">
 				<div class="row justify-content-center">
-					<img src="images/logo-blue.png" class="footer-logo" alt="mydiary-logo">
-					<p class="footer-text">
-						<span><strong>MY</strong></span>
-						<span>DIARY</span>
-					</p>
+					<img src="images/full-logo-blue.png" class="footer-logo" alt="mydiary-logo">
 				</div>
 			</div>
 		</footer>
@@ -146,7 +142,7 @@
     				$('.progress-bar').css('width', '100%').attr('aria-valuenow', 100);
     			}
     			else if(slideNum==3){
-    				drawMultiLineChart('#chart', jsonData.chartData, jsonData.chartElems);
+    				drawMultiLineChart('#chart', jsonData.chartData, jsonData.chartElems, 3, true);
     			}
     		}
 
