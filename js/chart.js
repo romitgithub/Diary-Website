@@ -130,8 +130,8 @@ function drawChart(chartDivIdentifier, data, spacing){
 */ 
 function drawMultiLineChart(chartDivIdentifier, data, elems, numAxisLabels, showDots, showToolTip2){
 
+  var oldData = data;
   var data = modifyData(data, elems);
-  console.log(data);
   var labelsArray = data['labelsArray'];
 
   var divWidth = $(chartDivIdentifier).width();
@@ -160,7 +160,7 @@ function drawMultiLineChart(chartDivIdentifier, data, elems, numAxisLabels, show
             .attr("class", "custom-tooltip text-center")
             .style("opacity", 0);
     
-    tooltip.html("<p><strong>Politeness Received</strong></p><div><span class='data-comparison-item-icon blue'></span><span class='data-comparison-item-percent'><strong>73%</strong></span><span class='data-comparison-item-group'>Male</span></div><div><span class='data-comparison-item-icon red'></span><span class='data-comparison-item-percent'><strong>63%</strong></span><span class='data-comparison-item-group'>Female</span></div>");
+    tooltip.html("<p><strong>Politeness Received</strong></p><div><span class='data-comparison-item-icon blue'></span><span class='data-comparison-item-percent'><strong>73%</strong></span><span class='data-comparison-item-group'>Male</span></div>");
 
     tooltipOffset = 80;
     tooltipExtraHeightOffset = 0;
@@ -242,30 +242,9 @@ function drawMultiLineChart(chartDivIdentifier, data, elems, numAxisLabels, show
     .data(data)
     .enter()
     .append("path")
-      .attr("class", "line")
-    .attr("stroke-width", 12)
+    .attr("class", "line")
     .attr('stroke', function(d,i){      
       return colors[i%colors.length];
-    })
-    .on("click", function(d) {
-
-       tooltip.style("z-index", 1);
-
-       tooltip
-          .transition()
-          .duration(200)
-          .style("opacity", 1);
-       
-       tooltip
-          .style("left", (d3.event.pageX - tooltipOffset + "px"))
-          .style("top", (d3.event.pageY - 100 - tooltipExtraHeightOffset) + "px");
-    })
-    .on("mouseout", function(d) {
-       tooltip
-          .transition()
-          .duration(500)
-          .style("opacity", 0)
-          .style("z-index", -10);
     })
     .style("stroke-dasharray", function(d,i){      
       if(i%colors.length == 2 || i%colors.length == 3){
@@ -276,10 +255,19 @@ function drawMultiLineChart(chartDivIdentifier, data, elems, numAxisLabels, show
       }
     })
     .style("stroke-width", 3)
-    .attr("d", line); 
+    .attr("d", line);
 
+
+  //************************************************************
+  // Adds dots on the points on line
+  //************************************************************ 
+  
+  var dotRadius = 3;
   if(showDots){
-    var points = svg.selectAll('.dots')
+    dotRadius = 4;
+  }
+
+  var points = svg.selectAll('.dots')
     .data(data)
     .enter()
     .append("g")
@@ -296,7 +284,7 @@ function drawMultiLineChart(chartDivIdentifier, data, elems, numAxisLabels, show
       .enter()
       .append('circle')
       .attr('class','dot')
-      .attr("r", 4)
+      .attr("r", dotRadius)
       .attr('fill', function(d,i){  
         return colors[d.index%colors.length];
       })  
@@ -304,7 +292,6 @@ function drawMultiLineChart(chartDivIdentifier, data, elems, numAxisLabels, show
         return "translate(" + x(d.point.x) + "," + y(d.point.y) + ")"; }
       )
       .on("click", function(d) {
-
          tooltip.style("z-index", 1);
          tooltip
             .transition()
@@ -321,7 +308,6 @@ function drawMultiLineChart(chartDivIdentifier, data, elems, numAxisLabels, show
             .style("opacity", 0)
             .style("z-index", -10);
       });
-    }
 }
 
 /*  
