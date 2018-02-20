@@ -77,7 +77,7 @@
 					<div class="row">
 						<div class="col-8 offset-2 col-lg-10 offset-lg-1 col-md-12 offset-md-0 col-sm-12 offset-sm-0">
 							<img src="images/cake-dark.png" class="big-icon" alt="birthday-cake">
-							<h1 class="big-header mt-4"><strong>Your birthday is November 13th</strong></h1>
+							<h1 class="big-header mt-4" id="birthday-result-title"></h1>
 							<p class="feature-desc-text mt-4 col-12">
 								Based on our analytics, it looks like this is the special date, <strong>Is that right?</strong>
 							</p>
@@ -108,7 +108,7 @@
 							</p>
 						</div>
 						<div class="col-12 mt-8">
-							<button class="button blue-border-bg col-4" id="maybelaterbutton" onclick="window.location='firstStepMood.html'">
+							<button class="button blue-border-bg col-4" id="maybelaterbutton" onclick="window.location='dashboard.html'">
 								<span><strong>Maybe later</strong></span>
 							</button>
 							<div class="button calendar mt-3" id="birthdatebutton">
@@ -135,10 +135,26 @@
 		</footer>
 		<script>
 
+			var url = "https://api.myjson.com/bins/75cex";
+			var jsonData;
+
 			$(document).ready(function(){
+				loadData();
 				setPagerNavigation();
-				$( "#datepicker" ).datepicker();
+				$( "#datepicker" ).datepicker({
+					onSelect: function(){
+						window.location='firstStepMood.html';
+					}
+				});
 			});
+
+			function loadData(){
+				$.getJSON( url, function( data ) {
+				  if(data!=null){
+				  	jsonData = data;
+				  }
+				});
+			}
 
 			function setPagerNavigation(){
 				$('#fullpage').fullpage({
@@ -167,6 +183,7 @@
 
     		function updateProgress(){
 	    		moveToSlide(3);
+	    		$('#birthday-result-title').html("<strong>Your birthday is " + jsonData.birthday + "</strong>");
 	    	}
 
     		function loadResultsScreen(resultCode){

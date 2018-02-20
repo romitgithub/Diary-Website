@@ -258,3 +258,19 @@ div.button.calendar input{
 div.button.calendar label{
 	margin: 0px;
 }
+
+.md-chart{
+	height: 300px;
+}
+
+.rg-chart{
+	height: 380px;
+}
+
+.lg-chart{
+	height: 420px;
+}
+
+.sm-chart{
+	height: 160px;
+}

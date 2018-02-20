@@ -214,7 +214,6 @@ function drawMultiLineChart(chartDivIdentifier, data, elems, numAxisLabels, show
     .enter()
     .append("path")
       .attr("class", "line")
-    .attr("clip-path", "url(#clip)")
     .attr("stroke-width", 12)
     .attr('stroke', function(d,i){      
       return colors[i%colors.length];
