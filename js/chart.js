@@ -294,7 +294,27 @@ function drawMultiLineChart(chartDivIdentifier, data, elems, numAxisLabels, show
       })  
       .attr("transform", function(d) { 
         return "translate(" + x(d.point.x) + "," + y(d.point.y) + ")"; }
-      );
+      )
+      .on("click", function(d) {
+
+         tooltip.style("z-index", 1);
+
+         tooltip
+            .transition()
+            .duration(200)
+            .style("opacity", 1);
+         
+         tooltip
+            .style("left", (d3.event.pageX - tooltipOffset + "px"))
+            .style("top", (d3.event.pageY - 100 - tooltipExtraHeightOffset) + "px");
+      })
+      .on("mouseout", function(d) {
+         tooltip
+            .transition()
+            .duration(500)
+            .style("opacity", 0)
+            .style("z-index", -10);
+      });
     }
 }
 

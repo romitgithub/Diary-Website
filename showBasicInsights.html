@@ -5,9 +5,13 @@
 		<title>MyDiary</title>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="css/base.css">
+		<link rel="stylesheet" type="text/css" href="css/generateInsight.css">
 		<link rel="stylesheet" type="text/css" href="css/chart.css">
+		<link rel="stylesheet" href="css/jquery-ui.css">
 		
 		<script src="libs/jquery.min.js"></script>
+		<script src="libs/popper.min.js"></script>
+		<script src="libs/jquery-ui.js"></script>
 		<script src="libs/bootstrap.js"></script>
 		<script src="libs/d3.js"></script>
 		<script src="js/chart.js"></script>
@@ -36,163 +40,159 @@
 					</div>
 				</div>
 				<div class="col-3 text-right">
-					<img src="images/settings.png" class="user-settings-icon" alt="user-settings">
+					<img src="images/settings.png" class="user-settings-icon" alt="user-settings" onclick="toggleGenerateInsightFormView()">
 					<img src="images/user-profile.jpg" class="user-profile-icon" alt="user-photo">
 					<p class="user-profile-name">John Mathis</p>
 					<img src="images/down-arrow.png" class="profile-more-icon" alt="down-arrow">
 				</div>
 			</div>
 		</header>
-		<div class="container charts-main-container"> 
-			<div class="col-12 mt-8">
+		<div class="mt-8"></div>
+		<div class="container generate-insights" id="generateInsightsBlock">
+			<div class="container col-12 create-insight-container">
+				<div class="row mt-2">
+					<h5 class="col-4 extra-padding"><strong>Insights Criteria</strong></h5>
+					<div class="col-8 dropdown-button-group text-right extra-padding">
+						<div class="dropdown show custom-dropdown">
+						  <img src="images/user.png" class="btn-small-icon" alt="user-icon">
+						  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="groupDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    Groups
+						  </a>
+						  <div class="dropdown-menu" aria-labelledby="groupDropdownMenuLink" id="group_dropdown_container">
+						  </div>
+						</div>
+						<div class="dropdown show">
+						  <img src="images/star.png" class="btn-small-icon" alt="star-icon">
+						  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="favoritesDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    Favorites
+						  </a>
+						  <div class="dropdown-menu" aria-labelledby="favoritesDropdownMenuLink" id="favorites_dropdown_container">
+						  </div>
+						</div>
+					</div>
+				</div>
+				<div class="container row mt-4">
+					<div class="col-lg-4 col-md-4 col-sm-8 extra-padding">
+						<div class="group" id="group_a">
+							<p><strong>Group A</strong></p>
+						</div>
+
+						<div class="group mt-4" id="group_b">
+							<p><strong>Group B</strong></p>
+						</div>
+					</div>
+					<div class="col-lg-5 col-md-5 col-sm-8 border-left-right extra-padding">
+						<div class="group" id="time_period_group">
+							<p><strong>Time periods</strong></p>
+						</div>
+						<div class="group mt-4">
+							<p><strong>Custom Period</strong></p>
+							<div class="button calendar mt-3">
+								<input type="text" id="datepicker1" placeholder="MM/DD/YYYY">
+								<label for="datepicker1"><img src="images/calendar-light.png" alt="calendar" class="btn-small-icon"></label>
+							</div>
+							<span class="margin-left-right"><strong>to</strong></span>
+							<div class="button calendar mt-3">
+								<input type="text" id="datepicker2" placeholder="MM/DD/YYYY">
+								<label for="datepicker2"><img src="images/calendar-light.png" alt="calendar" class="btn-small-icon"></label>
+							</div>
+						</div>
+						<div class="group mt-4">
+							<div class="before-after-col">
+								<p><strong>Before</strong></p>	
+								<div class="button calendar mt-3">
+									<input type="text" id="datepicker3" placeholder="MM/DD/YYYY">
+									<label for="datepicker3"><img src="images/calendar-light.png" alt="calendar" class="btn-small-icon"></label>
+								</div>
+							</div>
+							<div class="before-after-col">
+								<p><strong>After</strong></p>	
+								<div class="button calendar mt-3">
+									<input type="text" id="datepicker4" placeholder="MM/DD/YYYY">
+									<label for="datepicker4"><img src="images/calendar-light.png" alt="calendar" class="btn-small-icon"></label>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-8 extra-padding">
+						<div class="group">
+							<p><strong>Exact Period</strong></p>
+							<div class="button calendar mt-3">
+								<input type="text" id="datepicker5" placeholder="MM/DD/YYYY">
+								<label for="datepicker5"><img src="images/calendar-light.png" alt="calendar" class="btn-small-icon"></label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row mt-5" id="bottom-buttons">
+					<div class="col-12 text-right">
+						<button class="button disabled" id="clear_button" onclick="resetView()">
+							<span><strong>Clear</strong></span>
+						</button>
+						<button class="button blue-border-bg">
+							<span><strong>Add to favorites</strong></span>
+						</button>
+						<button class="button blue-filled-bg" id="generateInsightButton" onclick="fetchNewData()">
+							<span><strong>Generate insights</strong></span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container charts-main-container mt-5"> 
+			<div class="col-12">
 				<h5 class="data-title"><strong></strong></h5>			
 			</div>
 		</div>
+		<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+		    <div class="modal-content">
+		      <div class="modal-body container">
+		      	<div class="row group-header">
+		      		<p class="col-6" id="modal-title"><strong>Female</strong> (25)</p>
+		      		<img src="images/edit.png" class="edit-icon" alt="edit">
+		      	</div>
+		      	<div class="row group-search-card">
+		      		<input type="text" placeholder="Find email contacts" class="col-12">
+		      		<img src="images/search.png" class="search-icon" alt="search">
+		      	</div>
+		      	<div class="container group-items mt-2">
+		      	</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<script src="js/generateInsights.js"></script>
+		<script src="js/showBasicInsights.js"></script>
 		<script>
 
-		var url = "https://api.myjson.com/bins/vv0yp";
-		var dataJson;
-		var chartsMainContainerClassName = '.charts-main-container';
-		var dataComparisonItemsClassName = '.data-comparison-items';
-
-		$(document).ready(function(){
-			loadData();
-		});
-
-		function loadData(){
-			$.getJSON( url, function( data ) {
-			  if(data!=null){
-			  	dataJson = data;
-			  	$('.data-title').html("<strong>" + data.dataTitle + "</strong>");
-
-			  	if(data.charts.length!=0){
-			  		for(var i = 0; i < data.charts.length; i++){
-			  			if(data.charts[i].chartType == "SingleBarChartContainer"){
-			  				addSingleBarChartContainer(data.charts[i], i+1);
-			  			}
-			  			else if(data.charts[i].chartType == "SingleLineChartContainer"){
-			  				addSingleLineChartContainer(data.charts[i], i+1);
-			  			}
-			  			else if(data.charts[i].chartType == "MultipleBarChartContainer"){
-			  				addMultipleBarChartContainer(data.charts[i], i+1);
-			  			}
-			  			else if(data.charts[i].chartType == "MultipleLineChartContainer"){
-			  				addMultipleLineChartContainer(data.charts[i], i+1);
-			  			}
-			  		}
-			  	}
-			  }
+			$(document).ready(function(){
+				$( "#datepicker1" ).datepicker();
+				$( "#datepicker2" ).datepicker();
+				$( "#datepicker3" ).datepicker();
+				$( "#datepicker4" ).datepicker();
+				$( "#datepicker5" ).datepicker();
+				loadGenerateInsightFormData(true, 0);
+				loadBasicInsightsChartData();
 			});
-		}
 
-		function addSingleBarChartContainer(data, position){
-			var chartContainerId = "chart_container_" + position;
-			var chartContainer = "<div class='container col-12 single-chart-container mt-4' id='" + chartContainerId + "'></div>";
-			var chartHeaderItem = "<h5 class='col-12 text-left chart-title'><strong>" + data.chartTitle + "</strong></h5>";
-			var chartComparisonItemsContainer = "<div class='col-12 text-left data-comparison-items'>";
-			var chartBox = "<div class='row chart-box'></div>";
-
-			$(chartsMainContainerClassName).append(chartContainer);
-			$('#' + chartContainerId).append(chartHeaderItem);
-			$('#' + chartContainerId).append(chartComparisonItemsContainer);
-			$('#' + chartContainerId).append(chartBox);
-			$('#' + chartContainerId + ' > ' + dataComparisonItemsClassName).append(getDataComparisonItems());
-
-			for(var j = 0; j < data.chartData.length; j++){
-				var chartItemId  = chartContainerId + "_chart_" + j;
-				var chartItem = "<div class='col-3 md-chart mt-4' id='" + chartItemId + "'></div>";
-				$('#' + chartContainerId + ' > ' + '.chart-box').append(chartItem);
-
-				drawChart("#"+chartItemId, data.chartData[j], 0.6);
+			function toggleGenerateInsightFormView(){
+				$('#generateInsightsBlock').toggle();
 			}
 
-		}
-
-		function addSingleLineChartContainer(data, position){
-			var chartContainerId = "chart_container_" + position;
-			var chartContainer = "<div class='container col-12 single-chart-container mt-4' id='" + chartContainerId + "'></div>";
-			var chartHeaderItem = "<h5 class='col-12 text-left chart-title'><strong>" + data.chartTitle + "</strong></h5>";
-			var chartComparisonItemsContainer = "<div class='col-12 text-left data-comparison-items'></div>";
-			var chartBox = "<div class='row chart-box'></div>";
-
-			$(chartsMainContainerClassName).append(chartContainer);
-			$('#' + chartContainerId).append(chartHeaderItem);
-			$('#' + chartContainerId).append(chartComparisonItemsContainer);
-			$('#' + chartContainerId).append(chartBox);
-			$('#' + chartContainerId + ' > ' + dataComparisonItemsClassName).append(getDataComparisonItems());
-
-			var chartItemId  = chartContainerId + "_chart";
-			var chartItem = "<div class='col-12 md-chart mt-4' id='" + chartItemId + "'></div>";
-			$('#' + chartContainerId + ' > ' + '.chart-box').append(chartItem);
-
-			drawMultiLineChart("#"+chartItemId, data.chartData, data.chartElems, 0, false);
-		}
-
-		function addMultipleBarChartContainer(data, position){
-			var chartContainerId = "chart_container_" + position;
-			var chartContainer = "<div class='row multiple-charts-container mt-4' id='" + chartContainerId + "'></div>";
-
-			$(chartsMainContainerClassName).append(chartContainer);
-			
-			for(var i = 0; i < data.charts.length; i++){
-				var chartItemContainerId  = chartContainerId + "_chart_item_container_" + i;
-				var chartItemContainer = "<div class='col-6'><div class='col-12 chart-item' id='" + chartItemContainerId + "'></div></div>";
-
-				var chartHeaderItem = "<h5 class='col-12 text-left chart-title'><strong>" + data.charts[i].chartTitle + "</strong></h5>";
-				var chartComparisonItemsContainer = "<div class='col-12 text-left data-comparison-items'></div>";	
-
-				var chartId = chartItemContainerId + "_chart";
-				var chart = "<div class='rg-chart mt-4' id='" + chartId + "''></div>";
-
-				$('#' + chartContainerId).append(chartItemContainer);
-				$('#' + chartItemContainerId).append(chartHeaderItem);
-				$('#' + chartItemContainerId).append(chartComparisonItemsContainer);
-				$('#' + chartItemContainerId + ' > ' + dataComparisonItemsClassName).append(getDataComparisonItems());
-				$('#' + chartItemContainerId).append(chart);
-				drawChart('#'+chartId, data.charts[i].chartData, 0.6);
-			}			
-		}
-
-		function addMultipleLineChartContainer(data, position){
-			var chartContainerId = "chart_container_" + position;
-			var chartContainer = "<div class='row multiple-charts-container mt-4' id='" + chartContainerId + "'></div>";
-
-			$(chartsMainContainerClassName).append(chartContainer);
-			
-			for(var i = 0; i < data.charts.length; i++){
-				var chartItemContainerId  = chartContainerId + "_chart_item_container_" + i;
-				var chartItemContainer = "<div class='col-6'><div class='col-12 chart-item' id='" + chartItemContainerId + "'></div></div>";
-
-				var chartHeaderItem = "<h5 class='col-12 text-left chart-title'><strong>" + data.charts[i].chartTitle + "</strong></h5>";
-				var chartComparisonItemsContainer = "<div class='col-12 text-left data-comparison-items'></div>";	
-
-				var chartId = chartItemContainerId + "_chart";
-				var chart = "<div class='sm-chart mt-4' id='" + chartId + "''></div>";
-
-				$('#' + chartContainerId).append(chartItemContainer);
-				$('#' + chartItemContainerId).append(chartHeaderItem);
-				$('#' + chartItemContainerId).append(chartComparisonItemsContainer);
-				$('#' + chartItemContainerId + ' > ' + dataComparisonItemsClassName).append(getDataComparisonItems());
-				$('#' + chartItemContainerId).append(chart);
-				drawMultiLineChart('#'+chartId, data.charts[i].chartData, data.charts[i].chartElems, 0, false);
-			}
-		}		
-
-		function getDataComparisonItems(){
-			var chartComparisonItems = dataJson.chartComparisonItems;
-			var colorsClass = ["blue", "red"];
-			var items = [];
-
-			for(var j = 0; j < chartComparisonItems.length; j++){
-				var additionalClass = colorsClass[j];
-				var div = "<div class='data-comparison-item text-left'><span class='data-comparison-item-title'>" + chartComparisonItems[j] + "</span><span class='data-comparison-item-icon " + additionalClass + "'></span></div>";
-
-				items.push(div);
+			function fetchNewData(){
+				loadBasicInsightsChartData();
+				scrollTo('charts-main-container');
 			}
 
-			return items;
-		}
+			function scrollTo(elemClassName){
+				var $container = $("html,body");
+				var $scrollTo = $('.'+elemClassName);
 
-	</script>
+				$container.animate({scrollTop: $scrollTo.offset().top - 100, scrollLeft: 0},300);
+			}
+
+		</script>
 	</body>
 </html>
