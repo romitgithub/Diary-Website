@@ -67,7 +67,6 @@ function loadDataForNewType(chartSectionPosition){
   	$('.charts-box').empty();
   	for(var i = 1; i <= chartJsonData.charts.length; i++){
   		var chartId = "chart"+i;
-  		console.log(chartId);
   		var div = "<div class='col-6 lg-chart mt-4' id='" + chartId + "'></div>";
   		$('.charts-box').append(div);
   		drawChart("#"+chartId, chartJsonData.charts[i-1][chartJsonData.chartSections[chartSectionPosition]], 0.6);

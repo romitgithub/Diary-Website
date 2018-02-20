@@ -51,21 +51,6 @@ function drawChart(chartDivIdentifier, data, spacing){
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
-        .on("click", function(d) {
-           div.transition()
-             .duration(200)
-             .style("opacity", 1);
-           div.html(
-            "<p><strong>Politeness Received</strong></p><div><span class='data-comparison-item-icon blue'></span><span class='data-comparison-item-percent'><strong>73%</strong></span><span class='data-comparison-item-group'>Male</span></div><div><span class='data-comparison-item-icon red'></span><span class='data-comparison-item-percent'><strong>63%</strong></span><span class='data-comparison-item-group'>Female</span></div>"
-            )
-             .style("left", (d3.event.pageX - 80) + "px")
-             .style("top", (d3.event.pageY - 100) + "px");
-           })
-         .on("mouseout", function(d) {
-           div.transition()
-             .duration(500)
-             .style("opacity", 0);
-           })
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     var ageNames = d3.keys(data[0]).filter(function(key) { return key !== "Groups"; });
@@ -87,6 +72,30 @@ function drawChart(chartDivIdentifier, data, spacing){
         .data(data)
         .enter().append("g")
         .attr("class", "groups")
+        .on("click", function(d, i) {
+
+            var percent1 = Math.floor((data[i].ages[0].value/(data[i].ages[0].value+data[i].ages[1].value))*100);
+            var percent2 = Math.floor((data[i].ages[1].value/(data[i].ages[0].value+data[i].ages[1].value))*100);
+
+            div.style("z-index", 1000);
+            div
+              .transition()
+              .duration(100)
+              .style("opacity", 1);
+           
+            div
+              .html(
+                "<p><strong>" + data[i].Groups + "</strong></p><div><span class='data-comparison-item-icon blue'></span><span class='data-comparison-item-percent'><strong>" + percent1 + "%</strong></span><span class='data-comparison-item-group'>" + data[i].ages[0].name + "</span></div><div><span class='data-comparison-item-icon red'></span><span class='data-comparison-item-percent'><strong>" + percent2 + "%</strong></span><span class='data-comparison-item-group'>" + data[i].ages[1].name + "</span></div>"
+                )
+              .style("left", (d3.event.pageX - 80) + "px")
+              .style("top", (d3.event.pageY - 100) + "px");
+        })
+        .on("mouseout", function(d) {
+           div.transition()
+             .duration(500)
+             .style("opacity", 0)
+             .style("z-index", -10);
+        })
         .attr("transform", function(d) { return "translate(" + x0(d.Groups) + ",0)"; });
 
     state.selectAll("rect")
@@ -101,7 +110,6 @@ function drawChart(chartDivIdentifier, data, spacing){
           else{
             return x1(d.name); 
           }
-          
         })
         .attr("y", function(d) { return y(d.value); })
         .attr("rx", 4)
@@ -298,12 +306,10 @@ function drawMultiLineChart(chartDivIdentifier, data, elems, numAxisLabels, show
       .on("click", function(d) {
 
          tooltip.style("z-index", 1);
-
          tooltip
             .transition()
             .duration(200)
             .style("opacity", 1);
-         
          tooltip
             .style("left", (d3.event.pageX - tooltipOffset + "px"))
             .style("top", (d3.event.pageY - 100 - tooltipExtraHeightOffset) + "px");
