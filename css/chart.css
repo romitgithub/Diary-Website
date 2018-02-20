@@ -64,6 +64,14 @@ img.profile-more-icon{
 	vertical-align: middle;
 }
 
+img.user-settings-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
 p.menu-button-text{
 	display: inline-block;
 	font-size: 12px;
@@ -95,25 +103,6 @@ div.charts-container{
 	border-radius: 6px;
 	padding: 12px;
 }
-
-.axis .domain {
-  display: none;
-}
-
-.axis{
-	font-size: 12px;
-	font-family: quicksand-bold;
-	font-weight: 700;
-	color: #bcbcbc;
-}
-
-.axis path {
-	fill: none;
-	stroke: #bbb;
-	shape-rendering: crispEdges;
-}
-
-.c3-axis .tick line {display: none;}
 
 div.multiple-charts-container div.chart-item{
 	margin: 0px;
@@ -170,12 +159,30 @@ span.data-comparison-item-icon.red{
 
 body {
   font: 10px sans-serif;
-  /* margin: 50px; */
 }
  
 /*
 ** line chart css
 */
+
+.axis .domain {
+  display: none;
+}
+
+.axis{
+	font-size: 12px;
+	font-family: quicksand-bold;
+	font-weight: 700;
+	color: #bcbcbc;
+}
+
+.axis path {
+	fill: none;
+	stroke: #bbb;
+	shape-rendering: crispEdges;
+}
+
+.c3-axis .tick line {display: none;}
 
 .grid .tick {
 	stroke: lightgrey;
@@ -197,7 +204,6 @@ body {
 }
  
 .dot {
-	/* consider the stroke-with the mouse detect radius? */
 	stroke: transparent;
 	stroke-width: 10px;  
 	cursor: pointer;
@@ -284,4 +290,8 @@ span.data-comparison-item-value {
     font-size: 14px;
     vertical-align: middle;
     margin: 8px;
+}
+
+div#generateInsightsBlock{
+	display:none;
 }

@@ -84,14 +84,17 @@ div.menu-buttons div.active p{
 	color: #2590f4;
 }
 
+div.generate-insights{
+	max-width: 1260px; 
+}
+
 div.create-insight-container{
-	width: 94vw;
-	min-height: 82vh;
-	margin: 100px auto;
 	background: #fff;
 	box-shadow: 1px 1px 12px #e5e5e5;
 	border-radius: 6px;
 	padding: 12px;
+	/* margin-left: 24px; */
+	/* margin-right: 24px; */
 }
 
 button.button.unselected{
@@ -110,7 +113,7 @@ button.button.unselected{
 	margin-top: 16px;
 }
 
-button.button.selected{
+div.group > button.button.selected{
 	background: #2590f4;
 	color: #fff;
 	padding-top: 6px;

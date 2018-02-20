@@ -38,99 +38,101 @@
 				</div>
 			</div>
 		</header>
-		<div class="container create-insight-container">
-			<div class="row mt-2">
-				<h5 class="col-4 extra-padding"><strong>Insights Criteria</strong></h5>
-				<div class="col-8 dropdown-button-group text-right extra-padding">
-					<div class="dropdown show custom-dropdown">
-					  <img src="images/user.png" class="btn-small-icon" alt="user-icon">
-					  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="groupDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					    Groups
-					  </a>
-					  <div class="dropdown-menu" aria-labelledby="groupDropdownMenuLink" id="group_dropdown_container">
-					  </div>
-					</div>
-					<div class="dropdown show">
-					  <img src="images/star.png" class="btn-small-icon" alt="star-icon">
-					  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="favoritesDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					    Favorites
-					  </a>
-					  <div class="dropdown-menu" aria-labelledby="favoritesDropdownMenuLink" id="favorites_dropdown_container">
-					  </div>
+		<div class="container generate-insights mt-8">
+			<div class="container col-12 create-insight-container">
+				<div class="row mt-2">
+					<h5 class="col-4 extra-padding"><strong>Insights Criteria</strong></h5>
+					<div class="col-8 dropdown-button-group text-right extra-padding">
+						<div class="dropdown show custom-dropdown">
+						  <img src="images/user.png" class="btn-small-icon" alt="user-icon">
+						  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="groupDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    Groups
+						  </a>
+						  <div class="dropdown-menu" aria-labelledby="groupDropdownMenuLink" id="group_dropdown_container">
+						  </div>
+						</div>
+						<div class="dropdown show">
+						  <img src="images/star.png" class="btn-small-icon" alt="star-icon">
+						  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="favoritesDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    Favorites
+						  </a>
+						  <div class="dropdown-menu" aria-labelledby="favoritesDropdownMenuLink" id="favorites_dropdown_container">
+						  </div>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="container row mt-4">
-				<div class="col-lg-4 col-md-4 col-sm-8 extra-padding">
-					<div class="group" id="group_a">
-						<p><strong>Group A</strong></p>
-					</div>
+				<div class="container row mt-4">
+					<div class="col-lg-4 col-md-4 col-sm-8 extra-padding">
+						<div class="group" id="group_a">
+							<p><strong>Group A</strong></p>
+						</div>
 
-					<div class="group mt-4" id="group_b">
-						<p><strong>Group B</strong></p>
-					</div>
-				</div>
-				<div class="col-lg-5 col-md-5 col-sm-8 border-left-right extra-padding">
-					<div class="group" id="time_period_group">
-						<p><strong>Time periods</strong></p>
-					</div>
-					<div class="group mt-4">
-						<p><strong>Custom Period</strong></p>
-						<div class="button calendar mt-3">
-							<input type="text" id="datepicker1" placeholder="MM/DD/YYYY">
-							<label for="datepicker1"><img src="images/calendar-light.png" alt="calendar" class="btn-small-icon"></label>
-						</div>
-						<span class="margin-left-right"><strong>to</strong></span>
-						<div class="button calendar mt-3">
-							<input type="text" id="datepicker2" placeholder="MM/DD/YYYY">
-							<label for="datepicker2"><img src="images/calendar-light.png" alt="calendar" class="btn-small-icon"></label>
+						<div class="group mt-4" id="group_b">
+							<p><strong>Group B</strong></p>
 						</div>
 					</div>
-					<div class="group mt-4">
-						<div class="before-after-col">
-							<p><strong>Before</strong></p>	
+					<div class="col-lg-5 col-md-5 col-sm-8 border-left-right extra-padding">
+						<div class="group" id="time_period_group">
+							<p><strong>Time periods</strong></p>
+						</div>
+						<div class="group mt-4">
+							<p><strong>Custom Period</strong></p>
 							<div class="button calendar mt-3">
-								<input type="text" id="datepicker3" placeholder="MM/DD/YYYY">
-								<label for="datepicker3"><img src="images/calendar-light.png" alt="calendar" class="btn-small-icon"></label>
+								<input type="text" id="datepicker1" placeholder="MM/DD/YYYY">
+								<label for="datepicker1"><img src="images/calendar-light.png" alt="calendar" class="btn-small-icon"></label>
+							</div>
+							<span class="margin-left-right"><strong>to</strong></span>
+							<div class="button calendar mt-3">
+								<input type="text" id="datepicker2" placeholder="MM/DD/YYYY">
+								<label for="datepicker2"><img src="images/calendar-light.png" alt="calendar" class="btn-small-icon"></label>
 							</div>
 						</div>
-						<div class="before-after-col">
-							<p><strong>After</strong></p>	
+						<div class="group mt-4">
+							<div class="before-after-col">
+								<p><strong>Before</strong></p>	
+								<div class="button calendar mt-3">
+									<input type="text" id="datepicker3" placeholder="MM/DD/YYYY">
+									<label for="datepicker3"><img src="images/calendar-light.png" alt="calendar" class="btn-small-icon"></label>
+								</div>
+							</div>
+							<div class="before-after-col">
+								<p><strong>After</strong></p>	
+								<div class="button calendar mt-3">
+									<input type="text" id="datepicker4" placeholder="MM/DD/YYYY">
+									<label for="datepicker4"><img src="images/calendar-light.png" alt="calendar" class="btn-small-icon"></label>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-8 extra-padding">
+						<div class="group">
+							<p><strong>Exact Period</strong></p>
 							<div class="button calendar mt-3">
-								<input type="text" id="datepicker4" placeholder="MM/DD/YYYY">
-								<label for="datepicker4"><img src="images/calendar-light.png" alt="calendar" class="btn-small-icon"></label>
+								<input type="text" id="datepicker5" placeholder="MM/DD/YYYY">
+								<label for="datepicker5"><img src="images/calendar-light.png" alt="calendar" class="btn-small-icon"></label>
 							</div>
 						</div>
-						
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-3 col-sm-8 extra-padding">
-					<div class="group">
-						<p><strong>Exact Period</strong></p>
-						<div class="button calendar mt-3">
-							<input type="text" id="datepicker5" placeholder="MM/DD/YYYY">
-							<label for="datepicker5"><img src="images/calendar-light.png" alt="calendar" class="btn-small-icon"></label>
-						</div>
+				<div class="row mt-5" id="bottom-buttons">
+					<div class="col-2">
+						<button class="button blue-border-bg" onclick="window.location='dashboard.html'">
+							<img src="images/left-arrow-blue.png" class="btn-small-icon" alt="left-arrow">
+							<span><strong>Back</strong></span>
+						</button>
 					</div>
-				</div>
-			</div>
-			<div class="row mt-5" id="bottom-buttons">
-				<div class="col-2">
-					<button class="button blue-border-bg" onclick="window.location='dashboard.html'">
-						<img src="images/left-arrow-blue.png" class="btn-small-icon" alt="left-arrow">
-						<span><strong>Back</strong></span>
-					</button>
-				</div>
-				<div class="col-8 offset-2 text-right">
-					<button class="button disabled" id="clear_button" onclick="resetView()">
-						<span><strong>Clear</strong></span>
-					</button>
-					<button class="button blue-border-bg">
-						<span><strong>Add to favorites</strong></span>
-					</button>
-					<button class="button blue-filled-bg" id="generateInsightButton" onclick="location.href='showCoreInsights.html'">
-						<span><strong>Generate insights</strong></span>
-					</button>
+					<div class="col-8 offset-2 text-right">
+						<button class="button disabled" id="clear_button" onclick="resetView()">
+							<span><strong>Clear</strong></span>
+						</button>
+						<button class="button blue-border-bg">
+							<span><strong>Add to favorites</strong></span>
+						</button>
+						<button class="button blue-filled-bg" id="generateInsightButton" onclick="location.href='showCoreInsights.html'">
+							<span><strong>Generate insights</strong></span>
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -152,183 +154,16 @@
 		    </div>
 		  </div>
 		</div>
+		<script src="js/generateInsights.js"></script>
 		<script>
-		var url = "https://api.myjson.com/bins/1fqpmh";
-		var jsonData;
-
-		$(document).ready(function(){
-			loadData();
-			$( "#datepicker1" ).datepicker();
-			$( "#datepicker2" ).datepicker();
-			$( "#datepicker3" ).datepicker();
-			$( "#datepicker4" ).datepicker();
-			$( "#datepicker5" ).datepicker();
-		});
-
-		function loadData(){
-			$.getJSON( url, function( data ) {
-			  if(data!=null){
-			  	jsonData = data;
-			  	addGroupsData(data.groups, "group_a");
-			  	addGroupsData(data.groups, "group_b");
-			  	addDropdownGroupData(data.groups, "group_dropdown_container");
-			  	addTimePeriodData(data.timePeriods, "time_period_group");
-			  	addFavoritesDropdownData(data.favorites, "favorites_dropdown_container");
-			  }
+			$(document).ready(function(){
+				loadGenerateInsightFormData(false, 0);
+				$( "#datepicker1" ).datepicker();
+				$( "#datepicker2" ).datepicker();
+				$( "#datepicker3" ).datepicker();
+				$( "#datepicker4" ).datepicker();
+				$( "#datepicker5" ).datepicker();
 			});
-		}
-
-		function addGroupsData(groupsList, groupId){
-			for(var i = 0; i < groupsList.length; i++){
-				(function () {
-				var buttonId = groupId + '_button_' + i;
-				
-				var additionalClass;
-
-				var btn = document.createElement("BUTTON");        // Create a <button> element
-				var t = document.createTextNode(groupsList[i].groupTitle);       // Create a text node
-				btn.appendChild(t);        
-				btn.classList.add('button');
-				btn.setAttribute("id", buttonId);
-				btn.classList.add('unselected');                        // Append the text to <button>
-				document.getElementById(groupId).appendChild(btn);        
-
-				btn.addEventListener('click', function(){
-				    changeSelection(buttonId, groupId);
-				}, false);
-			}())
-		  }
-		}
-
-		function addTimePeriodData(groupsList, groupId){
-			for(var i = 0; i < groupsList.length; i++){
-				(function () {
-				var buttonId = groupId + '_button_' + i;
-				
-				var additionalClass;
-
-				var btn = document.createElement("BUTTON");        // Create a <button> element
-				var t = document.createTextNode(groupsList[i]);       // Create a text node
-				btn.appendChild(t);        
-				btn.classList.add('button');
-				btn.setAttribute("id", buttonId);
-				btn.classList.add('unselected');                        // Append the text to <button>
-				document.getElementById(groupId).appendChild(btn);        
-
-				btn.addEventListener('click', function(){
-				    changeSelection(buttonId, groupId);
-				}, false);
-			}())
-		  }
-		}
-
-		function addDropdownGroupData(groupsList, containerId){
-			for(var i = 0; i < groupsList.length; i++){
-				var dropDownItem = "<a class='dropdown-item' href='#' data-toggle='modal' data-target='#exampleModalCenter' data-groupid='" + i + "'><div><p><strong>" + groupsList[i].groupTitle + "</strong></p></div></a>";
-				$('#' + containerId).append(dropDownItem);
-			}
-			var newGroupItem = "<a class='dropdown-item add-new' href='#' data-toggle='modal' data-target='#exampleModalCenter'><div><p><strong>New Group</strong></p></div></a>"
-			$('#'+containerId).append(newGroupItem);
-		}
-
-		function addFavoritesDropdownData(dataList, containerId){
-			for(var i = 0; i < dataList.length; i++){
-
-				var time;
-				if(dataList[i].time.type == "Before" || dataList[i].time.type == "After"){
-					time = dataList[i].time.type + " " + dataList[i].time.values[0];
-				}
-				else if(dataList[i].time.type == "Custom"){
-					time = dataList[i].time.values[0] + " - " + dataList[i].time.values[1];	
-				}
-				else{
-					time = dataList[i].time.values[0];	
-				}
-
-				var dropDownItemId = "favorites_dropdown_item_" + i;
-
-				var dropDownItem = "<a class='dropdown-item' href='#' data-position='" + i + "' id='" + dropDownItemId + "'><div><img src='images/delete.png'><p><strong>" + dataList[i].groups[0] + " vs " + dataList[i].groups[1] + "</strong></p><p>" + time + "</p></div></a>";
-				
-				$('#'+containerId).append(dropDownItem);
-				
-				$('#'+dropDownItemId).on('click', function(){
-					updateView(this);
-				});
-			}
-		}
-
-		function updateView(button){
-			resetView();
-			var favoritesPosition = button.dataset.position;
-			updateGroupView(favoritesPosition);
-			updateTimePeriodView(favoritesPosition);
-			$('#clear_button').removeClass('disabled');
-		}
-
-		function updateGroupView(favoritesPosition){
-			var groupAButton = $('#group_a > button:contains(' + jsonData.favorites[favoritesPosition].groups[0] + ')');
-			changeSelection(groupAButton[0].id, "group_a");
-
-			var groupBButton = $('#group_b > button:contains(' + jsonData.favorites[favoritesPosition].groups[1] + ')');
-			changeSelection(groupBButton[0].id, "group_b");
-		}
-
-		function updateTimePeriodView(favoritesPosition){
-			var time = jsonData.favorites[favoritesPosition].time;
-			console.log(time);
-
-			if(time.type == "Before"){
-				$('#datepicker3').val(time.values[0]);
-			}
-			else if(time.type == "After"){
-				$('#datepicker4').val(time.values[0]);
-			}
-			else if(time.type == "Custom"){
-				$('#datepicker1').val(time.values[0]);
-				$('#datepicker2').val(time.values[1]);
-			}
-			else if(time.type == "fixed"){
-				var timePeriodButton = $('#time_period_group > button:contains(' + time.values[0] + ')');
-				changeSelection(timePeriodButton[0].id, "time_period_group");
-			}
-		}
-
-		function resetView(){
-			changeSelection("0", "time_period_group");
-			changeSelection("0", "group_a");
-			changeSelection("0", "group_b");
-			$('#datepicker1').val('');
-			$('#datepicker2').val('');
-			$('#datepicker3').val('');
-			$('#datepicker4').val('');
-			$('#clear_button').addClass('disabled');
-		}
-
-		function changeSelection(buttonId, groupId){
-			var selectedItem = $('#'+ groupId + '.group > ' + '.selected');
-			if(selectedItem.length != 0){
-				selectedItem.removeClass('selected').addClass('unselected');
-			}
-			$('#'+buttonId).removeClass('unselected').addClass('selected');
-		}
-
-		$('#exampleModalCenter').on('show.bs.modal', function (event) {
-		  var button = $(event.relatedTarget) // Button that triggered the modal
-		  var groupId = button.data('groupid') // Extract info from data-* attributes
-		  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-		  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-		  
-		  var modal = $(this);
-		  var currentGroup = jsonData.groups[groupId];
-		  modal.find('#modal-title').text(currentGroup.groupTitle);
-		  modal.find('.group-items').empty();
-		  for(var i = 0; i < currentGroup.groupUsersList.length; i++){
-		  	var userItem = "<div class='row card-item'><div class='col-2 text-left'><img src='images/user-profile.jpg' class='user-profile-icon-small' alt='user-photo'></div><div class='col-8 text-left'><p><strong>" + currentGroup.groupUsersList[i].userName + "</strong></p><p>" + currentGroup.groupUsersList[i].userEmail + "</p></div><div class='col-2 text-right'><img src='images/success.png' class='user-check-mark-icon' alt='check-mark'></div></div>";
-
-		  	modal.find('.group-items').append(userItem);
-		  }
-		});
-
-	</script>
+		</script>
 	</body>
 </html>
