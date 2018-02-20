@@ -1,10 +1,154 @@
 {
 	"groups": [
-		"All",
-		"Personal",
-		"Work",
-		"Female",
-		"Male"
+		{
+			"groupTitle": "All",
+			"groupUsersList": [
+				{
+					"userName": "Romit Choudhary",
+					"userEmail": "romit@email.com"
+				},
+				{
+					"userName": "Vibhor Agnihotri",
+					"userEmail": "vibhor@email.com"
+				},
+				{
+					"userName": "Bhanu",
+					"userEmail": "bhanu@email.com"
+				},
+				{
+					"userName": "Hardik",
+					"userEmail": "hardik@email.com"
+				},
+				{
+					"userName": "Adarsh Jain",
+					"userEmail": "adarsh@email.com"
+				},
+				{
+					"userName": "Rohit Choudhary",
+					"userEmail": "rohit@email.com"
+				},
+				{
+					"userName": "Rahul Agnihotri",
+					"userEmail": "rahul@email.com"
+				},
+				{
+					"userName": "Jason Silva",
+					"userEmail": "jason@email.com"
+				},
+				{
+					"userName": "Rohit Choudhary",
+					"userEmail": "rohit@email.com"
+				},
+				{
+					"userName": "Rahul Agnihotri",
+					"userEmail": "rahul@email.com"
+				},
+				{
+					"userName": "Jason Silva",
+					"userEmail": "jason@email.com"
+				}		
+			]
+		},
+		{
+			"groupTitle": "Personal",
+			"groupUsersList": [
+				{
+					"userName": "Rohit Choudhary",
+					"userEmail": "rohit@email.com"
+				},
+				{
+					"userName": "Rahul Agnihotri",
+					"userEmail": "rahul@email.com"
+				},
+				{
+					"userName": "Jason Silva",
+					"userEmail": "jason@email.com"
+				},
+				{
+					"userName": "Ankit",
+					"userEmail": "ankit@email.com"
+				},
+				{
+					"userName": "Adarsh Jain",
+					"userEmail": "adarsh@email.com"
+				}		
+			]
+		},
+		{
+			"groupTitle": "Work",
+			"groupUsersList": [
+				{
+					"userName": "Romit Choudhary",
+					"userEmail": "romit@email.com"
+				},
+				{
+					"userName": "Vibhor Agnihotri",
+					"userEmail": "vibhor@email.com"
+				},
+				{
+					"userName": "Bhanu",
+					"userEmail": "bhanu@email.com"
+				},
+				{
+					"userName": "Hardik",
+					"userEmail": "hardik@email.com"
+				},
+				{
+					"userName": "Adarsh Jain",
+					"userEmail": "adarsh@email.com"
+				}		
+			]
+		},
+		{
+			"groupTitle": "Female",
+			"groupUsersList": [
+				{
+					"userName": "Rohit Choudhary",
+					"userEmail": "rohit@email.com"
+				},
+				{
+					"userName": "Rahul Agnihotri",
+					"userEmail": "rahul@email.com"
+				},
+				{
+					"userName": "Jason Silva",
+					"userEmail": "jason@email.com"
+				},
+				{
+					"userName": "Ankit",
+					"userEmail": "ankit@email.com"
+				},
+				{
+					"userName": "Adarsh Jain",
+					"userEmail": "adarsh@email.com"
+				}		
+			]
+		},
+		{
+			"groupTitle": "Male",
+			"groupUsersList": [
+				{
+					"userName": "Romit Choudhary",
+					"userEmail": "romit@email.com"
+				},
+				{
+					"userName": "Vibhor Agnihotri",
+					"userEmail": "vibhor@email.com"
+				},
+				{
+					"userName": "Bhanu",
+					"userEmail": "bhanu@email.com"
+				},
+				{
+					"userName": "Hardik",
+					"userEmail": "hardik@email.com"
+				},
+				{
+					"userName": "Adarsh Jain",
+					"userEmail": "adarsh@email.com"
+				}		
+			]
+		}
 	],
 	"timePeriods": [
 		"Today",
@@ -19,16 +163,25 @@
 	],
 	"favorites": [
 		{
-			"group": "Personal vs Work",
-			"time": "This year"
+			"groups": ["Personal", "Work"],
+			"time": {
+				"type": "fixed",
+				"values": ["This year"]
+			}
 		},
 		{
-			"group": "Female vs Male",
-			"time": "Before Nov 1, 2017"
+			"groups": ["Female", "Male"],
+			"time": {
+				"type": "Before",
+				"values": ["Nov 1, 2017"]
+			}
 		},
 		{
-			"group": "Female vs Male",
-			"time": "This year"
+			"groups": ["Female", "Male"],
+			"time": {
+				"type": "Custom",
+				"values": ["21/05/2012", "19/06/2014"]
+			}
 		}
 	]
 }
