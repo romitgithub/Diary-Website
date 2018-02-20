@@ -149,7 +149,7 @@ function drawMultiLineChart(chartDivIdentifier, data, elems, numAxisLabels, show
             .attr("class", "line-chart-tooltip justify-content-center")
             .style("opacity", 0);
 
-    tooltip.html("<div class='line-chart-tooltip-item-block'><div class='line-chart-tooltip-item'><p>78%</p><p><strong>Politeness</strong></p></div><div class='line-chart-tooltip-item'><p>12%</p><p><strong>Request</strong></p></div><div class='line-chart-tooltip-item'><p>1.8</p><p><strong>Balance</strong></p></div></div><div class='line-chart-tooltip-item-block'><div class='line-chart-tooltip-item'><p>56%</p><p><strong>Positive</strong></p></div><div class='line-chart-tooltip-item'><p>74%</p><p><strong>Negative</strong></p></div></div><div class='line-chart-tooltip-item-block'><div class='line-chart-tooltip-item'><p>59%</p><p><strong>Mirroring</strong></p></div></div>");
+    tooltip.html("<div class='line-chart-tooltip-item-block'><div class='line-chart-tooltip-item' id=''><p>78%</p><p><strong>Politeness</strong></p></div><div class='line-chart-tooltip-item'><p>12%</p><p><strong>Request</strong></p></div><div class='line-chart-tooltip-item'><p>1.8</p><p><strong>Balance</strong></p></div></div><div class='line-chart-tooltip-item-block'><div class='line-chart-tooltip-item'><p>56%</p><p><strong>Positive</strong></p></div><div class='line-chart-tooltip-item'><p>74%</p><p><strong>Negative</strong></p></div></div><div class='line-chart-tooltip-item-block'><div class='line-chart-tooltip-item'><p>59%</p><p><strong>Mirroring</strong></p></div></div>");
 
     tooltipOffset = 300;
     tooltipExtraHeightOffset = 20;
@@ -267,6 +267,8 @@ function drawMultiLineChart(chartDivIdentifier, data, elems, numAxisLabels, show
     dotRadius = 4;
   }
 
+  var toolTipBaseData = [78, 12, 1.8, 56, 74, 59];
+
   var points = svg.selectAll('.dots')
     .data(data)
     .enter()
@@ -292,6 +294,9 @@ function drawMultiLineChart(chartDivIdentifier, data, elems, numAxisLabels, show
         return "translate(" + x(d.point.x) + "," + y(d.point.y) + ")"; }
       )
       .on("click", function(d) {
+        console.log(oldData);
+        console.log(d);
+        console.log(tooltip[0][0].children);
          tooltip.style("z-index", 1);
          tooltip
             .transition()
@@ -300,6 +305,33 @@ function drawMultiLineChart(chartDivIdentifier, data, elems, numAxisLabels, show
          tooltip
             .style("left", (d3.event.pageX - tooltipOffset + "px"))
             .style("top", (d3.event.pageY - 100 - tooltipExtraHeightOffset) + "px");
+
+          if(showToolTip2){
+            var toolTipItems = document.getElementsByClassName('line-chart-tooltip-item');
+            for(var i = 0; i < toolTipItems.length; i++){
+              var innerTextValue = (toolTipBaseData[i] + d.point.y);
+              if(i!=2){
+                innerTextValue = innerTextValue + "%";
+              }
+              toolTipItems[i].children[0].innerText = innerTextValue;
+            }
+          }
+          else{
+
+            var total = oldData[d.point.x].Male + oldData[d.point.x].Female + oldData[d.point.x].Sent + oldData[d.point.x].Received;
+            var malePercent = Math.floor((oldData[d.point.x].Male/total)*100)
+            var femalePercent = Math.floor((oldData[d.point.x].Female/total)*100)
+            var sentPercent = Math.floor((oldData[d.point.x].Sent/total)*100)
+            var receivedPercent = Math.floor((oldData[d.point.x].Received/total)*100)
+
+            var tooltipTitle = tooltip[0][0].children[0];
+            var tooltipValue = tooltip[0][0].children[1].children[1];
+            var tooltipGroup = tooltip[0][0].children[1].children[2];
+
+            tooltipTitle.innerText = oldData[d.point.x].Groups;
+            tooltipValue.innerText = d.point.y;
+            tooltipGroup.innerText = getKeyByValue(elems, d.index);
+          }
       })
       .on("mouseout", function(d) {
          tooltip
@@ -347,4 +379,6 @@ function getCount(json){
   return i;
 }
 
-
+function getKeyByValue(object, value) {
+  return Object.keys(object).find(key => object[key] === value);
+}
