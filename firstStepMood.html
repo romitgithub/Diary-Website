@@ -89,38 +89,6 @@
 								Based on that you can create all the custom insight you desire.
 							</p>
 						</div>
-						<div class="line-chart-tooltip justify-content-center mt-4">
-							<div class="line-chart-tooltip-item-block">
-								<div class="line-chart-tooltip-item">
-									<p>78%</p>
-									<p><strong>Politeness</strong></p>
-								</div>
-								<div class="line-chart-tooltip-item">
-									<p>12%</p>
-									<p><strong>Request</strong></p>
-								</div>
-								<div class="line-chart-tooltip-item">
-									<p>1.8</p>
-									<p><strong>Balance</strong></p>
-								</div>
-							</div>
-							<div class="line-chart-tooltip-item-block">
-								<div class="line-chart-tooltip-item">
-									<p>56%</p>
-									<p><strong>Positive</strong></p>
-								</div>
-								<div class="line-chart-tooltip-item">
-									<p>74%</p>
-									<p><strong>Negative</strong></p>
-								</div>
-							</div>
-							<div class="line-chart-tooltip-item-block">
-								<div class="line-chart-tooltip-item">
-									<p>59%</p>
-									<p><strong>Mirroring</strong></p>
-								</div>
-							</div>
-						</div>
 						<div class="col-4 offset-4">
 							<div class="sm-chart" id="chart"></div>
 						</div>
@@ -142,7 +110,7 @@
 		</footer>
 		<script >
 
-			var url = "https://api.myjson.com/bins/bnzcp";
+			var url = "https://api.myjson.com/bins/138tmx";
 			var jsonData;
 
 			$(document).ready(function(){
@@ -177,7 +145,7 @@
     				$('.progress-bar').css('width', '100%').attr('aria-valuenow', 100);
     			}
     			else if(slideNum==3){
-    				drawMultiLineChart('#chart', jsonData.chartData, jsonData.chartElems, 3, false);
+    				drawMultiLineChart('#chart', jsonData.chartData, jsonData.chartElems, 3, true, true);
     			}
     		}
 

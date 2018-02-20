@@ -276,6 +276,7 @@ div.button.calendar label{
 }
 
 div.line-chart-tooltip{
+	position: absolute;
 	background: white;
 	padding: 8px;
 	border: 1px solid #eaeaea;

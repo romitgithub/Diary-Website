@@ -12,27 +12,35 @@
   "chartData": [
     {
       "Groups": "Jul",
-      "Data": 4
+      "Data": 0
     },
     {
       "Groups": "Aug",
-      "Data": 3
+      "Data": 5
     },
     {
       "Groups": "Sep",
-      "Data": 6
+      "Data": 3
     },
     {
       "Groups": "Oct",
-      "Data": 4
+      "Data": 5
     },
     {
       "Groups": "Nov",
-      "Data": 8
+      "Data": 1
     },
     {
       "Groups": "Dec",
-      "Data": 6
+      "Data": 11
+    },
+    {
+      "Groups": "Dec",
+      "Data": 7
+    },
+    {
+      "Groups": "Dec",
+      "Data": 10
     }
   ]
 }

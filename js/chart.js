@@ -120,7 +120,7 @@ function drawChart(chartDivIdentifier, data, spacing){
 ** @param showDots: boolean to enable.disable showing of dots on line chart
 ** sample data can be found at json/basicInsights.json, under chartTypes = SingleLineChartContainer, MultipleLineChartContainer
 */ 
-function drawMultiLineChart(chartDivIdentifier, data, elems, numAxisLabels, showDots){
+function drawMultiLineChart(chartDivIdentifier, data, elems, numAxisLabels, showDots, showToolTip2){
 
   var data = modifyData(data, elems);
   console.log(data);
@@ -133,9 +133,30 @@ function drawMultiLineChart(chartDivIdentifier, data, elems, numAxisLabels, show
     divHeight = 300;
   }
 
-  var div = d3.select("body").append("div")
-    .attr("class", "custom-tooltip text-center")
-    .style("opacity", 0);
+  var tooltip, tooltipOffset, tooltipExtraHeightOffset;
+
+  if(showToolTip2){
+    tooltip = d3.select("body")
+            .append("div")
+            .attr("class", "line-chart-tooltip justify-content-center")
+            .style("opacity", 0);
+
+    tooltip.html("<div class='line-chart-tooltip-item-block'><div class='line-chart-tooltip-item'><p>78%</p><p><strong>Politeness</strong></p></div><div class='line-chart-tooltip-item'><p>12%</p><p><strong>Request</strong></p></div><div class='line-chart-tooltip-item'><p>1.8</p><p><strong>Balance</strong></p></div></div><div class='line-chart-tooltip-item-block'><div class='line-chart-tooltip-item'><p>56%</p><p><strong>Positive</strong></p></div><div class='line-chart-tooltip-item'><p>74%</p><p><strong>Negative</strong></p></div></div><div class='line-chart-tooltip-item-block'><div class='line-chart-tooltip-item'><p>59%</p><p><strong>Mirroring</strong></p></div></div>");
+
+    tooltipOffset = 300;
+    tooltipExtraHeightOffset = 20;
+  }
+  else{
+    tooltip = d3.select("body")
+            .append("div")
+            .attr("class", "custom-tooltip text-center")
+            .style("opacity", 0);
+    
+    tooltip.html("<p><strong>Politeness Received</strong></p><div><span class='data-comparison-item-icon blue'></span><span class='data-comparison-item-percent'><strong>73%</strong></span><span class='data-comparison-item-group'>Male</span></div><div><span class='data-comparison-item-icon red'></span><span class='data-comparison-item-percent'><strong>63%</strong></span><span class='data-comparison-item-group'>Female</span></div>");
+
+    tooltipOffset = 80;
+    tooltipExtraHeightOffset = 0;
+  }
 
   var colors = [
     "#2590f4", "#F54040",
@@ -165,18 +186,18 @@ function drawMultiLineChart(chartDivIdentifier, data, elems, numAxisLabels, show
   var xAxis = d3.svg.axis()
       .scale(x)
       .ticks(ticksCount)
-    .tickSize(-height)
-    .tickPadding(5)  
-    .tickFormat(function(d, i){
-        return labelsArray[i%(labelsArray.length)] //"Year1 Year2, etc depending on the tick value - 0,1,2,3,4"
-    })
+      .tickSize(-height)
+      .tickPadding(5)  
+      .tickFormat(function(d, i){
+          return labelsArray[i%(labelsArray.length)] //"Jan Feb, etc depending on the tick value - 0,1,2,3,4"
+      })
       .orient("bottom");  
     
   var yAxis = d3.svg.axis()
       .scale(y)
-    .tickPadding(10)
-    .tickSize(-width)
-    .tickSubdivide(true)  
+      .tickPadding(10)
+      .tickSize(-width)
+      .tickSubdivide(true)  
       .orient("left");
   
     
@@ -219,24 +240,25 @@ function drawMultiLineChart(chartDivIdentifier, data, elems, numAxisLabels, show
       return colors[i%colors.length];
     })
     .on("click", function(d) {
-       div
+
+       tooltip.style("z-index", 1);
+
+       tooltip
           .transition()
           .duration(200)
           .style("opacity", 1);
        
-       div
-          .html(
-            "<p><strong>Politeness Received</strong></p><div><span class='data-comparison-item-icon blue'></span><span class='data-comparison-item-percent'><strong>73%</strong></span><span class='data-comparison-item-group'>Male</span></div><div><span class='data-comparison-item-icon red'></span><span class='data-comparison-item-percent'><strong>63%</strong></span><span class='data-comparison-item-group'>Female</span></div>"
-            )
-          .style("left", (d3.event.pageX - 80) + "px")
-          .style("top", (d3.event.pageY - 100) + "px");
+       tooltip
+          .style("left", (d3.event.pageX - tooltipOffset + "px"))
+          .style("top", (d3.event.pageY - 100 - tooltipExtraHeightOffset) + "px");
     })
-    // .on("mouseout", function(d) {
-    //    div
-    //       .transition()
-    //       .duration(500)
-    //       .style("opacity", 0);
-    // })
+    .on("mouseout", function(d) {
+       tooltip
+          .transition()
+          .duration(500)
+          .style("opacity", 0)
+          .style("z-index", -10);
+    })
     .style("stroke-dasharray", function(d,i){      
       if(i%colors.length == 2 || i%colors.length == 3){
         return "3";
