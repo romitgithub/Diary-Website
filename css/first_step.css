@@ -274,3 +274,40 @@ div.button.calendar label{
 .sm-chart{
 	height: 160px;
 }
+
+div.line-chart-tooltip{
+	background: white;
+	padding: 8px;
+	border: 1px solid #eaeaea;
+	box-shadow: 1px 1px 7px #e5e5e5;
+	margin: auto;
+}
+
+div.line-chart-tooltip > div{
+	display: inline-block;
+}
+
+div.line-chart-tooltip-item{
+	display: inline-block;
+	padding: 0px;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+div.line-chart-tooltip-item p:first-child{
+	font-size: 36px;
+	color: #6a6a6a;
+}
+
+div.line-chart-tooltip-item p:last-child{
+	font-size: 12px;
+	color: #b5b5b5;
+}
+
+div.line-chart-tooltip-item-block:first-child{
+	border-right: 1px solid #e5e5e5;
+}
+
+div.line-chart-tooltip-item-block:last-child{
+	border-left: 1px solid #e5e5e5;	
+}

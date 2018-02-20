@@ -123,7 +123,7 @@ function drawChart(chartDivIdentifier, data, spacing){
 function drawMultiLineChart(chartDivIdentifier, data, elems, numAxisLabels, showDots){
 
   var data = modifyData(data, elems);
-
+  console.log(data);
   var labelsArray = data['labelsArray'];
 
   var divWidth = $(chartDivIdentifier).width();
@@ -219,20 +219,24 @@ function drawMultiLineChart(chartDivIdentifier, data, elems, numAxisLabels, show
       return colors[i%colors.length];
     })
     .on("click", function(d) {
-       div.transition()
-         .duration(200)
-         .style("opacity", 1);
-       div.html(
-        "<p><strong>Politeness Received</strong></p><div><span class='data-comparison-item-icon blue'></span><span class='data-comparison-item-percent'><strong>73%</strong></span><span class='data-comparison-item-group'>Male</span></div><div><span class='data-comparison-item-icon red'></span><span class='data-comparison-item-percent'><strong>63%</strong></span><span class='data-comparison-item-group'>Female</span></div>"
-        )
-         .style("left", (d3.event.pageX - 80) + "px")
-         .style("top", (d3.event.pageY - 100) + "px");
-       })
-    .on("mouseout", function(d) {
-       div.transition()
-         .duration(500)
-         .style("opacity", 0);
-       })
+       div
+          .transition()
+          .duration(200)
+          .style("opacity", 1);
+       
+       div
+          .html(
+            "<p><strong>Politeness Received</strong></p><div><span class='data-comparison-item-icon blue'></span><span class='data-comparison-item-percent'><strong>73%</strong></span><span class='data-comparison-item-group'>Male</span></div><div><span class='data-comparison-item-icon red'></span><span class='data-comparison-item-percent'><strong>63%</strong></span><span class='data-comparison-item-group'>Female</span></div>"
+            )
+          .style("left", (d3.event.pageX - 80) + "px")
+          .style("top", (d3.event.pageY - 100) + "px");
+    })
+    // .on("mouseout", function(d) {
+    //    div
+    //       .transition()
+    //       .duration(500)
+    //       .style("opacity", 0);
+    // })
     .style("stroke-dasharray", function(d,i){      
       if(i%colors.length == 2 || i%colors.length == 3){
         return "3";
